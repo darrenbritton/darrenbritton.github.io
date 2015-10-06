@@ -1,10 +1,29 @@
+nav {
+    background-color: rgba(0, 0, 0, .1);
+    z-index: 1;
+}
+
+li a {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 12pt !important;
+}
+
+li a:hover {
+    font-size: 13pt !important;
+    -webkit-transition: font-size 1s;
+    /* Safari */
+    transition: font-size 1s;
+}
+
 .pacifico {
     font-family: 'Pacifico', cursive;
 }
 
 #skills-wrapper {
-    margin-top: -15px;
-    max-height: 80%;
-    background-image: url(../images/bg.jpg);
+    margin-top: -65px;
+    height: 80vh;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bg.jpg);
     color: #FFF;
 }
