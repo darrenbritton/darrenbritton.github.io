@@ -1,0 +1,10 @@
+.pacifico {
+    font-family: 'Pacifico', cursive;
+}
+
+#skills-wrapper {
+    margin-top: -15px;
+    max-height: 80%;
+    background-image: url(../images/bg.jpg);
+    color: #FFF;
+}
