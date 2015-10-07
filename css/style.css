@@ -30,6 +30,20 @@
     .pacifico {
         font-family: 'Pacifico', cursive;
     }
+
+    .header-word-one, .header-word-two {
+    	color: #fff;
+    	font-size: 132pt;
+    	font-family: 'Pacifico', cursive;
+    	position: absolute;
+    	right: 50%;
+    	top: 25%;
+    }
+
+    .header-word-two{ 
+    	right: 30%;
+    	top: 40%;
+    }
     
     .header-wrapper {
         width: 100%;
