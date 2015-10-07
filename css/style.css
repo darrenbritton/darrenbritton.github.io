@@ -32,18 +32,31 @@
     }
 
     .header-word-one, .header-word-two {
+    	z-index: 5;
     	color: #fff;
     	font-size: 132pt;
     	font-family: 'Pacifico', cursive;
     	position: absolute;
-    	right: 50%;
+    	left: 30%;
     	top: 25%;
     }
 
     .header-word-two{ 
-    	right: 30%;
+    	left: 50%;
     	top: 40%;
     }
+
+    @media screen and (max-width: 1000px) {
+    .header-word-one, .header-word-two {
+    	left: 0%;
+    	top: 15%;
+    }
+
+    .header-word-two{ 
+    	left: 0%;
+    	top: 50%;
+    }
+}
     
     .header-wrapper {
         width: 100%;
