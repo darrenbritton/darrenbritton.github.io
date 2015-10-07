@@ -35,9 +35,10 @@
                 <a href="##" class="brand-logo pacifico right">Darren Britton</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="main-nav left hide-on-med-and-down">
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">About</a></li>
                     <li><a href="#">Education & Awards</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
@@ -152,6 +153,49 @@
         <p class="header-word-one">Hello</p>
         <p class="header-word-two">World</p>
     </div>
+    <section name="about-me">
+        <div class="row">
+            <div class="col s12">
+                <center>
+                    <h2 class="header pacifico">
+                    <u>About Me</u>
+                </h2>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <center>
+                    <img src="images/me.jpg" alt="avatar-circle" class="circle responsive-img avatar-circle">
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <center>
+                    <h4 class="thin">Computer Scientist, Web Developer and Photographer from Dublin, Ireland</h4>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <center>
+                    <p class="flow-text">I am curently a student in the Dublin Institute of Technology. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links below or at the bottom of the page.</p>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <center>
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/darren.britton.5201"><i class="fa fa-facebook fa-2x"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/darrenbritton"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                        <li><a href="https://github.com/ThatCrazyIrishGuy"><i class="fa fa-git fa-2x"></i></a></li>
+                    </ul>
+                </center>
+            </div>
+        </div>
+    </section>
     <div class="row">
         <div class="col s12">
             <ul class="tabs">
@@ -177,7 +221,7 @@
     <script>
     $(".button-collapse").sideNav();
     $(function() {
-        $('a[href*="##"]:not([href="##"])').click(function() {
+        $('nav a[href*="#"]:not([href="#"])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');

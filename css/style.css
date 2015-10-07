@@ -133,3 +133,21 @@
             background-position: 53% 0%
         }
     }
+
+    .avatar-circle{
+    	height: 15em;
+    	width: 15em;
+    }
+
+    .social-list li{
+    	margin: 0em 1em;
+    	display: inline;
+    }
+
+    .fa-git{
+    	color: #F03C2E;
+    }
+
+    .fa-facebook{
+    	color: #3A5795;
+    }
