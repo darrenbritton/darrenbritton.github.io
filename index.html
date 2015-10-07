@@ -29,7 +29,7 @@
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo pacifico right">Darren Britton</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="left hide-on-med-and-down">
+            <ul class="main-nav left hide-on-med-and-down">
                 <li><a href="#">Skills</a></li>
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">About</a></li>
@@ -46,15 +46,45 @@
         </div>
     </nav>
     <div id="skills-wrapper">
+                <ul class="deck">
+                <li class="deck__item deck__item--facebook">
+                    <a class="deck__link" href="#">
+                        <span class="deck__icon fontawesome-facebook"></span>
+                        <span class="deck__label">Facebook</span>
+                    </a>
+                </li>
+                <li class="deck__item deck__item--twitter">
+                    <a class="deck__link" href="#">
+                        <span class="deck__icon fontawesome-twitter"></span>
+                        <span class="deck__label">Twitter</span>
+                    </a>
+                </li>
+                <li class="deck__item deck__item--linkedin">
+                    <a class="deck__link" href="#">
+                        <span class="deck__icon fontawesome-linkedin"></span>
+                        <span class="deck__label">LinkedIn</span>
+                    </a>
+                </li>
+                <li class="deck__item deck__item--github">
+                    <a class="deck__link" href="#">
+                        <span class="deck__icon fontawesome-github"></span>
+                        <span class="deck__label">GitHub</span>
+                    </a>
+                </li>
+            </ul>
     </div>
     <!-- /.container -->
     <!-- Materialize JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/materialize.min.js"></script>
     <script>
     $(".button-collapse").sideNav();
+    $(".main-nav li a").hover(function() {
+        $(this).effect("slide", "fast");
+    });
     </script>
 </body>
 
