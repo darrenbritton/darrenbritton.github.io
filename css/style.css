@@ -1,6 +1,10 @@
+html{
+    height: 100%;
+}
 body{
-	overflow: hidden;
 	-webkit-font-smoothing: antialiased;
+    height: 100%;
+    margin: 0;
 }
 nav {
     background-color: rgba(0, 0, 0, .1);
@@ -25,14 +29,20 @@ nav li a:hover {
     font-family: 'Pacifico', cursive;
 }
 
-#skills-wrapper {
-    margin-top: -65px;
-    height: 80vh;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bg.jpg);
-    color: #FFF;
+html {
+  background: linear-gradient(darkblue 0%, pink 21%, yellow 43%, pink 61%, darkblue 81%);
+  height: 100%;
+  width: 100%;
+  background-size: auto 400%;
+  animation: day 120s linear 0s infinite;
 }
 
-#ground {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bg.jpg);
-    color: #FFF;	
+@keyframes day {
+  from {
+    background-position: 0 0;
+  }
+  
+  to {
+    background-position: 0 400%;
+  }
 }

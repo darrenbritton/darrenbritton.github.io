@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 960px) {
+  body {
+    zoom: 0.7;
+  }
+}
+html, body {
+  height: 80%;
+}
+
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+
+@keyframes bounce {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+@-webkit-keyframes sway {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-12px);
+            transform: translateX(-12px);
+  }
+}
+@keyframes sway {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-12px);
+            transform: translateX(-12px);
+  }
+}
+body {
+  min-height: 100%;
+  background: -webkit-linear-gradient(top, #152c3e, #37618a);
+}
+body #mountains {
+  z-index: 2;
+  position: absolute;
+  bottom: 20%;
+  margin-bottom: -16px;
+  left: 10%;
+}
+body #cloud1 {
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  right: 4%;
+  -webkit-animation: bounce 2s ease-in-out 0s infinite alternate;
+          animation: bounce 2s ease-in-out 0s infinite alternate;
+}
+body #cloud2 {
+  z-index: 1;
+  position: absolute;
+  top: 22%;
+  right: 16%;
+  -webkit-animation: bounce 3.5s ease-in-out 2s infinite alternate;
+          animation: bounce 3.5s ease-in-out 2s infinite alternate;
+}
+body .trees {
+  width: 100%;
+  height: 130px;
+  z-index: 4;
+  position: absolute;
+  bottom: 20%;
+  margin-bottom: -100px;
+}
+body #ground {
+  z-index: 1;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  background: #879759;
+}
+body #hills {
+  position: absolute;
+  left: 10%;
+  margin-left: -120px;
+  margin-bottom: -86px;
+  bottom: 20%;
+  z-index: 3;
+}
+body #stars {
+  width: 100%;
+  height: 100%;
+}
