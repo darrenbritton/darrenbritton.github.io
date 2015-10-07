@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="css/materialize.min.css">
     <!-- Materialize Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Pacifico Google Font -->
+    <!-- fontawesome icons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <!-- Pacifico Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <!-- Custom styles-->
+    <link href="css/falls.css" rel="stylesheet">
+    <link href="css/deck.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -47,34 +49,59 @@
             </ul>
         </div>
     </nav>
-    <div id="skills-wrapper">
-                <ul class="deck">
-                <li class="deck__item deck__item--facebook">
-                    <a class="deck__link" href="#">
-                        <span class="deck__icon fa fa-facebook"></span>
-                        <span class="deck__label">Facebook</span>
-                    </a>
-                </li>
-                <li class="deck__item deck__item--twitter">
-                    <a class="deck__link" href="#">
-                        <span class="deck__icon fa fa-twitter"></span>
-                        <span class="deck__label">Twitter</span>
-                    </a>
-                </li>
-                <li class="deck__item deck__item--linkedin">
-                    <a class="deck__link" href="#">
-                        <span class="deck__icon fa fa-linkedin"></span>
-                        <span class="deck__label">LinkedIn</span>
-                    </a>
-                </li>
-                <li class="deck__item deck__item--github">
-                    <a class="deck__link" href="#">
-                        <span class="deck__icon fa fa-github"></span>
-                        <span class="deck__label">GitHub</span>
-                    </a>
-                </li>
-            </ul>
-    </div>
+    <script id="skyVS">
+    varying vec2 vUv;
+    varying float time;
+    uniform float delta;
+
+    void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+    </script>
+    <script id="skyFS">
+    #ifdef GL_ES
+    precision highp float;
+    #endif
+
+    uniform vec2 resolution;
+    uniform float time;
+    uniform float delta;
+
+    varying vec2 vUv;
+
+    void main(void) {
+        vec2 position = vUv;
+
+        float red = 0.1;
+        float green = 0.0;
+        float blue = 0.1;
+
+
+        if (vUv.y < 0.85) {
+            float offset = 0.1 + (0.85 - vUv.y) * (1.0 + sin(delta * 0.1) * 1.0);
+
+            blue = offset;
+            red = offset;
+
+            //blue *= (1.1 + cos(vUv.x + delta * 0.3) * 0.05);
+            blue *= 1.0 + cos(vUv.x + delta * 0.3) * 0.05;
+
+        }
+
+        if (vUv.y < 0.8) {
+            blue += 0.0 + cos(vUv.x + delta * 0.2) * 0.01;
+
+        }
+
+        vec3 rgb = vec3(red, green, blue);
+        vec4 color = vec4(rgb, 1.0);
+
+        gl_FragColor = color;
+    }
+    </script>
+    <canvas id="ground" style="height: 80vh; z-index:-4;"></canvas>
+    <div id="whitepanel"></div>
     <!-- /.container -->
     <!-- Materialize JavaScript
     ================================================== -->
@@ -82,11 +109,13 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/materialize.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js'></script>
+    <script type="text/javascript" src="js/falls.js"></script>
     <script>
     $(".button-collapse").sideNav();
-    $(".main-nav li a").hover(function() {
-        $(this).effect("slide", "fast");
-    });
+    // $(".main-nav li a").hover(function() {
+    //     $(this).effect("slide", "fast");
+    // });
     </script>
 </body>
 
