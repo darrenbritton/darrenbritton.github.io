@@ -39,10 +39,10 @@ nav li a:hover {
 
 .deck {
   position: absolute;
-  width: 5em;
-  height: 7em;
-  top: 25%;
-  left: 97%;
+  width: 10em;
+  height: 15em;
+  top: 50%;
+  left: 50%;
   margin: -6.5em 0 0 -5em;
   -webkit-backface-visibility: hidden;
   font-family: 'Ubuntu', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -62,7 +62,7 @@ nav li a:hover {
 .deck__item:hover ~ .deck__item {
   transform: rotate(120deg);
 }
-
+http://localhost/thatcrazyirishguy.github.io/#
 .deck__item:last-of-type:after {
   content: "";
   position: absolute;
