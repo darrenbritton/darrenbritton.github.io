@@ -1,48 +1,91 @@
-html{
-    height: 100%;
-}
-body{
-	-webkit-font-smoothing: antialiased;
-    height: 100%;
-    margin: 0;
-}
-nav {
-    background-color: rgba(0, 0, 0, .1);
-    z-index: 1;
-}
-
-nav li a {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    font-size: 12pt !important;
-}
-
-nav li a:hover {
-    font-size: 13pt !important;
-    -webkit-transition: font-size 1s;
-    /* Safari */
-    transition: font-size 1s;
-}
-
-.pacifico {
-    font-family: 'Pacifico', cursive;
-}
-
-.header-wrapper {
-  background: linear-gradient(#061B50 0%, #3C739C 21%,#C9E9F4 43%, #E4989C 61%, #061B50 81%);
-  height: 100%;
-  width: 100%;
-  background-size: auto 400%;
-  animation: day 120s linear 0s infinite;
-}
-
-@keyframes day {
-  from {
-    background-position: 0 0;
-  }
-  
-  to {
-    background-position: 0 400%;
-  }
-}
+    html {
+        height: 100%;
+    }
+    
+    body {
+        -webkit-font-smoothing: antialiased;
+        height: 100%;
+        margin: 0;
+    }
+    
+    nav {
+        background-color: rgba(0, 0, 0, .1);
+        z-index: 1;
+    }
+    
+    nav li a {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 12pt !important;
+    }
+    
+    nav li a:hover {
+        font-size: 13pt !important;
+        -webkit-transition: font-size 1s;
+        /* Safari */
+        transition: font-size 1s;
+    }
+    
+    .pacifico {
+        font-family: 'Pacifico', cursive;
+    }
+    
+    .header-wrapper {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
+        background-size: 1000% 1000%;
+        -webkit-animation: AnimationName 120s ease infinite;
+        -moz-animation: AnimationName 120s ease infinite;
+        -o-animation: AnimationName 120s ease infinite;
+        animation: AnimationName 120s ease infinite;
+    }
+    
+    @-webkit-keyframes AnimationName {
+        0% {
+            background-position: 53% 0%
+        }
+        50% {
+            background-position: 48% 100%
+        }
+        100% {
+            background-position: 53% 0%
+        }
+    }
+    
+    @-moz-keyframes AnimationName {
+        0% {
+            background-position: 53% 0%
+        }
+        50% {
+            background-position: 48% 100%
+        }
+        100% {
+            background-position: 53% 0%
+        }
+    }
+    
+    @-o-keyframes AnimationName {
+        0% {
+            background-position: 53% 0%
+        }
+        50% {
+            background-position: 48% 100%
+        }
+        100% {
+            background-position: 53% 0%
+        }
+    }
+    
+    @keyframes AnimationName {
+        0% {
+            background-position: 53% 0%
+        }
+        50% {
+            background-position: 48% 100%
+        }
+        100% {
+            background-position: 53% 0%
+        }
+    }
