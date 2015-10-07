@@ -29,8 +29,8 @@ nav li a:hover {
     font-family: 'Pacifico', cursive;
 }
 
-html {
-  background: linear-gradient(darkblue 0%, pink 21%, yellow 43%, pink 61%, darkblue 81%);
+.header-wrapper {
+  background: linear-gradient(#061B50 0%, #3C739C 21%,#C9E9F4 43%, #E4989C 61%, #061B50 81%);
   height: 100%;
   width: 100%;
   background-size: auto 400%;

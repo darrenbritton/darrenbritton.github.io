@@ -53,10 +53,6 @@ html, body {
             transform: translateX(-12px);
   }
 }
-body {
-  min-height: 100%;
-  background: -webkit-linear-gradient(top, #152c3e, #37618a);
-}
 body #mountains {
   z-index: 2;
   position: absolute;
