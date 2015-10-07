@@ -27,36 +27,53 @@
         transition: font-size 1s;
     }
     
+    .tabs .tab a {
+        color: #0091ea;
+    }
+    
+    .tabs .tab a:hover {
+        color: #80d8ff;
+    }
+    
+    .tabs .indicator {
+        background-color: #0091ea;
+    }
+    
     .pacifico {
         font-family: 'Pacifico', cursive;
     }
-
-    .header-word-one, .header-word-two {
-    	z-index: 5;
-    	color: #fff;
-    	font-size: 132pt;
-    	font-family: 'Pacifico', cursive;
-    	position: absolute;
-    	left: 30%;
-    	top: 25%;
+    
+    .brand-logo {
+        margin-right: .5em;
     }
-
-    .header-word-two{ 
-    	left: 50%;
-    	top: 40%;
+    
+    .header-word-one,
+    .header-word-two {
+        z-index: 5;
+        color: #fff;
+        font-size: 132pt;
+        font-family: 'Pacifico', cursive;
+        position: absolute;
+        left: 30%;
+        top: 25%;
     }
-
+    
+    .header-word-two {
+        left: 50%;
+        top: 40%;
+    }
+    
     @media screen and (max-width: 1000px) {
-    .header-word-one, .header-word-two {
-    	left: 0%;
-    	top: 15%;
+        .header-word-one,
+        .header-word-two {
+            left: 0%;
+            top: 15%;
+        }
+        .header-word-two {
+            left: 0%;
+            top: 50%;
+        }
     }
-
-    .header-word-two{ 
-    	left: 0%;
-    	top: 50%;
-    }
-}
     
     .header-wrapper {
         width: 100%;
