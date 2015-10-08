@@ -1,11 +1,13 @@
     html {
-        height: 100%;
+        min-height: 100%;
+        position: relative;
     }
     
     body {
         -webkit-font-smoothing: antialiased;
         height: 100%;
         margin: 0;
+        color: #fff;
     }
     
     nav {
@@ -151,12 +153,13 @@
         color: #3A5795;
     }
     
-    #about-me {
-        background: transparent url("../images/poly.png") repeat scroll 0% 0%;
-        margin-bottom: 0;
-        padding-bottom: 20px;
-    }
-    
-    #experience, .tabs {
-        background: transparent url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/crossword.png") repeat scroll 0% 0%;
+    #page-background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        z-index: -1;
+        /* Remove this line if it's not going to be a background! */
     }

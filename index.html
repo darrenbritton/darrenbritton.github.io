@@ -154,6 +154,7 @@
         <p class="header-word-one">Hello</p>
         <p class="header-word-two">World</p>
     </div>
+    <canvas id="page-background"></canvas>
     <section name="about-me" id="about-me">
         <div class="row">
             <div class="col s12">
@@ -287,6 +288,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.3.1/trianglify.min.js"></script>
     <script>
     $(".button-collapse").sideNav();
     $('ul.tabs').tabs();
@@ -304,6 +306,18 @@
             }
         });
     });
+    var body = document.body,
+    html = document.documentElement;
+
+	var pageHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+    var pattern = Trianglify({
+        width: window.innerWidth,
+        height: pageHeight,
+        cell_size: 200,
+        x_colors: ['#aa7243', '#1C120D']
+	});
+	pattern.canvas(document.getElementById('page-background'));
     </script>
 </body>
 
