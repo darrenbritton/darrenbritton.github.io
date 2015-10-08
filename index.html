@@ -153,7 +153,7 @@
         <p class="header-word-one">Hello</p>
         <p class="header-word-two">World</p>
     </div>
-    <section name="about-me">
+    <section name="about-me" id="about-me">
         <div class="row">
             <div class="col s12">
                 <center>
@@ -196,22 +196,90 @@
             </div>
         </div>
     </section>
-    <div class="row">
-        <div class="col s12">
-            <ul class="tabs">
-                <li class="tab col s3"><a name="skills" class="active" href="#web-design">Web Design</a></li>
-                <li class="tab col s3"><a href="#full-stack-development">Full Stack Development</a></li>
-                <li class="tab col s3"><a href="#desktop-development">Desktop Development</a></li>
-                <li class="tab col s3"><a href="#android-development">Android Development</a></li>
-            </ul>
+    <section name="experience" id="experience">
+        <div class="row">
+            <div class="col s12">
+                <center>
+                    <h2 class="header pacifico">
+                    <u>Experience</u>
+                </h2>
+                </center>
+            </div>
         </div>
-        <div id="web-design" class="col s12" style="height: 100vh">
-            Test 1
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col l4 s12"><a name="skills" class="active" href="#support-engineer">Support Engineer</a></li>
+                    <li class="tab col l4 s12"><a href="#systems-engineer">Systems Engineer</a></li>
+                    <li class="tab col l4 s12"><a href="#cashier">Cashier</a></li>
+                </ul>
+            </div>
+            <div id="support-engineer" class="col s12">
+                <div class="row">
+                    <div class="col s6">
+                        <center>
+                            <h2 class="thin left">SAP IRELAND</h2>
+                        </center>
+                    </div>
+                    <div class="col s6">
+                        <center>
+                            <h2 class="thin right">FEB 2015 - AUG 2015</h2>
+                        </center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                        <center>
+                            <p class="flow-text">WRITE ME!!!</br>WRITE ME!!!</br>WRITE ME!!!</br>WRITE ME!!!</br>
+                            </p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div id="systems-engineer" class="col s12">
+                <div class="row">
+                    <div class="col s6">
+                        <center>
+                            <h2 class="thin left">ST DECLANS COLLEGE</h2>
+                        </center>
+                    </div>
+                    <div class="col s6">
+                        <center>
+                            <h2 class="thin right">MAR 2010 - JUN 2010</h2>
+                        </center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                        <center>
+                            <p class="flow-text">Designed and implemented a networked digital signage system for displaying notifications for students and teachers, using the digital signage framework created by MediaSignage Inc . Some of the various tasks involved with this job included hardware selection and sourcing, software in stallation, system automation scripting, hardware failsafe configuration , remote access setup and system testing.</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div id="cashier" class="col s12">
+                <div class="row">
+                    <div class="col s6">
+                        <center>
+                            <h2 class="thin left">IMC SANTRY</h2>
+                        </center>
+                    </div>
+                    <div class="col s6">
+                        <center>
+                            <h2 class="thin right">JUN 2014 - OCT 2014</h2>
+                        </center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                        <center>
+                            <p class="flow-text">Provided fast, friendly, and accurate, ticket and concession services for our customers using computerized cash register systems. Necessary skills were the ability to memorize movie running times and concessions specials . I was required to often deal with customer complaints and assist customers in seating, finding screens etc . I also assist ed in the cleaning of screens, as well as the foyer are and surrounding areas . End of day duties included emptying and cleaning popcorn bins and restocking the shop.</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="full-stack-development" class="col s12" style="height: 100vh">Test 2</div>
-        <div id="desktop-development" class="col s12" style="height: 100vh">Test 3</div>
-        <div id="android-development" class="col s12" style="height: 100vh">Test 4</div>
-    </div>
+    </section>
     <!-- /.container -->
     <!-- Materialize JavaScript
     ================================================== -->
@@ -220,6 +288,7 @@
     <script src="js/materialize.min.js"></script>
     <script>
     $(".button-collapse").sideNav();
+    $('ul.tabs').tabs();
     $(function() {
         $('nav a[href*="#"]:not([href="#"])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {

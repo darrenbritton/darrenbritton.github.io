@@ -10,7 +10,6 @@
     
     nav {
         background-color: rgba(0, 0, 0, .1);
-        z-index: 1;
     }
     
     nav li a {
@@ -133,21 +132,31 @@
             background-position: 53% 0%
         }
     }
-
-    .avatar-circle{
-    	height: 15em;
-    	width: 15em;
+    
+    .avatar-circle {
+        height: 15em;
+        width: 15em;
     }
-
-    .social-list li{
-    	margin: 0em 1em;
-    	display: inline;
+    
+    .social-list li {
+        margin: 0em 1em;
+        display: inline;
     }
-
-    .fa-git{
-    	color: #F03C2E;
+    
+    .fa-git {
+        color: #F03C2E;
     }
-
-    .fa-facebook{
-    	color: #3A5795;
+    
+    .fa-facebook {
+        color: #3A5795;
+    }
+    
+    #about-me {
+        background: transparent url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/shattered.png") repeat scroll 0% 0%;
+        margin-bottom: 0;
+        padding-bottom: 20px;
+    }
+    
+    #experience, .tabs {
+        background: transparent url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/crossword.png") repeat scroll 0% 0%;
     }
