@@ -14,7 +14,8 @@
        font-family: 'Roboto', sans-serif;
    }
    
-   .navbar-transparent {
+   .navbar-transparent,
+   .footer {
        background-color: rgba(0, 0, 0, .1);
        border: none;
        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
@@ -177,8 +178,8 @@
    .fa-git {
        color: #F03C2E;
    }
-
-  .fa-linkedin {
+   
+   .fa-linkedin {
        color: #0077B5;
    }
    
@@ -213,10 +214,53 @@
        font-weight: 300;
        font-size: 2.48rem;
    }
+   
+   .skill-bar {
+       margin-top: 2em;
+       height: 2.6em;
+   }
+   
+   .education {
+       font-size: 3rem;
+       text-align: center;
+   }
+   
+   .education.award {
+       font-weight: 400;
+   }
+   
+   .education.body {
+       font-weight: 300;
+   }
+   
+   .education.year {
+       font-weight: 300;
+   }
 
+   .footer .container-fluid{
+       background-color: rgba(0, 0, 0, .3);
+   }
+   
+   .footer h3 {
+       font-weight: 200;
+       text-align: center;
+   }
+   
+   @media screen and (max-width: 992px) {
+       .education.body {
+           float: left;
+       }
+       .education.year {
+           float: right;
+       }
+       .education.award {
+           padding-top: 1em;
+       }
+   }
+   
    li a {
-    font-size: 2.13rem;
-    color: #fff;
+       font-size: 2.13em;
+       color: #fff;
    }
    
    svg {
