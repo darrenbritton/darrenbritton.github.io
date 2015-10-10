@@ -73,8 +73,8 @@
        margin-right: .5em;
    }
    
-   .header-word-one,
-   .header-word-two {
+   #header-word-one,
+   #header-word-two {
        z-index: 5;
        color: #fff;
        font-size: 132pt;
@@ -84,18 +84,18 @@
        top: 25%;
    }
    
-   .header-word-two {
+   #header-word-two {
        left: 50%;
        top: 40%;
    }
    
    @media screen and (max-width: 1000px) {
-       .header-word-one,
-       .header-word-two {
+       #header-word-one,
+       #header-word-two {
            left: 0%;
            top: 15%;
        }
-       .header-word-two {
+       #header-word-two {
            left: 0%;
            top: 50%;
        }
