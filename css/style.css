@@ -1,165 +1,214 @@
-    html {
-        min-height: 100%;
-        position: relative;
-    }
-    
-    body {
-        -webkit-font-smoothing: antialiased;
-        height: 100%;
-        margin: 0;
-        color: #fff;
-    }
-    
-    nav {
-        background-color: rgba(0, 0, 0, .1);
-    }
-    
-    nav li a {
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-weight: 300;
-        text-transform: uppercase;
-        font-size: 12pt !important;
-    }
-    
-    nav li a:hover {
-        font-size: 13pt !important;
-        -webkit-transition: font-size 1s;
-        /* Safari */
-        transition: font-size 1s;
-    }
-    
-    .tabs .tab a {
-        color: #0091ea;
-    }
-    
-    .tabs .tab a:hover {
-        color: #80d8ff;
-    }
-    
-    .tabs .indicator {
-        background-color: #0091ea;
-    }
-    
-    .pacifico {
-        font-family: 'Pacifico', cursive;
-    }
-    
-    .brand-logo {
-        margin-right: .5em;
-    }
-    
-    .header-word-one,
-    .header-word-two {
-        z-index: 5;
-        color: #fff;
-        font-size: 132pt;
-        font-family: 'Pacifico', cursive;
-        position: absolute;
-        left: 30%;
-        top: 25%;
-    }
-    
-    .header-word-two {
-        left: 50%;
-        top: 40%;
-    }
-    
-    @media screen and (max-width: 1000px) {
-        .header-word-one,
-        .header-word-two {
-            left: 0%;
-            top: 15%;
-        }
-        .header-word-two {
-            left: 0%;
-            top: 50%;
-        }
-    }
-    
-    .header-wrapper {
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
-        background-size: 1000% 1000%;
-        -webkit-animation: AnimationName 120s ease infinite;
-        -moz-animation: AnimationName 120s ease infinite;
-        -o-animation: AnimationName 120s ease infinite;
-        animation: AnimationName 120s ease infinite;
-    }
-    
-    @-webkit-keyframes AnimationName {
-        0% {
-            background-position: 53% 0%
-        }
-        50% {
-            background-position: 48% 100%
-        }
-        100% {
-            background-position: 53% 0%
-        }
-    }
-    
-    @-moz-keyframes AnimationName {
-        0% {
-            background-position: 53% 0%
-        }
-        50% {
-            background-position: 48% 100%
-        }
-        100% {
-            background-position: 53% 0%
-        }
-    }
-    
-    @-o-keyframes AnimationName {
-        0% {
-            background-position: 53% 0%
-        }
-        50% {
-            background-position: 48% 100%
-        }
-        100% {
-            background-position: 53% 0%
-        }
-    }
-    
-    @keyframes AnimationName {
-        0% {
-            background-position: 53% 0%
-        }
-        50% {
-            background-position: 48% 100%
-        }
-        100% {
-            background-position: 53% 0%
-        }
-    }
-    
-    .avatar-circle {
-        height: 15em;
-        width: 15em;
-    }
-    
-    .social-list li {
-        margin: 0em 1em;
-        display: inline;
-    }
-    
-    .fa-git {
-        color: #F03C2E;
-    }
-    
-    .fa-facebook {
-        color: #3A5795;
-    }
-    
-    #page-background {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        overflow: hidden;
-        z-index: -1;
-        /* Remove this line if it's not going to be a background! */
-    }
+   @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300);
+   html {
+       min-height: 100%;
+       position: relative;
+       background-color: #2F2016;
+   }
+   
+   body {
+       -webkit-font-smoothing: antialiased;
+       height: 100%;
+       margin: 0;
+       color: #fff;
+       font-family: 'Roboto', sans-serif;
+   }
+   
+   .navbar-transparent {
+       background-color: rgba(0, 0, 0, .1);
+       border: none;
+       box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+       z-index: 10;
+   }
+   
+   .navbar-transparent .navbar-nav > li > a {
+       color: #fff;
+   }
+   
+   nav li a {
+       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+       font-weight: 300;
+       text-transform: uppercase;
+       font-size: 12pt !important;
+       padding: 1.5em 1em !important;
+   }
+   
+   .navbar-brand {
+       font-size: 3.1rem;
+       padding: .8em 1em;
+       color: #fff !important;
+   }
+   
+   .navbar-default .navbar-toggle .icon-bar {
+       background-color: #fff;
+   }
+   
+   .navbar-toggle {
+       margin-top: 1em;
+   }
+   
+   @media (max-width: 768px) {
+       #navbar-collapse {
+           background-color: rgba(0, 0, 0, 0.9);
+       }
+   }
+   
+   .tabs .tab a {
+       color: #0091ea;
+   }
+   
+   .tabs .tab a:hover {
+       color: #80d8ff;
+   }
+   
+   .tabs .indicator {
+       background-color: #0091ea;
+   }
+   
+   .pacifico {
+       font-family: 'Pacifico', cursive;
+   }
+   
+   .brand-logo {
+       margin-right: .5em;
+   }
+   
+   .header-word-one,
+   .header-word-two {
+       z-index: 5;
+       color: #fff;
+       font-size: 132pt;
+       font-family: 'Pacifico', cursive;
+       position: absolute;
+       left: 30%;
+       top: 25%;
+   }
+   
+   .header-word-two {
+       left: 50%;
+       top: 40%;
+   }
+   
+   @media screen and (max-width: 1000px) {
+       .header-word-one,
+       .header-word-two {
+           left: 0%;
+           top: 15%;
+       }
+       .header-word-two {
+           left: 0%;
+           top: 50%;
+       }
+   }
+   
+   .header-wrapper {
+       width: 100%;
+       height: 100%;
+       background: linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
+       background-size: 1000% 1000%;
+       -webkit-animation: AnimationName 120s ease infinite;
+       -moz-animation: AnimationName 120s ease infinite;
+       -o-animation: AnimationName 120s ease infinite;
+       animation: AnimationName 120s ease infinite;
+   }
+   
+   @-webkit-keyframes AnimationName {
+       0% {
+           background-position: 53% 0%
+       }
+       50% {
+           background-position: 48% 100%
+       }
+       100% {
+           background-position: 53% 0%
+       }
+   }
+   
+   @-moz-keyframes AnimationName {
+       0% {
+           background-position: 53% 0%
+       }
+       50% {
+           background-position: 48% 100%
+       }
+       100% {
+           background-position: 53% 0%
+       }
+   }
+   
+   @-o-keyframes AnimationName {
+       0% {
+           background-position: 53% 0%
+       }
+       50% {
+           background-position: 48% 100%
+       }
+       100% {
+           background-position: 53% 0%
+       }
+   }
+   
+   @keyframes AnimationName {
+       0% {
+           background-position: 53% 0%
+       }
+       50% {
+           background-position: 48% 100%
+       }
+       100% {
+           background-position: 53% 0%
+       }
+   }
+   
+   .avatar-circle {
+       height: 20em;
+       width: 16em;
+   }
+   
+   .social-list {
+       margin-top: 1em;
+   }
+   
+   .social-list li {
+       margin: 0em 1em;
+       display: inline;
+   }
+   
+   .fa-git {
+       color: #F03C2E;
+   }
+   
+   .fa-facebook {
+       color: #3A5795;
+   }
+   
+   #page-background {
+       position: absolute;
+       top: 0;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       overflow: hidden;
+       z-index: -1;
+   }
+   
+   .section-header {
+       font-size: 6rem;
+       margin: .8em 0em;
+   }
+   
+   .thin {
+       font-weight: 100;
+       font-size: 3.48rem;
+       line-height: 110%;
+       margin: .6em 0em;
+   }
+   
+   .flow-text {
+       line-height: 1.5;
+       font-weight: 300;
+       font-size: 2.48rem;
+   }
+   
+   svg {
+       z-index: 0 !important;
+   }
