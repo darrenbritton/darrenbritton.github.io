@@ -25,7 +25,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body onresize="drawBackground()">
     <div class="header-wrapper">
         <nav class="navbar navbar-default navbar-transparent" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -159,7 +159,7 @@
             <div class="col-xs-10 col-xs-offset-1">
                 <center>
                     <h1 class="section-header pacifico">
-                    	<u>About Me</u>
+                    	About Me
                 	</h1>
                 </center>
             </div>
@@ -189,9 +189,9 @@
             <div class="col-xs-8 col-xs-offset-2">
                 <center>
                     <ul class="social-list">
-                        <li><a href="https://www.facebook.com/darren.britton.5201"><i class="fa fa-facebook fa-2x"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/darrenbritton"><i class="fa fa-linkedin fa-2x"></i></a></li>
-                        <li><a href="https://github.com/ThatCrazyIrishGuy"><i class="fa fa-git fa-2x"></i></a></li>
+                        <li><a href="https://www.facebook.com/darren.britton.5201"  target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/darrenbritton"  target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                        <li><a href="https://github.com/ThatCrazyIrishGuy"  target="_blank"><i class="fa fa-git fa-2x"></i></a></li>
                     </ul>
                 </center>
             </div>
@@ -202,29 +202,32 @@
             <div class="col-xs-10 col-xs-offset-1">
                 <center>
                     <h2 class="section-header pacifico">
-                    <u>Experience</u>
-                </h2>
+                    	Experience
+                	</h2>
                 </center>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <ul class="tabs">
-                    <li class="tab col l4 s12"><a name="skills" class="active" href="#support-engineer">Support Engineer</a></li>
-                    <li class="tab col l4 s12"><a href="#systems-engineer">Systems Engineer</a></li>
-                    <li class="tab col l4 s12"><a href="#cashier">Cashier</a></li>
+            <!-- Nav tabs -->
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#support-engineer" data-toggle="tab">Support Engineer</a></li>
+                    <li role="presentation pull-right"><a href="#systems-engineer" data-toggle="tab">Systems Engineer</a></li>
+                    <li role="presentation pull-right"><a href="#cashier" data-toggle="tab">Cashier</a></li>
                 </ul>
             </div>
-            <div id="support-engineer" class="col-xs-10 col-xs-offset-1">
+        </div>
+        <div class="tab-content">
+            <div id="support-engineer" role="tabpanel" class="tab-pane fade in active col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col s6">
                         <center>
-                            <h2 class="thin left">SAP IRELAND</h2>
+                            <h2 class="thin pull-left">SAP IRELAND</h2>
                         </center>
                     </div>
                     <div class="col s6">
                         <center>
-                            <h2 class="thin right">FEB 2015 - AUG 2015</h2>
+                            <h2 class="thin pull-right">FEB 2015 - AUG 2015</h2>
                         </center>
                     </div>
                 </div>
@@ -237,16 +240,16 @@
                     </div>
                 </div>
             </div>
-            <div id="systems-engineer" class="col-xs-10 col-xs-offset-1">
+            <div id="systems-engineer" role="tabpanel" class="tab-pane fade col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col s6">
                         <center>
-                            <h2 class="thin left">ST DECLANS COLLEGE</h2>
+                            <h2 class="thin pull-left">ST DECLANS COLLEGE</h2>
                         </center>
                     </div>
                     <div class="col s6">
                         <center>
-                            <h2 class="thin right">MAR 2010 - JUN 2010</h2>
+                            <h2 class="thin pull-right">MAR 2010 - JUN 2010</h2>
                         </center>
                     </div>
                 </div>
@@ -258,16 +261,16 @@
                     </div>
                 </div>
             </div>
-            <div id="cashier" class="col-xs-10 col-xs-offset-1">
+            <div id="cashier" role="tabpanel" class="tab-pane fade col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col s6">
                         <center>
-                            <h2 class="thin left">IMC SANTRY</h2>
+                            <h2 class="thin pull-left">IMC SANTRY</h2>
                         </center>
                     </div>
                     <div class="col s6">
                         <center>
-                            <h2 class="thin right">JUN 2014 - OCT 2014</h2>
+                            <h2 class="thin pull-right">JUN 2014 - OCT 2014</h2>
                         </center>
                     </div>
                 </div>
@@ -292,15 +295,19 @@
     var body = document.body,
         html = document.documentElement;
 
-    var pageHeight = Math.max(body.scrollHeight, body.offsetHeight,
-        html.clientHeight, html.scrollHeight, html.offsetHeight);
-    var pattern = Trianglify({
-        width: window.innerWidth,
-        height: pageHeight,
-        cell_size: 200,
-        x_colors: ['#aa7243', '#1C120D']
-    });
-    pattern.canvas(document.getElementById('page-background'));
+    drawBackground();
+
+    function drawBackground() {
+        var pageHeight = Math.max(body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight);
+        var pattern = Trianglify({
+            width: window.innerWidth,
+            height: pageHeight,
+            cell_size: 200,
+            x_colors: ['#1C120D', '#aa7243']
+        });
+        pattern.canvas(document.getElementById('page-background'));
+    }
     </script>
 </body>
 

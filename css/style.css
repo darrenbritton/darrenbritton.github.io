@@ -3,6 +3,7 @@
        min-height: 100%;
        position: relative;
        background-color: #2F2016;
+       overflow-x: hidden;
    }
    
    body {
@@ -176,6 +177,10 @@
    .fa-git {
        color: #F03C2E;
    }
+
+  .fa-linkedin {
+       color: #0077B5;
+   }
    
    .fa-facebook {
        color: #3A5795;
@@ -207,6 +212,11 @@
        line-height: 1.5;
        font-weight: 300;
        font-size: 2.48rem;
+   }
+
+   li a {
+    font-size: 2.13rem;
+    color: #fff;
    }
    
    svg {
