@@ -1,4 +1,82 @@
    @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300);
+   html,
+   body {
+       height: 80%;
+   }
+   
+   @keyframes moveclouds {
+       from {
+           transform: translate(500px, 0px);
+       }
+       to {
+           transform: translate(-2000px, 0px);
+       }
+   }
+   
+   @-webkit-keyframes moveclouds {
+       from {
+           transform: translate(500px, 0px);
+       }
+       to {
+           transform: translate(-2000px, 0px);
+       }
+   }
+   
+   #mountains {
+       z-index: 2;
+       position: absolute;
+       bottom: 20%;
+       margin-bottom: -16px;
+       left: 10%;
+   }
+   
+   #cloud1 {
+       z-index: 2;
+       position: absolute;
+       top: 20%;
+       right: 4%;
+       -webkit-animation: moveclouds 140s linear infinite;
+       -moz-animation: moveclouds 140s linear infinite;
+       -o-animation: moveclouds 140s linear infinite;
+   }
+   
+   #cloud2 {
+       z-index: 1;
+       position: absolute;
+       top: 22%;
+       right: 16%;
+       -webkit-animation: moveclouds 120s linear infinite;
+       -moz-animation: moveclouds 120s linear infinite;
+       -o-animation: moveclouds 120s linear infinite;
+   }
+   
+   .trees {
+       width: 100%;
+       height: 130px;
+       z-index: 4;
+       position: absolute;
+       bottom: 20%;
+       margin-bottom: -100px;
+   }
+   
+   #ground {
+       z-index: 1;
+       width: 100%;
+       height: 20%;
+       position: absolute;
+       bottom: 0;
+       background: #879759;
+   }
+   
+   #hills {
+       position: absolute;
+       left: 10%;
+       margin-left: -120px;
+       margin-bottom: -86px;
+       bottom: 20%;
+       z-index: 3;
+   }
+   
    html {
        min-height: 100%;
        position: relative;
@@ -89,8 +167,8 @@
        left: 50%;
        top: 40%;
    }
-
-      @media screen and (max-width: 1800px) {
+   
+   @media screen and (max-width: 1800px) {
        #header-word-one,
        #header-word-two {
            left: 20%;
@@ -100,7 +178,6 @@
            top: 55%;
        }
    }
-   
    
    @media screen and (max-width: 1000px) {
        #header-word-one,
@@ -114,13 +191,13 @@
        }
    }
    
-  @media screen and (max-width: 450px) {
+   @media screen and (max-width: 450px) {
        #header-word-one,
        #header-word-two {
            font-size: 7em;
        }
    }
-
+   
    .header-wrapper {
        width: 100%;
        height: 100%;
@@ -255,8 +332,8 @@
    .education.year {
        font-weight: 300;
    }
-
-   .footer .container-fluid{
+   
+   .footer .container-fluid {
        background-color: rgba(0, 0, 0, .3);
    }
    
@@ -264,9 +341,30 @@
        font-weight: 200;
        text-align: center;
    }
-
+   
    .row {
-    text-align: center;
+       text-align: center;
+   }
+   
+   #home-button {
+       position: absolute;
+       bottom: 10%;
+       right: 10%;
+   }
+   
+   .nav-tabs > li,
+   .nav-pills > li {
+       float: none;
+       display: inline-block;
+       *display: inline;
+       /* ie7 fix */
+       zoom: 1;
+       /* hasLayout ie7 trigger */
+   }
+   
+   .nav-tabs,
+   .nav-pills {
+       text-align: center;
    }
    
    @media screen and (max-width: 992px) {
