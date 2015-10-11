@@ -245,6 +245,10 @@
        font-weight: 200;
        text-align: center;
    }
+
+   .row {
+    text-align: center;
+   }
    
    @media screen and (max-width: 992px) {
        .education.body {

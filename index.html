@@ -27,7 +27,7 @@
 
 <body onresize="drawBackground()">
     <div class="header-wrapper">
-        <nav class="navbar navbar-default navbar-transparent" role="navigation">
+        <nav class="navbar navbar-default navbar-transparent">
             <!-- Brand and toggle get grouped for better mobile display -->
             <p class="navbar-brand pacifico navbar-right">Darren Britton</p>
             <div class="navbar-header">
@@ -51,7 +51,7 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-        <section class="stage">
+        <div class="stage">
             <svg height="390" width="550" id="mountains">
                 <polygon points="300,390 190,90 320,130 400,340" fill="#5d2042" />
                 <polygon points="0,340 108,190 194,100 201,120 301,390" fill="#320e40" />
@@ -149,62 +149,50 @@
                 <use x="440" y="-15" xlink:href="#tree" transform="scale(1.2)" />
             </svg>
             <canvas id="sky"></canvas>
-        </section>
+        </div>
         <p id="header-word-one">Hello</p>
         <p id="header-word-two">World</p>
     </div>
     <canvas id="page-background"></canvas>
-    <section name="about-me" id="about-me">
+    <section id="about-me">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <center>
-                    <h1 class="section-header pacifico">
+                <h1 class="section-header pacifico">
                     	About Me
                 	</h1>
-                </center>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <center>
-                    <img src="images/me.jpg" alt="avatar-circle" class="img-circle avatar-circle">
-                </center>
+                <img src="images/me.jpg" alt="avatar-circle" class="img-circle avatar-circle">
             </div>
         </div>
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <center>
-                    <h4 class="thin">Computer Scientist, Web Developer and Photographer from Dublin, Ireland</h4>
-                </center>
+                <h4 class="thin">Computer Scientist, Web Developer and Photographer from Dublin, Ireland</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
-                <center>
-                    <p class="flow-text">I am curently a student in the Dublin Institute of Technology. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links below or at the bottom of the page.</p>
-                </center>
+                <p class="flow-text">I am curently a student in the Dublin Institute of Technology. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links below or at the bottom of the page.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
-                <center>
-                    <ul class="social-list">
-                        <li><a href="https://www.facebook.com/darren.britton.5201" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/darrenbritton" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="https://github.com/ThatCrazyIrishGuy" target="_blank"><i class="fa fa-git"></i></a></li>
-                    </ul>
-                </center>
+                <ul class="social-list">
+                    <li><a href="https://www.facebook.com/darren.britton.5201" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/darrenbritton" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/ThatCrazyIrishGuy" target="_blank"><i class="fa fa-git"></i></a></li>
+                </ul>
             </div>
         </div>
     </section>
-    <section name="experience" id="experience">
+    <section id="experience">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <center>
-                    <h2 class="section-header pacifico">
+                <h2 class="section-header pacifico">
                     	Experience
                 	</h2>
-                </center>
             </div>
         </div>
         <div class="row">
@@ -212,8 +200,8 @@
             <div class="col-xs-12">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#support-engineer" data-toggle="tab">Support Engineer</a></li>
-                    <li role="presentation pull-right"><a href="#systems-engineer" data-toggle="tab">Systems Engineer</a></li>
-                    <li role="presentation pull-right"><a href="#cashier" data-toggle="tab">Cashier</a></li>
+                    <li role="presentation"><a href="#systems-engineer" data-toggle="tab">Systems Engineer</a></li>
+                    <li role="presentation"><a href="#cashier" data-toggle="tab">Cashier</a></li>
                 </ul>
             </div>
         </div>
@@ -221,77 +209,57 @@
             <div id="support-engineer" role="tabpanel" class="tab-pane fade in active col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col s6">
-                        <center>
-                            <h2 class="thin pull-left">SAP IRELAND</h2>
-                        </center>
+                        <h2 class="thin pull-left">SAP IRELAND</h2>
                     </div>
                     <div class="col s6">
-                        <center>
-                            <h2 class="thin pull-right">FEB 2015 - AUG 2015</h2>
-                        </center>
+                        <h2 class="thin pull-right">FEB 2015 - AUG 2015</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
-                        <center>
-                            <p class="flow-text"> Working as a Support Engineer at SAP made me the last line of support for any of SAP's EMEA customers in dealing with system performance issues. During my internship I completed SAPTEC,  ADM315, BC400 accreditations. I was given the same responsibilities as a full time Support Engineer deliverying weekly performance optimization to various high profile customers as well as various other forms of high value service delivery.
-                            </p>
-                        </center>
+                        <p class="flow-text"> Working as a Support Engineer at SAP made me the last line of support for any of SAP's EMEA customers in dealing with system performance issues. During my internship I completed SAPTEC, ADM315, BC400 accreditations. I was given the same responsibilities as a full time Support Engineer deliverying weekly performance optimization to various high profile customers as well as various other forms of high value service delivery.
+                        </p>
                     </div>
                 </div>
             </div>
             <div id="systems-engineer" role="tabpanel" class="tab-pane fade col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col s6">
-                        <center>
-                            <h2 class="thin pull-left">ST DECLANS COLLEGE</h2>
-                        </center>
+                        <h2 class="thin pull-left">ST DECLANS COLLEGE</h2>
                     </div>
                     <div class="col s6">
-                        <center>
-                            <h2 class="thin pull-right">MAR 2010 - JUN 2010</h2>
-                        </center>
+                        <h2 class="thin pull-right">MAR 2010 - JUN 2010</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
-                        <center>
-                            <p class="flow-text">Designed and implemented a networked digital signage system for displaying notifications for students and teachers, using the digital signage framework created by MediaSignage Inc . Some of the various tasks involved with this job included hardware selection and sourcing, software in stallation, system automation scripting, hardware failsafe configuration , remote access setup and system testing.</p>
-                        </center>
+                        <p class="flow-text">Designed and implemented a networked digital signage system for displaying notifications for students and teachers, using the digital signage framework created by MediaSignage Inc . Some of the various tasks involved with this job included hardware selection and sourcing, software in stallation, system automation scripting, hardware failsafe configuration , remote access setup and system testing.</p>
                     </div>
                 </div>
             </div>
             <div id="cashier" role="tabpanel" class="tab-pane fade col-xs-10 col-xs-offset-1">
                 <div class="row">
                     <div class="col s6">
-                        <center>
-                            <h2 class="thin pull-left">IMC SANTRY</h2>
-                        </center>
+                        <h2 class="thin pull-left">IMC SANTRY</h2>
                     </div>
                     <div class="col s6">
-                        <center>
-                            <h2 class="thin pull-right">JUN 2014 - OCT 2014</h2>
-                        </center>
+                        <h2 class="thin pull-right">JUN 2014 - OCT 2014</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
-                        <center>
-                            <p class="flow-text">Provided fast, friendly, and accurate, ticket and concession services for our customers using computerized cash register systems. Necessary skills were the ability to memorize movie running times and concessions specials . I was required to often deal with customer complaints and assist customers in seating, finding screens etc . I also assist ed in the cleaning of screens, as well as the foyer are and surrounding areas . End of day duties included emptying and cleaning popcorn bins and restocking the shop.</p>
-                        </center>
+                        <p class="flow-text">Provided fast, friendly, and accurate, ticket and concession services for our customers using computerized cash register systems. Necessary skills were the ability to memorize movie running times and concessions specials . I was required to often deal with customer complaints and assist customers in seating, finding screens etc . I also assist ed in the cleaning of screens, as well as the foyer are and surrounding areas . End of day duties included emptying and cleaning popcorn bins and restocking the shop.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section name="skills" id="skills">
+    <section id="skills">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <center>
-                    <h2 class="section-header pacifico">
+                <h2 class="section-header pacifico">
                     	Skills
                 	</h2>
-                </center>
             </div>
         </div>
         <div class="row container-fluid">
@@ -335,14 +303,12 @@
             </div>
         </div>
     </section>
-    <section name="skills" id="skills">
+    <section id="education">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <center>
-                    <h2 class="section-header pacifico">
+                <h2 class="section-header pacifico">
                     	Education
                 	</h2>
-                </center>
             </div>
         </div>
         <div class="row">
@@ -381,50 +347,40 @@
             </div>
         </div>
     </section>
-    <section name="interests" id="interests">
+    <section id="interests">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <center>
-                    <h2 class="section-header pacifico">
+                <h2 class="section-header pacifico">
                     	Interests
                 	</h2>
-                </center>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 portfolio-item">
                     <img class="img-responsive" src="http://ste.india.com/sites/default/files/2015/02/28/330145-cyclingroad700.jpg" alt="">
-                    <h3>
                     <p class="thin">Cycling<p>
-                </h3>
                     <p class="flow-text">Cycling is a hobby I've pick up from my father and it's my primary form of excercise. Living right beside the phonix park means i have the perfect place to time my laps around.</p>
                 </div>
                 <div class="col-md-4 portfolio-item">
                     <img class="img-responsive" src="http://ste.india.com/sites/default/files/2015/07/22/382902-snooker-gen-700.jpg" alt="">
-                    <h3>
                     <p class="thin">Snooker</p>
-                </h3>
                     <p class="flow-text">I've been playing snooker for most of my life and I find that it's a great way to unwind.</p>
                 </div>
                 <div class="col-md-4 portfolio-item">
-                    <img class="img-responsive" src="http://www.bookingsforyou.com/media/1137979/1-Skiing-in-Italy.jpeg?width=700&height=400&mode=crop&scale=both&quality=100" alt="">
-                    <h3>
+                    <img class="img-responsive" src="http://www.bookingsforyou.com/media/1137979/1-Skiing-in-Italy.jpeg?width=700&amp;height=400&amp;mode=crop&amp;scale=both&amp;quality=100" alt="">
                     <p class="thin">Skiing</p>
-                </h3>
                     <p class="flow-text">Skiing is one of my newer intrests and hobbies, but over the last four years i've become keenly intrested and it currently maintains the top spot of as my favourite sport</p>
                 </div>
             </div>
         </div>
     </section>
-    <section name="awards" id="awards">
+    <section id="awards">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <center>
-                    <h2 class="section-header pacifico">
+                <h2 class="section-header pacifico">
                     	Honours and Awards
                 	</h2>
-                </center>
             </div>
         </div>
         <div class="row">
