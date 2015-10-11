@@ -78,7 +78,7 @@
    #header-word-two {
        z-index: 5;
        color: #fff;
-       font-size: 132pt;
+       font-size: 11em;
        font-family: 'Pacifico', cursive;
        position: absolute;
        left: 30%;
@@ -89,6 +89,18 @@
        left: 50%;
        top: 40%;
    }
+
+      @media screen and (max-width: 1800px) {
+       #header-word-one,
+       #header-word-two {
+           left: 20%;
+       }
+       #header-word-two {
+           left: 40%;
+           top: 55%;
+       }
+   }
+   
    
    @media screen and (max-width: 1000px) {
        #header-word-one,
@@ -102,6 +114,13 @@
        }
    }
    
+  @media screen and (max-width: 450px) {
+       #header-word-one,
+       #header-word-two {
+           font-size: 7em;
+       }
+   }
+
    .header-wrapper {
        width: 100%;
        height: 100%;
