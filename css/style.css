@@ -282,6 +282,10 @@
    .fa-facebook {
        color: #3A5795;
    }
+
+   .fa-bicycle, .fa-hand-spock-o, .fa-connectdevelop{
+    margin-top: -50px;
+   }
    
    #page-background {
        position: absolute;
