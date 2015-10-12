@@ -1057,3 +1057,7 @@ function drawBackground() {
     pattern.canvas(document.getElementById('page-background'));
 }
 drawBackground();
+
+function preventScrollRight () {
+    window.pageXOffset = 0;
+}
