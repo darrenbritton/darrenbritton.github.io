@@ -31,7 +31,7 @@
    }
    
    #cloud1 {
-       z-index: 2;
+       z-index: 6;
        position: absolute;
        top: 20%;
        right: 4%;
@@ -204,13 +204,13 @@
        height: 100%;
        background: linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
        background-size: 1000% 1000%;
-       -webkit-animation: AnimationName 120s ease infinite;
-       -moz-animation: AnimationName 120s ease infinite;
-       -o-animation: AnimationName 120s ease infinite;
-       animation: AnimationName 120s ease infinite;
+       -webkit-animation: daynight 120s ease infinite;
+       -moz-animation: daynight 120s ease infinite;
+       -o-animation: daynight 120s ease infinite;
+       animation: daynight 120s ease infinite;
    }
    
-   @-webkit-keyframes AnimationName {
+   @-webkit-keyframes daynight {
        0% {
            background-position: 53% 0%
        }
@@ -222,7 +222,7 @@
        }
    }
    
-   @-moz-keyframes AnimationName {
+   @-moz-keyframes daynight {
        0% {
            background-position: 53% 0%
        }
@@ -234,7 +234,7 @@
        }
    }
    
-   @-o-keyframes AnimationName {
+   @-o-keyframes daynight {
        0% {
            background-position: 53% 0%
        }
@@ -246,7 +246,7 @@
        }
    }
    
-   @keyframes AnimationName {
+   @keyframes daynight {
        0% {
            background-position: 53% 0%
        }
@@ -398,8 +398,4 @@
    li a {
        font-size: 2.13em;
        color: #fff;
-   }
-   
-   svg {
-       z-index: 0 !important;
    }
