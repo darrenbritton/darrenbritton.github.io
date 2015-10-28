@@ -13,6 +13,33 @@
        }
    }
    
+   @-webkit-keyframes moveclouds {
+       from {
+           transform: translate(500px, 0px);
+       }
+       to {
+           transform: translate(-2000px, 0px);
+       }
+   }
+   
+   @-moz-keyframes moveclouds {
+       from {
+           transform: translate(500px, 0px);
+       }
+       to {
+           transform: translate(-2000px, 0px);
+       }
+   }
+   
+   @-o-keyframes moveclouds {
+       from {
+           transform: translate(500px, 0px);
+       }
+       to {
+           transform: translate(-2000px, 0px);
+       }
+   }
+   
    #mountains {
        z-index: 2;
        position: absolute;
@@ -201,6 +228,42 @@
        animation: DayNightCycle 120s ease infinite;
    }
    
+   @-webkit-keyframes DayNightCycle {
+       0% {
+           background-position: 53% 0%
+       }
+       50% {
+           background-position: 48% 100%
+       }
+       100% {
+           background-position: 53% 0%
+       }
+   }
+   
+   @-moz-keyframes DayNightCycle {
+       0% {
+           background-position: 53% 0%
+       }
+       50% {
+           background-position: 48% 100%
+       }
+       100% {
+           background-position: 53% 0%
+       }
+   }
+   
+   @-o-keyframes DayNightCycle {
+       0% {
+           background-position: 53% 0%
+       }
+       50% {
+           background-position: 48% 100%
+       }
+       100% {
+           background-position: 53% 0%
+       }
+   }
+   
    @keyframes DayNightCycle {
        0% {
            background-position: 53% 0%
@@ -327,7 +390,6 @@
    .nav-pills > li {
        float: none;
        display: inline-block;
-       display: inline;
    }
    
    .nav-tabs,
