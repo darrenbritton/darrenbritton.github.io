@@ -220,6 +220,10 @@
        background: #061b50;
        width: 100%;
        height: 100%;
+       background: -webkit-linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
+       background: -moz-linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
+       background: -ms-linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
+       background: -o-linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
        background: linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
        background-size: 1000% 1000%;
        -webkit-animation: DayNightCycle 120s ease infinite;
