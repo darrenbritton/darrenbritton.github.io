@@ -13,15 +13,6 @@
        }
    }
    
-   @-webkit-keyframes moveclouds {
-       from {
-           transform: translate(500px, 0px);
-       }
-       to {
-           transform: translate(-2000px, 0px);
-       }
-   }
-   
    #mountains {
        z-index: 2;
        position: absolute;
@@ -204,49 +195,13 @@
        height: 100%;
        background: linear-gradient(#061b50, #3c739c, #c9e9f4, #e4989c, #061b50);
        background-size: 1000% 1000%;
-       -webkit-animation: AnimationName 120s ease infinite;
-       -moz-animation: AnimationName 120s ease infinite;
-       -o-animation: AnimationName 120s ease infinite;
-       animation: AnimationName 120s ease infinite;
+       -webkit-animation: DayNightCycle 120s ease infinite;
+       -moz-animation: DayNightCycle 120s ease infinite;
+       -o-animation: DayNightCycle 120s ease infinite;
+       animation: DayNightCycle 120s ease infinite;
    }
    
-   @-webkit-keyframes AnimationName {
-       0% {
-           background-position: 53% 0%
-       }
-       50% {
-           background-position: 48% 100%
-       }
-       100% {
-           background-position: 53% 0%
-       }
-   }
-   
-   @-moz-keyframes AnimationName {
-       0% {
-           background-position: 53% 0%
-       }
-       50% {
-           background-position: 48% 100%
-       }
-       100% {
-           background-position: 53% 0%
-       }
-   }
-   
-   @-o-keyframes AnimationName {
-       0% {
-           background-position: 53% 0%
-       }
-       50% {
-           background-position: 48% 100%
-       }
-       100% {
-           background-position: 53% 0%
-       }
-   }
-   
-   @keyframes AnimationName {
+   @keyframes DayNightCycle {
        0% {
            background-position: 53% 0%
        }
@@ -372,10 +327,7 @@
    .nav-pills > li {
        float: none;
        display: inline-block;
-       *display: inline;
-       /* ie7 fix */
-       zoom: 1;
-       /* hasLayout ie7 trigger */
+       display: inline;
    }
    
    .nav-tabs,
