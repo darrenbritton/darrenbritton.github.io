@@ -53,9 +53,9 @@
        position: absolute;
        top: 20%;
        right: 4%;
-       -webkit-animation: moveclouds 140s linear infinite;
-       -moz-animation: moveclouds 140s linear infinite;
-       -o-animation: moveclouds 140s linear infinite;
+       -webkit-animation: moveclouds 120s linear infinite;
+       -moz-animation: moveclouds 120s linear infinite;
+       -o-animation: moveclouds 120s linear infinite;
    }
    
    #cloud2 {
@@ -175,7 +175,6 @@
        z-index: 5;
        color: #fff;
        font-size: 11em;
-       font-family: 'Pacifico', cursive;
        position: absolute;
        left: 30%;
        top: 25%;
@@ -189,10 +188,10 @@
    @media screen and (max-width: 1800px) {
        #header-word-one,
        #header-word-two {
-           left: 20%;
+           left: 30%;
        }
        #header-word-two {
-           left: 40%;
+           left: 50%;
            top: 55%;
        }
    }
@@ -417,7 +416,13 @@
        font-size: 2.13em;
        color: #fff;
    }
-   
-   svg {
-       z-index: 0 !important;
+
+   #simplify{
+    margin-top: 15px;
+   }
+
+   .btn-default {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0;
+    color: #fff;
    }
