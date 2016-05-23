@@ -3,7 +3,7 @@ $(document).ready(function() {
     $(".twitter.share").attr("href", _href + window.location.href);
     _href = $(".facebook.share").attr("href");
     $(".facebook.share").attr("href", _href + window.location.href);
-    $.getJSON( "projects/projects.json", function( data ) {
+    $.getJSON( "projects.json", function( data ) {
           var projectName = getUrlParameter('name');
           var result = false;
           $.each( data, function( key,project ) {
@@ -21,7 +21,7 @@ $(document).ready(function() {
                 }
                 if(project.hasOwnProperty('images')){
                     $.each(project.images,function(key,uri){
-                        $('.slides').append(`<li><img alt="project image" src="projects/img/${uri}" /></li>`);
+                        $('.slides').append(`<li><img alt="project image" src="img/${uri}" /></li>`);
                     });
                 }
             }
