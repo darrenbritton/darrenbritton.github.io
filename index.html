@@ -1,417 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; target-densityDpi=device-dpi" />
-    <meta name="description" content="Porfolio - C12425568 - DT228/4">
-    <meta name="author" content="Darren Britton">
-    <link rel="icon" href="images/favicon.ico">
-    <title>C12425568 - Darren Britton</title>
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- fontawesome icons -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Pacifico Google Font -->
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <!-- Custom styles-->
-    <link href="css/style.min.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!--[if IE 8]>
-	<script>alert("Please not that this website is not optimized for websites below Internet Explorer 9, please upgrade for the best experience");</script>
-	<![endif]-->
+    <title>Foundry Multi-purpose HTML Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/ytplayer.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
 </head>
 
-<body onresize="drawBackground()">
-    <div class="header-wrapper">
-        <nav class="navbar navbar-default navbar-transparent navbar-fixed-top">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <p class="navbar-brand pacifico navbar-right">Darren Britton</p>
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a data-toggle="collapse" data-target="#navbar-collapse" href="#about-me">About Me</a></li>
-                    <li><a data-toggle="collapse" data-target="#navbar-collapse" href="#experience">Experience</a></li>
-                    <li><a data-toggle="collapse" data-target="#navbar-collapse" href="#skills">Skills</a></li>
-                    <li><a data-toggle="collapse" data-target="#navbar-collapse" href="#education">Education</a></li>
-                    <li><a data-toggle="collapse" data-target="#navbar-collapse" href="#awards">Honours &amp; Awards</a></li>
-                </ul>
-                <button class="btn btn-default" id="simplify">simplify</button>
-            </div>
-            <!-- /.navbar-collapse -->
+<body class="scroll-assist">
+    <div class="nav-container">
+        <a id="top"></a>
+        <nav class="absolute transparent">
+            <div class="nav-bar">
+                <div class="module left">
+                    <a href="index.html">
+                        <a class="logo pacifico">Darren Britton</a>
+                        <a class="logo logo-dark pacifico">Darren Britton</a>
+                    </a>
+                </div>
+                <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+                    <i class="ti-menu"></i>
+                </div>
+                <div class="module-group right">
+                    <div class="module left">
+                        <ul class="menu">
+                            <li>
+                                <a class="inner-link" href="#about-me">About Me</a>
+                            </li>
+                            <li>
+                                <a class="inner-link" href="#portfolio">Portfolio</a>
+                            </li>
+                            <li>
+                                <a class="inner-link" href="#expereince">Experience</a>
+                            </li>
+                            <li>
+                                <a class="inner-link" href="#education">Education</a>
+                            </li>
+                            <li>
+                                <a class="inner-link" href="#honours-and-awards">Honours &amp; Awards</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--end of module group-->
+                </div>
         </nav>
-        <!-- these vector points were taken from a live html svg example online -->
-        <div class="stage">
-            <svg height="390" width="550" id="mountains">
-                <polygon points="300,390 190,90 320,130 400,340" fill="#5d2042" />
-                <polygon points="0,340 108,190 194,100 201,120 301,390" fill="#320e40" />
-                <polygon points="14,348 117,174 194,102 172,377" fill="#3b1642" fill-opacity="0.8" />
-                <polygon points="120,174 194,102 233,206 144,275" fill="#3d1744" fill-opacity="0.9" />
-                <polygon points="233,206 288,177 324,214" fill="#421943" />
-                <polygon points="233,206 324,214 247,245" fill="#3e1743" />
-                <polygon points="247,245 324,214 360,360" fill="#411842" />
-                <polygon points="324,214 288,177 350,210" fill="#632242" />
-                <polygon points="324,214 350,210 360,360" fill="#652343" />
-                <g id="apex">
-                    <polygon points="108,190 170,40 194,100" fill="#aeacb9" />
-                    <polygon points="170,40 234,6 260,70 288,178 194,102" fill="#ceced8" />
-                    <polygon points="234,6 290,80 320,132 288,178" fill="#ffffed" />
-                </g>
-            </svg>
-            <svg height="347" width="168" id="cloud1">
-                <g>
-                    <polygon points="0,30 8,19 27,18 22,36 9,37" fill="#d5d6e2" />
-                    <polygon points="0,30 9,37 3,50" fill="#c7c2d1" />
-                    <polygon points="3,50 9,37 22,36 33,44 14,55" fill="#a8a9b7" />
-                    <polygon points="14,55 33,44 36,52 23,58" fill="#7a7789" />
-                    <polygon points="27,18 22,36 33,44" fill="#acabb9" />
-                    <polygon points="31,11 51,4 66,1 83,13 83,23 78,23" fill="#fff6e7" />
-                    <polygon points="27,18 31,11 54,6 56,32 33,40 29,36" fill="#d0d0dc" />
-                    <polygon points="29,36 58,65 42,67 31,57" fill="#9694a3" />
-                    <polygon points="33,40 56,32 75,37 58,65" fill="#a2a1b1" />
-                    <polygon points="58,65 75,37 82,57" fill="#9897a7" />
-                    <polygon points="56,32 54,6 80,14 82,57 75,37" fill="#d7d6e2" />
-                    <polygon points="80,15 84,17 88,30 85,50 81,51" fill="#9d9da9" />
-                    <polygon points="90,16 82,20 81,31 95,35" fill="#cdcdda" />
-                    <polygon points="81,31 82,47 95,35" fill="#a2a2b0" />
-                    <polygon points="82,47 95,35 105,45 91,53" fill="#878892" />
-                    <polygon points="105,45 95,35 106,22" fill="#fbe5d5" />
-                    <polygon points="106,22 95,35 90,16" fill="#dbd6dd" />
-                </g>
-            </svg>
-            <svg height="347" width="168" id="cloud2">
-                <g transform="scale(0.5)">
-                    <polygon points="0,30 8,19 27,18 22,36 9,37" fill="#d5d6e2" />
-                    <polygon points="0,30 9,37 3,50" fill="#c7c2d1" />
-                    <polygon points="3,50 9,37 22,36 33,44 14,55" fill="#a8a9b7" />
-                    <polygon points="14,55 33,44 36,52 23,58" fill="#7a7789" />
-                    <polygon points="27,18 22,36 33,44" fill="#acabb9" />
-                    <polygon points="31,11 51,4 66,1 83,13 83,23 78,23" fill="#fff6e7" />
-                    <polygon points="27,18 31,11 54,6 56,32 33,40 29,36" fill="#d0d0dc" />
-                    <polygon points="29,36 58,65 42,67 31,57" fill="#9694a3" />
-                    <polygon points="33,40 56,32 75,37 58,65" fill="#a2a1b1" />
-                    <polygon points="58,65 75,37 82,57" fill="#9897a7" />
-                    <polygon points="56,32 54,6 80,14 82,57 75,37" fill="#d7d6e2" />
-                    <polygon points="80,15 84,17 88,30 85,50 81,51" fill="#9d9da9" />
-                    <polygon points="90,16 82,20 81,31 95,35" fill="#cdcdda" />
-                    <polygon points="81,31 82,47 95,35" fill="#a2a2b0" />
-                    <polygon points="82,47 95,35 105,45 91,53" fill="#878892" />
-                    <polygon points="105,45 95,35 106,22" fill="#fbe5d5" />
-                    <polygon points="106,22 95,35 90,16" fill="#dbd6dd" />
-                </g>
-            </svg>
-            <svg id="ground"></svg>
-            <svg id="hills" width="700" height="170">
-                <polygon points="480,70 530,100 560,90 516,40" fill="#9b9d57" />
-                <polygon points="480,70 530,100 412,84" fill="#7d8f57" />
-                <polygon points="530,100 412,84 360,138" fill="#748857" />
-                <polygon points="360,138 240,140 320,82" fill="#748857" />
-                <polygon points="412,84 360,140 320,82" fill="#88945a" />
-                <polygon points="320,82 240,140 210,64" fill="#597252" />
-                <polygon points="300,78 100,100 0,104 170,58" fill="#4f654f" />
-                <polygon points="172,58 145,40 122,48 66,79 0,104" fill="#536a50" />
-            </svg>
-            <svg class="trees">
-                <g class="tree" id="tree" transform="translate(400,30)">
-                    <polygon points="25,75 27,44 21,34 25,33 30,41 38,33 40,34 31,46 29,75" fill="#3f2145" />
-                    <polygon points="29,75 31,46 32,45 32,74" fill="#812743" />
-                    <polygon points="2,21 11,33 20,32 27,29 32,23 24,35 11,34" fill="#282246" />
-                    <polygon points="27,29 33,13 18,0 29,2 37,13 32,23" fill="#6a7749" />
-                    <polygon points="33,23 35,32 45,37 55,27 44,35 37,31" fill="#210f3f" />
-                    <polygon points="37,31 38,17 46,17 50,31" fill="#354346" />
-                    <polygon points="37,31 50,31 45,37" fill="#292941" />
-                    <polygon points="33,23 37,31 38,17" fill="#2b2d42" />
-                    <polygon points="38,17 46,17 46,11" fill="#495e4b" />
-                    <polygon points="46,17 46,11 54,18" fill="#5b7049" />
-                    <polygon points="44,11 54,18 56,26 50,31" fill="#515d49" />
-                    <polygon points="11,33 20,32 27,29 15,19" fill="#292e42" />
-                    <polygon points="27,29 33,13 15,19" fill="#424f46" />
-                    <polygon points="33,13 18,0 15,19" fill="#48604a" />
-                    <polygon points="18,0 7,5 15,19" fill="#3a5449" />
-                    <polygon points="7,5 0,18 15,19" fill="#344847" />
-                    <polygon points="0,18 11,33 15,19" fill="#292c4b" />
-                    <polygon points="175,4 121,10 53,12 12,16 5,20 47,22 122,12 180,4" fill="#648155" transform="translate(-148,70)" />
-                </g>
-                <use x="-215" y="-23" xlink:href="#tree" transform="scale(0.8)" />
-                <use x="-220" y="-20" xlink:href="#tree" />
-                <use x="540" y="-30" xlink:href="#tree" />
-                <use x="480" y="-20" xlink:href="#tree" />
-                <use x="440" y="-15" xlink:href="#tree" transform="scale(1.2)" />
-            </svg>
-            <canvas id="sky"></canvas>
         </div>
-        <p id="header-word-one" class="pacifico">Hello</p>
-        <p id="header-word-two" class="pacifico">World</p>
-    </div>
-    <canvas id="page-background"></canvas>
-    <section id="about-me">
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <h1 class="section-header pacifico">
-                    	About Me
-                	</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <img src="images/me.jpg" alt="avatar-circle" class="img-circle avatar-circle">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <h4 class="thin">Computer Scientist, Web Developer and Photographer from Dublin, Ireland</h4>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <p class="flow-text">I am curently a student in the Dublin Institute of Technology. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links below or at the bottom of the page.</p>
+        <div class="main-container">
+            <section class="cover fullscreen parallax image-bg overlay">
+                <div class="background-image-holder">
+                    <img alt="image" class="background-image" src="img/header.jpg" />
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-                <ul class="social-list">
-                    <li><a href="https://www.facebook.com/darren.britton.5201" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://github.com/ThatCrazyIrishGuy" target="_blank"><i class="fa fa-git"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/darrenbritton" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section id="experience">
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <h2 class="section-header pacifico">
-                    	Experience
-                	</h2>
-            </div>
-        </div>
-        <div class="row">
-            <!-- Nav tabs -->
-            <div class="col-md-12">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#support-engineer" data-toggle="tab">Support Engineer</a></li>
-                    <li role="presentation"><a href="#systems-engineer" data-toggle="tab">Systems Engineer</a></li>
-                    <li role="presentation"><a href="#cashier" data-toggle="tab">Cashier</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="tab-content">
-            <div id="support-engineer" role="tabpanel" class="tab-pane fade in active col-md-10 col-md-offset-1">
-                <div class="row">
-                    <div class="col s6">
-                        <h2 class="thin pull-left">SAP IRELAND</h2>
-                    </div>
-                    <div class="col s6">
-                        <h2 class="thin pull-right">FEB 2015 - AUG 2015</h2>
-                    </div>
-                </div>
-                <div class="container-fluid">
+                <div class="container v-align-transform">
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <p class="flow-text"> Working as a Support Engineer at SAP made me the last line of support for any of SAP's EMEA customers in dealing with system performance issues. During my internship I completed SAPTEC, ADM315, BC400 accreditations. I was given the same responsibilities as a full time Support Engineer deliverying weekly performance optimization to various high profile customers as well as various other forms of high value service delivery.
+                        <div class="col-sm-12 text-center">
+                            <h1 class="uppercase large mb8 header-text">
+                                <strong>Computer</strong> Scientist</h1>
+                            <h5 class="mb0">Web Developer and Photographer</h5>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+                <div class="align-bottom text-center">
+                    <ul class="list-inline social-list mb24">
+                        <li>
+                            <a href="#">
+                                <i class="ti-twitter-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="ti-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="ti-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="" id="about-me">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1 text-center">
+                            <h3 class="uppercase mb40 mb-xs-24">About Me</h3>
+                            <p class="lead mb64">
+                                I have just finished my last year as a Computer Science student at the Dublin Institute of Technology. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links above or at the bottom of the page.
                             </p>
+                            <img alt="Pic" class="image-small" src="img/signature.png">
                         </div>
                     </div>
+                    <!--end of row-->
                 </div>
-            </div>
-            <div id="systems-engineer" role="tabpanel" class="tab-pane fade col-md-10 col-md-offset-1">
-                <div class="row">
-                    <div class="col s6">
-                        <h2 class="thin pull-left">ST DECLANS COLLEGE</h2>
-                    </div>
-                    <div class="col s6">
-                        <h2 class="thin pull-right">MAR 2010 - JUN 2010</h2>
-                    </div>
-                </div>
-                <div class="container-fluid">
+                <!--end of container-->
+            </section>
+            <section class="pt40 pb40">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <p class="flow-text">Designed and implemented a networked digital signage system for displaying notifications for students and teachers, using the digital signage framework created by MediaSignage Inc . Some of the various tasks involved with this job included hardware selection and sourcing, software in stallation, system automation scripting, hardware failsafe configuration , remote access setup and system testing.</p>
+                        <div class="col-sm-12 text-center">
+                            <h6 class="uppercase mb0">Portfolio</h6>
                         </div>
                     </div>
+                    <!--end of row-->
                 </div>
-            </div>
-            <div id="cashier" role="tabpanel" class="tab-pane fade col-md-10 col-md-offset-1">
-                <div class="row">
-                    <div class="col s6">
-                        <h2 class="thin pull-left">IMC SANTRY</h2>
-                    </div>
-                    <div class="col s6">
-                        <h2 class="thin pull-right">JUN 2014 - OCT 2014</h2>
+                <!--end of container-->
+            </section>
+            <section class="projects p0 bg-dark" id="portfolio">
+                <ul class="filters floating cast-shadow mb0">
+                </ul>
+                <div class="row masonry-loader">
+                    <div class="col-sm-12 text-center">
+                        <div class="spinner"></div>
                     </div>
                 </div>
-                <div class="container-fluid">
+                <div class="row masonry masonryFlyIn" id="projects">
+                </div>
+                <!--end of row-->
+            </section>
+            <section class="bg-dark" id="expereince">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <p class="flow-text">Provided fast, friendly, and accurate, ticket and concession services for our customers using computerized cash register systems. Necessary skills were the ability to memorize movie running times and concessions specials . I was required to often deal with customer complaints and assist customers in seating, finding screens etc . I also assist ed in the cleaning of screens, as well as the foyer are and surrounding areas . End of day duties included emptying and cleaning popcorn bins and restocking the shop.</p>
+                        <div class="col-sm-12">
+                            <h4 class="uppercase mb40 mb-xs-24">Experience</h4>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="skills">
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <h2 class="section-header pacifico">
-                    	Skills
-                	</h2>
-            </div>
-        </div>
-        <div class="row container-fluid">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="progress skill-bar">
-                            <div class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                <span class="thin">HTML</span>
+                    <!--end of row-->
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                            <p class="lead fade-half mb40 mb-xs-24">
+                                Relevent work experience has been listed below.
+                            </p>
+                            <div>
+                                <span class="pull-right fade-1-4">FEB 2015 - AUG 2015</span>
+                                <h6 class="uppercase mb0">SAP Ireland</h6>
+                                <span class="fade-half inline-block mb24">Support Engineer</span>
+                                <hr class="fade-3-4">
+                            </div>
+                            <div>
+                                <span class="pull-right fade-1-4">JAN 2014 - JULY 2014</span>
+                                <h6 class="uppercase mb0">St Declan's College</h6>
+                                <span class="fade-half inline-block mb24">Full Stack Developer</span>
+                                <hr class="fade-3-4">
+                            </div>
+                            <div>
+                                <span class="pull-right fade-1-4">MAR 2010 - JUN 2010</span>
+                                <h6 class="uppercase mb0">St Declan's College</h6>
+                                <span class="fade-half inline-block mb24">Systems Engineer</span>
+                                <hr class="fade-3-4">
                             </div>
                         </div>
                     </div>
+                    <!--end of row-->
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="progress skill-bar">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                <span class="thin">CSS</span>
+                <!--end of container-->
+            </section>
+            <section class="" id="experience">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="uppercase mb40 mb-xs-24">Experience</h4>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                            <p class="lead fade-half mb40 mb-xs-24">
+                                How I would rank my skills.
+                            </p>
+                            <div class="progress-bars">
+                                <div class="progress progress-2 text-left mb32">
+                                    <span class="title">JavaScript</span>
+                                    <div class="bar-holder">
+                                        <div style="width: 95%;" class="progress-bar" data-progress="95"></div>
+                                    </div>
+                                </div>
+                                <!--end of progress bar-->
+                                <div class="progress progress-2 text-left mb32">
+                                    <span class="title">HTML</span>
+                                    <div class="bar-holder">
+                                        <div style="width: 85%;" class="progress-bar" data-progress="85"></div>
+                                    </div>
+                                </div>
+                                <!--end of progress bar-->
+                                <div class="progress progress-2 text-left mb32">
+                                    <span class="title">CSS</span>
+                                    <div class="bar-holder">
+                                        <div style="width: 75%;" class="progress-bar" data-progress="75"></div>
+                                    </div>
+                                </div>
+                                <!--end of progress bar-->
+                            </div>
+                            <!--end of bars holder-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            <section class="bg-dark" id="education">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="uppercase mb40 mb-xs-24">Education</h4>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                            <p class="lead fade-half mb40 mb-xs-24">
+                                A list of the education I have recieved thus far.
+                            </p>
+                            <div>
+                                <span class="pull-right fade-1-4">2006 - 2012</span>
+                                <h6 class="uppercase mb0">Secondary Education</h6>
+                                <span class="fade-half inline-block mb24">Saint Declan's College </span>
+                                <hr class="fade-3-4">
+                            </div>
+                            <div>
+                                <span class="pull-right fade-1-4">2012 - 2016</span>
+                                <h6 class="uppercase mb0">BSc Computer Science</h6>
+                                <span class="fade-half inline-block mb24">Dublin Institute of Technology</span>
+                                <hr class="fade-3-4">
                             </div>
                         </div>
                     </div>
+                    <!--end of row-->
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="progress skill-bar">
-                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                <span class="thin">JAVASCRIPT</span>
+                <!--end of container-->
+            </section>
+            <section class="" id="honours-and-awards">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="uppercase mb40 mb-xs-24">Honors &amp; Awards</h4>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                            <p class="lead fade-half mb40 mb-xs-24">
+                                A list of honors and awards I have recieved for my work.
+                            </p>
+                            <div>
+                                <span class="pull-right fade-1-4">2010</span>
+                                <h6 class="uppercase mb0"> Access Accenture Achievement Award</h6>
+                                <span class="fade-half inline-block mb24">Accenture </span>
+                                <hr class="fade-3-4">
+                            </div>
+                            <div>
+                                <span class="pull-right fade-1-4">2014</span>
+                                <h6 class="uppercase mb0">Games Studio Ireland Challenge: Best in Original Story </h6>
+                                <span class="fade-half inline-block mb24">Games Fleadh </span>
+                                <hr class="fade-3-4">
+                            </div>
+                            <div>
+                                <span class="pull-right fade-1-4">2016</span>
+                                <h6 class="uppercase mb0">Best Project (in the DIT Project Fair)</h6>
+                                <span class="fade-half inline-block mb24">SAP</span>
+                                <hr class="fade-3-4">
                             </div>
                         </div>
                     </div>
+                    <!--end of row-->
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="progress skill-bar">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width:99%">
-                                <span class="thin">SWAG</span>
+                <!--end of container-->
+            </section>
+            <footer class="footer-1 bg-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <a class="logo logo-footer pacifico">Darren Britton</a>
+                        	<div data-theme="default" data-height="152" data-width="400" data-github="thatcrazyirishguy" class="github-card"></div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <!--end of widget-->
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget">
+                                <h6 class="title">Latest Updates</h6>
+                                <hr>
+                                <div class="twitter-feed">
+                                    <div class="tweets-feed" data-widget-id="734623328217010176">
+                                    </div>
+                                </div>
                             </div>
+                            <!--end of widget-->
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget">
+                                <h6 class="title">Flickr</h6>
+                                <hr>
+                                <div class="flickr-feed" data-user-id="132343752@N06" data-album-id="72157652534675541">
+                                    <ul></ul>
+                                </div>
+                            </div>
+                            <!--end of widget-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <span class="sub">&copy; Copyright 2016 - Darren Britton</span>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <ul class="list-inline social-list">
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-twitter-alt"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-github"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+                <!--end of container-->
+                <a class="btn btn-sm fade-half back-to-top inner-link" href="#top">Top</a>
+            </footer>
         </div>
-    </section>
-    <section id="education">
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <h2 class="section-header pacifico">
-                    	Education
-                	</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 col-md-4">
-                <div class="education body">
-                    Saint Declan's College
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-                <div class="education year">
-                    (2006-2012)
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="education award">
-                    <i class="fa fa-graduation-cap"></i> Secondary School
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-6 col-md-4">
-                <div class="education body">
-                    Dublin Institute of Technology
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-                <div class="education year">
-                    (2012-2016)
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="education award">
-                    <i class="fa fa-graduation-cap"></i> BSc Computer Science
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="awards">
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <h2 class="section-header pacifico">
-                    	Honours and Awards
-                	</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 col-md-4">
-                <div class="education body">
-                    Accenture
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-                <div class="education year">
-                    2010
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="education award">
-                    <i class="fa fa-trophy"></i> Access Accenture Achievement Award
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xs-6 col-md-4">
-                <div class="education body">
-                    Games Fleadh
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-                <div class="education year">
-                    2014
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="education award">
-                    <i class="fa fa-trophy"></i> Games Studio Ireland Challenge: Best in Original Story
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="container-fluid">
-                <h3>Created by <a href="https://www.darrenbritton.com" target="_blank" class="pacifico">Darren Britton</a></h3>
-            </div>
-        </div>
-    </section>
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- // <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.3.1/trianglify.min.js"></script> -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/portfolio.min.js"></script>
+<!--         <script src="js/spectragram.min.js"></script> -->
+<!--         <script src="js/ytplayer.min.js"></script> -->
+<!--         <script src="js/countdown.min.js"></script> -->
+<!--         <script src="js/flexslider.min.js"></script> -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/flickr.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/masonry.min.js"></script>
+        <script src="js/twitterfetcher.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="projects/projects.js"></script>
+        <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 </body>
 
 </html>

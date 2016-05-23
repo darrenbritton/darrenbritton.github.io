@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+.pacifico {
+    font-family: "Pacifico", cursive;
+}
+
+a.logo {
+    display: block;
+    font-size: 20pt;
+    font-weight: 300;
+    color: white;
+}
+
+a.logo.logo-dark {
+    color: #444;
+    position: absolute;
+    left: 1.8%;
+    top: 1%;
+}
+#about-me{
+	padding-bottom: 0px;
+}
+
+.logo-footer{
+	margin-bottom: 60px;
+}
+
+.btn-project{
+	margin-top: 40px;
+	width:100%;
+}
+
+.social-list i{
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.ti-twitter-alt:hover {
+	color: #33CCFF;
+}
+
+.ti-linkedin:hover {
+	color: #4875B4;
+}
+
+.ti-github:hover {
+	color: #fc6d26;
+}
+
+.ti-facebook:hover {
+	color: #3b5998;
+}
+
+.flex-next::before{
+	color: #000 !important;
+}
+
+.flex-prev::before{
+	color: #000 !important;
+}
