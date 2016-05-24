@@ -21,7 +21,7 @@ $(document).ready(function() {
                 }
                 if(project.hasOwnProperty('images')){
                     $.each(project.images,function(key,uri){
-                        $('.slides').append(`<li><img alt="project image" src="img/${uri}" /></li>`);
+                        $('.slides').append(`<li><img alt="project image" src="/img/${uri}" /></li>`);
                     });
                 }
             }
