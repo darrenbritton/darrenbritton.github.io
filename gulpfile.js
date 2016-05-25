@@ -56,9 +56,9 @@ gulp.task('compileCss', function(){
 })
 
 gulp.task('imageMin', function(){
-  return gulp.src('./img/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('./img/*.*')
   .pipe(cache(imagemin()))
-  .pipe(gulp.dest('/img'))
+  .pipe(gulp.dest('./img'))
 });
 
 gulp.task('browserSync', function() {
