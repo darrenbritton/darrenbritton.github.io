@@ -4,7 +4,7 @@
   "link": "http://digicah.com",
   "image": "digicah.jpg",
   "buttonText": "visit website",
-  "images": ["digicahA.png", "digicahB.png", "digicahC.png"],
+  "images": ["digicahA.PNG", "digicahB.PNG", "digicahC.PNG"],
   "shortDescription": "A Digital Cards Against Humanity Clone",
   "description": "Digicah was developed as a C# .NET application using WPF for the client and a command line interface for the server. It has been released in alpha and can be downloaded from the dedicated Digicah website."
 },
