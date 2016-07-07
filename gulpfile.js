@@ -9,12 +9,12 @@ var browserSync = require('browser-sync').create();
 var compilerPackage = require('google-closure-compiler');
 var closureCompiler = compilerPackage.gulp();
 
-gulp.task('compileJs', function() {
+gulp.task('compileJs', function () {
 
-    glob("./*.html", function(err, files) {
+    glob("./*.html", function (err, files) {
         if (err) throw err;
 
-        files.forEach(function(file) {
+        files.forEach(function (file) {
             var jsPaths = ['./js/shared/*.js'];
             var filename = file.substring(file.lastIndexOf('/') + 1, file.lastIndexOf('.'));
             var outputName = filename + '.min.js';
@@ -34,11 +34,11 @@ gulp.task('compileJs', function() {
     });
 });
 
-gulp.task('compileCss', function(){
-    glob("./*.html", function(err, files) {
+gulp.task('compileCss', function () {
+    glob("./*.html", function (err, files) {
         if (err) throw err;
 
-        files.forEach(function(file) {
+        files.forEach(function (file) {
             var cssPaths = ['./css/shared/*.css'];
             var filename = file.substring(file.lastIndexOf('/') + 1, file.lastIndexOf('.'));
             var outputName = filename + '.min.css';
@@ -55,17 +55,17 @@ gulp.task('compileCss', function(){
     });
 })
 
-gulp.task('imageMin', function(){
-  return gulp.src('./img/*.*')
-  .pipe(cache(imagemin()))
-  .pipe(gulp.dest('./img'))
+gulp.task('imageMin', function () {
+    return gulp.src('./img/*.*')
+        .pipe(cache(imagemin()))
+        .pipe(gulp.dest('./img'))
 });
 
-gulp.task('browserSync', function() {
-  browserSync.init();
+gulp.task('browserSync', function () {
+    browserSync.init();
 });
 
-gulp.task('watch', ['browserSync', 'compileCss'], function() {
+gulp.task('watch', ['browserSync', 'compileCss'], function () {
     gulp.watch('./js/**/*.js', ['compileJs']);
     gulp.watch('./css/**/*.css', ['compileCss']);
     gulp.watch('./img/*', ['imageMin']);
