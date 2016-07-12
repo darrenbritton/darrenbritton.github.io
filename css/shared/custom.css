@@ -59,3 +59,6 @@ a.logo.logo-dark {
 .flex-prev::before{
 	color: #000 !important;
 }
+.cover{
+    background-color: #194892;
+}
