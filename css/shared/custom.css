@@ -62,3 +62,113 @@ a.logo.logo-dark {
 .cover{
     background-color: #194892;
 }
+
+.cover {
+  background: linear-gradient(270deg, #355E9E, #5478B0,  #194892);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.totoro {
+  opacity: 0.8;
+  display: block;
+  max-width: 350px;
+  width: 100%;
+  max-height: 350px;
+  height: 100%;
+  background: #e0d69e;
+  position: absolute;
+  left: 50.6%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  border-radius: 500px;
+  margin-top: 60px;
+  box-shadow: 0px -75px 0px -33px #736f5f, 0px -78px 0px -30px #000, 0px 0px 0px 5px #000, inset 0px 125px 0px 10px #736f5f, inset 0px 125px 0px 10px #736f5f, inset 0px 130px 0px 12px #000, 0px 50px 40px -20px rgba(0, 0, 0, 0.3);
+  animation-name: wobble;
+  -webkit-animation-name: wobble;
+  animation-duration: 8.5s;
+  -webkit-animation-duration: 8.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes wobble {
+  0% {
+    transform: translate(-50%, -50%) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(2deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-1deg);
+  }
+}
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(-1deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(-1deg);
+  }
+}
+.totoro:before {
+  z-index: 2;
+  content: '';
+  position: absolute;
+  display: block;
+  width: 43px;
+  height: 43px;
+  border-radius: 500px;
+  left: 37px;
+  top: 12.5px;
+  box-shadow: 46px -2px 0px -20px #fff, 48px -2px 0px -15px #000, 45px 0px 0px -5px #fff, 45px 0px 0px #000, 180px -2px 0px -20px #fff, 182px -2px 0px -15px #000, 185px 0px 0px -5px #fff, 185px 0px 0px #000, 115px 28px 0px -3px #736f5f, 142px 32px 0px 10px #736f5f, 90px 32px 0px 10px #736f5f, 115px 13px 0px -5px #000, 115px 43px 0px -5px #000;
+}
+.totoro:after {
+  content: '';
+  position: absolute;
+  height: 80px;
+  width: 40px;
+  background: transparent;
+  border-radius: 70% 70% 50% 50% / 120% 120% 20% 20%;
+  top: -120px;
+  left: -30px;
+  box-shadow: 100px 50px 0px -8px #736f5f, 100px 50px 0px -8px #736f5f, 100px 0px 0px 0px #736f5f, 100px 0px 0px 5px #000, 100px 40px 0px -5px #000, 260px 50px 0px -8px #736f5f, 260px 0px 0px 0px #736f5f, 260px 0px 0px 5px #000, 260px 40px 0px -5px #000;
+}
