@@ -46,6 +46,9 @@
   "name": "H2G2: Pixel Adventure",
   "type": "game",
   "image": "h2g2.jpg",
+  "link": "/H2G2/WebBuild.html",
+  "buttonText": "Play In Browser",
+    "images": ["h2g2A.PNG", "h2g2B.PNG", "h2g2c.png"],
   "shortDescription": "A Hitchhiker's Guide to the Galaxy Game",
   "description": "This game was created with <a href='https://github.com/Xaeonn' target='_blank'>Sam Boles</a> to compete in the national Games Fleadh event. It is a text Adventure with pixel art, some minigamesm, and story created by myself which won the Game Studios Ireland: Best in Original Story award."
 }]
