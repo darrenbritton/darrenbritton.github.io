@@ -43,7 +43,8 @@ var binaryROM = '';
 var gameboyCanvas = null;
 var games = {
   pokemon: 'old.dat',
-  tetris: 'binary.dat'
+  tetris: 'binary.dat',
+  zelda: 'poly.dat'
 }
 var keyZones = [
   ["right", [39]
@@ -70,7 +71,7 @@ var keyZones = [
 window.loadGame = function(filename) {
   try {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", '/thatcrazyirishguy.github.io/' + filename, true);
+    rawFile.open("GET", '/' + filename, true);
     rawFile.responseType = "arraybuffer";
     rawFile.onreadystatechange = function() {
       if (rawFile.readyState === 4) {
