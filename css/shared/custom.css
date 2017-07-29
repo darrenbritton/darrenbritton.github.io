@@ -303,7 +303,7 @@ a.logo.logo-dark {
   top: 100px;
   left: 20px;
   border-radius: 100%;
-  background-color: #b98181;
+  background-color: #483e3e;
   -webkit-transition: background-color 300ms linear;
   -moz-transition: background-color 300ms linear;
   -ms-transition: background-color 300ms linear;
@@ -318,10 +318,6 @@ a.logo.logo-dark {
   font-size: 8px;
   font-family: sans-serif;
   color: #b3b3b3;
-}
-.gameboy .screen-cont .power.power-on {
-  background-color: #f00;
-  box-shadow: 0 0 3px 1px #ef5350;
 }
 .gameboy .controls-cont {
   display: block;
@@ -431,8 +427,8 @@ a.logo.logo-dark {
 }
 
 .gameboy .screen-cont .power.power-on {
-    background-color: #f00;
-    box-shadow: 0 0 3px 1px #ef5350;
+  background: rgb(206, 49, 55);
+  border: 0.1em solid rgb(161,30,45);
   }
 
 #gameboyAlert {
