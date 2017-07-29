@@ -18,9 +18,6 @@ var settings = [						//Some settings.
 	true,								//Use image smoothing based scaling?
     [true, true, true, true]            //User controlled channel enables.
 ];
-function cout(message){
-	console.info(message);
-}
 function start(canvas, ROM) {
 	clearLastEmulation();
 	autoSave();	//If we are about to load a new game, then save the last one...

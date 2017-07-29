@@ -22,7 +22,7 @@ gulp.task('compileJs', function () {
 
             return gulp.src(jsPaths, { base: './' })
                 .pipe(closureCompiler({
-                    compilation_level: 'SIMPLE_OPTIMIZATIONS',
+                    compilation_level: 'SIMPLE',
                     warning_level: 'QUIET',
                     js: './js/externs/jquery.min.js',
                     language_in: 'ECMASCRIPT6',

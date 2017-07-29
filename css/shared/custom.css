@@ -439,6 +439,10 @@ a.logo.logo-dark {
   display: none;
 }
 
+#gameboyControlsAlert {
+  display: none;
+}
+
 #gameboyCanvas {
   z-index: 1;
   position: relative;
