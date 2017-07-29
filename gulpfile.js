@@ -11,7 +11,7 @@ var closureCompiler = compilerPackage.gulp();
 
 gulp.task('compileJs', function () {
 
-    glob("./*.html", function (err, files) {
+    glob("./index.html", function (err, files) {
         if (err) throw err;
 
         files.forEach(function (file) {
@@ -22,10 +22,11 @@ gulp.task('compileJs', function () {
 
             return gulp.src(jsPaths, { base: './' })
                 .pipe(closureCompiler({
-                    compilation_level: 'SIMPLE',
+                    compilation_level: 'SIMPLE_OPTIMIZATIONS',
+                    warning_level: 'QUIET',
                     js: './js/externs/jquery.min.js',
-                    language_in: 'ECMASCRIPT6_STRICT',
-                    language_out: 'ECMASCRIPT5_STRICT',
+                    language_in: 'ECMASCRIPT6',
+                    language_out: 'ECMASCRIPT5',
                     output_wrapper: '(function(){\n%output%\n}).call(this)',
                     js_output_file: outputName
                 }))
