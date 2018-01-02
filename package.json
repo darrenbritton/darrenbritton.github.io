@@ -1,32 +1,32 @@
 {
-  "name": "darrenbritton",
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
   "version": "1.0.0",
-  "main": "gulpfile.js",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "browser-sync": "*",
-    "glob": "*",
-    "google-closure-compiler": "*",
-    "gulp": "*",
-    "gulp-cache": "*",
-    "gulp-changed": "*",
-    "gulp-concat": "*",
-    "gulp-cssnano": "*",
-    "gulp-imagemin": "*",
-    "gulp-uncss": "*"
+    "gatsby": "^1.9.145",
+    "gatsby-link": "^1.6.32",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-styled-components": "^2.0.4",
+    "gatsby-plugin-typography": "^1.7.10",
+    "gatsby-source-filesystem": "^1.5.11",
+    "gatsby-transformer-remark": "^1.7.26",
+    "grid-styled": "^2.0.0-11",
+    "styled-components": "^2.4.0",
+    "typography-theme-github": "^0.15.10"
   },
-  "devDependencies": {},
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
   "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ThatCrazyIrishGuy/thatcrazyirishguy.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ThatCrazyIrishGuy/thatcrazyirishguy.github.io/issues"
-  },
-  "homepage": "https://github.com/ThatCrazyIrishGuy/thatcrazyirishguy.github.io#readme",
-  "description": ""
+  "devDependencies": {
+    "prettier": "^1.9.2"
+  }
 }

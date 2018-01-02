@@ -1,0 +1,32 @@
+{
+  "name": "darrenbritton",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "*",
+    "glob": "*",
+    "google-closure-compiler": "*",
+    "gulp": "*",
+    "gulp-cache": "*",
+    "gulp-changed": "*",
+    "gulp-concat": "*",
+    "gulp-cssnano": "*",
+    "gulp-imagemin": "*",
+    "gulp-uncss": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThatCrazyIrishGuy/thatcrazyirishguy.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThatCrazyIrishGuy/thatcrazyirishguy.github.io/issues"
+  },
+  "homepage": "https://github.com/ThatCrazyIrishGuy/thatcrazyirishguy.github.io#readme",
+  "description": ""
+}
