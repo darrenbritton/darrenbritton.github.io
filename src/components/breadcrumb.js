@@ -29,16 +29,24 @@ const Base = styled.ol`
   }
   & > li:last-child > a {
     color: #777;
+    pointer-events: none;
+    cursor: default;
   }
+  ${props => props.dark && css`
+    & li a,
+    & li {
+      color: #444;
+    }
+  `}
 `
 
 class Breadcrumb extends React.Component {
   render() {
     const crumbs = this.props.crumbs.map(function(crumb){
-      return <li><Link to={crumb.link}>{crumb.name}</Link></li>;
+      return <li key={crumb.name}><Link to={crumb.link}>{crumb.name}</Link></li>;
     })
     return (
-      <Base>
+      <Base {...this.props}>
         {crumbs}
       </Base>
     );

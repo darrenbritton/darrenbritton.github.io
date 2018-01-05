@@ -18,12 +18,26 @@ const Button = styled.button`
   -moz-transition: all 0.3s ease;
   margin-right: 8px;
   margin-bottom: 24px;
+  cursor: pointer;
+  
+  &:hover {
+    color: #fff;
+    background-color: #47b475;
+  }
+
+  ${props => props.dark && css`
+    color: #444;
+    border-color: #444;
+    &:hover {
+      color: #fff;
+      background-color: #444;
+    }
+  `}
 
   ${props => props.opaque && css`
     background: none;
-    color: #666;
-    border-color: #666;
     &:hover {
+      background-color: transparent;
       color: #fff;
       border-color: #fff;
     }
