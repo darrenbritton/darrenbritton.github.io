@@ -6,7 +6,10 @@ import Bar from '../components/bar'
 import Breadcrumb from '../components/breadcrumb'
 import Carousel from '../components/carousel'
 
-const ComponentsDemo = () => (
+const ComponentsDemo = ({ data }) => {
+
+console.log(data);
+   return ( 
   <div>
     <h1>Buttons</h1>
     <Button>Default</Button>
@@ -17,8 +20,18 @@ const ComponentsDemo = () => (
     <h1>Breadcrumb</h1>
     <Breadcrumb dark crumbs={[{name: 'a', link: '/components#a'}, {name: 'b', link: '/components#b'}, {name: 'c', link: '/components#c'}, {name: 'd', link: '/components#d'}, {name: 'e', link: '/components#e'}, {name: 'f', link: '/components#f'}]} />
     <h1>Carousel</h1>
-    <Carousel images={['https://darrenbritton.com/img/digicahA.PNG', 'https://darrenbritton.com/img/digicahB.PNG', 'https://darrenbritton.com/img/digicahC.PNG']} />
-  </div>
-)
+    <Carousel resolutions={data.digicahImages.resolutions} images={['https://darrenbritton.com/img/digicahA.PNG', 'https://darrenbritton.com/img/digicahB.PNG', 'https://darrenbritton.com/img/digicahC.PNG']} />
+  </div>)
+}
+
+export const query = graphql`
+  query GetImages {
+    digicahImages: allImageSharp(id: { regex: "/digicah[a-zA-Z].png/" }) {
+      resolutions(width: 925) {
+        ...GatsbyImageSharpResolutions
+      }
+    }
+  }
+`
 
 export default ComponentsDemo
