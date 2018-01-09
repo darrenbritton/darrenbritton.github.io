@@ -10,22 +10,10 @@ class Carousel extends React.Component {
     })
     return (
       <NukaCarousel decorators={DefaultDecorators.slice(2)} wrapAround={true} dragging={true} autoplay={true}>
-        <Img resolutions={data.file.childImageSharp.resolutions} />
+        {images}
       </NukaCarousel>
     );
   }
 }
-
-export const query = graphql`
-  query GatsbyImageSampleQuery {
-    file(relativePath: { eq: "img/dani.jpg" }) {
-      childImageSharp {
-        resolutions(width: 125, height: 125) {
-          ...GatsbyImageSharpResolutions
-        }
-      }
-    }
-  }
-`;
 
 export default Carousel

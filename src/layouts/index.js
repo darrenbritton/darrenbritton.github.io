@@ -24,46 +24,50 @@ const Header = styled.div`
 
 const Title = styled.h1`
   margin-top: 0;
+  text-transform: capitalize;
   color: #fff;
 `
 
-const PortfolioItemTemplate = ({ children }) => (
-  <div>
-    <Helmet
-      title="Darren Britton"
-      meta={[
-        { name: 'description', content: 'portfolio' },
-        { name: 'keywords', content: 'darren, britton, portfolio' },
-      ]}
-    />
-    <Header>
-      <Flex wrap >
-        <Box px={2} width={[ 1, 2/3, 1/3 ]}>
-    			<Title>Digicah</Title>
-    		</Box>
-        <Box  px={2} width={[ 1, 2/3 ]}>
-          <Breadcrumb crumbs={[{name: 'home', link: '/'}, {name: 'portfolio', link: '/#portfolio'}, {name: 'digicah', link: '/digicah'}]} />
-        </Box>
-        <Box  px={2} width={[ 1 ]}>
-          <Bar />
-        </Box>
-        <Box  px={2} width={[ 1 ]}>
-          <p>Digicah was developed as a C# .NET application using WPF for the client and a command line interface for the server. It has been released in alpha and can be downloaded from the dedicated Digicah website.</p>
-        </Box>
-    	</Flex>
-    </Header>
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
+const PortfolioItemTemplate = ({ children, location }) => {
+  const slugs = location.pathname.split('/')
+  const name = slugs[slugs.length - 1];
+  const crumbs = [{name: 'home', link: '/'}, {name: 'portfolio', link: '/#portfolio'}, {name, link: location.pathname}]
+  return (
+    <div>
+      <Helmet
+        title="Darren Britton"
+        meta={[
+          { name: 'description', content: 'portfolio' },
+          { name: 'keywords', content: 'darren, britton, portfolio' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        ]}
+      />
+      <Header>
+        <Flex wrap >
+          <Box px={2} width={[ 1, 2/3, 1/3 ]}>
+      			<Title>{name}</Title>
+      		</Box>
+          <Box  px={2} width={[ 1, 2/3 ]}>
+            <Breadcrumb crumbs={crumbs} />
+          </Box>
+          <Box  px={2} width={[ 1 ]}>
+            <Bar />
+          </Box>
+      	</Flex>
+      </Header>
+      <div
+        style={{
+          margin: '0 auto',
+          maxWidth: 960,
+          padding: '0px 1.0875rem 1.45rem',
+          paddingTop: 0,
+        }}
+      >
+        {children()}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 PortfolioItemTemplate.propTypes = {
   children: PropTypes.func,

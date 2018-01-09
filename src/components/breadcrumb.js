@@ -4,7 +4,6 @@ import Link from 'gatsby-link'
 
 const Base = styled.ol`
   padding-top: 10px;
-  float: right;
   list-style: none;
   margin: 0;
   & li a,
@@ -31,6 +30,9 @@ const Base = styled.ol`
     color: #777;
     pointer-events: none;
     cursor: default;
+  }
+  @media (min-width: 831px) {
+    float: right;
   }
   ${props => props.dark && css`
     & li a,
