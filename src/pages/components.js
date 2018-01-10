@@ -18,7 +18,7 @@ const ComponentsDemo = () => {
       <h1>Breadcrumb</h1>
       <Breadcrumb dark crumbs={[{name: 'a', link: '/components#a'}, {name: 'b', link: '/components#b'}, {name: 'c', link: '/components#c'}, {name: 'd', link: '/components#d'}, {name: 'e', link: '/components#e'}, {name: 'f', link: '/components#f'}]} />
       <h1>Carousel</h1>
-      <Carousel images={['img/digicahA.PNG', 'img/digicahB.PNG', 'img/digicahC.PNG']} />
+      <Carousel images={['/cdn/images/digicahA.PNG', '/cdn/images/digicahB.PNG', '/cdn/images/digicahC.PNG']} />
     </div>
   )
 }
