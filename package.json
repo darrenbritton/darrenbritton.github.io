@@ -14,7 +14,9 @@
     "gatsby-transformer-remark": "^1.7.26",
     "grid-styled": "^2.0.0-11",
     "nuka-carousel": "^3.0.0",
+    "react-fontawesome": "^1.6.1",
     "react-timeago": "^3.4.3",
+    "scroll-to-element": "^2.0.0",
     "styled-components": "^2.4.0",
     "typography-theme-github": "^0.15.10"
   },

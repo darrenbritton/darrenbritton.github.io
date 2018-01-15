@@ -27,8 +27,8 @@ const Button = styled.button`
   }
 
   ${props => props.dark && css`
-    color: #444;
-    border-color: #444;
+    color: #949494;
+    border-color: #949494;
     &:hover {
       color: #fff;
       background-color: #444;
@@ -42,6 +42,13 @@ const Button = styled.button`
       color: #fff;
       border-color: #fff;
     }
+  `}
+
+  ${props => props.small && css`
+    height: 30px;
+    font-size: 11px;
+    line-height: 27px;
+    min-width: 0;
   `}
 `
 
