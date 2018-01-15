@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 const Button = styled.button`
   border: 2px solid #47b475;
+  background-color: #fff;
   padding: 0 26px;
   height: 40px;
   min-width: 150px;
@@ -19,7 +20,7 @@ const Button = styled.button`
   margin-right: 8px;
   margin-bottom: 24px;
   cursor: pointer;
-  
+
   &:hover {
     color: #fff;
     background-color: #47b475;

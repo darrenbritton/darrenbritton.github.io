@@ -10,7 +10,7 @@ class Carousel extends React.Component {
     })
     return (
       <NukaCarousel decorators={DefaultDecorators.slice(2)} wrapAround={true} dragging={true} autoplay={true}>
-        <Img resolutions={this.props.resolutions} />
+        {images}
       </NukaCarousel>
     );
   }

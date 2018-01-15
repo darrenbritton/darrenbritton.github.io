@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "gatsby": "^1.9.145",
+    "gatsby-image": "^1.0.31",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^2.0.4",
@@ -12,6 +13,8 @@
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.26",
     "grid-styled": "^2.0.0-11",
+    "nuka-carousel": "^3.0.0",
+    "react-timeago": "^3.4.3",
     "styled-components": "^2.4.0",
     "typography-theme-github": "^0.15.10"
   },
