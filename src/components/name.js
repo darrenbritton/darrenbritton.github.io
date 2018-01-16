@@ -6,12 +6,13 @@ const Base = styled.a`
   font-family: 'Pacifico', cursive;
   color: #fff;
   margin: 20px 0;
-  display: block;
   width: fit-content;
+  white-space: nowrap;
   transition-property: transform;
   transition-duration: 0.8s;
 
   &:hover {
+    cursor: pointer;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-image: url(https://media.giphy.com/media/l41YcGT5ShJa0nCM0/giphy.gif);
@@ -21,6 +22,10 @@ const Base = styled.a`
 
   ${props => props.dark && css`
     color: #444;
+  `}
+
+  ${props => props.block && css`
+    display: block;
   `}
 
   ${props => props.small && css`
@@ -35,7 +40,7 @@ const Base = styled.a`
 class Name extends React.Component {
   render() {
     return (
-      <Base {...this.props}>
+      <Base {...this.props} href='/'>
         Darren Britton
       </Base>
     );

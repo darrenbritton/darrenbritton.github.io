@@ -19,7 +19,7 @@ class Footer extends React.Component {
     return (<Base {...this.props}>
       <Flex justify='center'>
         <Box width={[1 / 2, 1 / 3, 1 / 6]}>
-          <Name big="big"/>
+          <Name big block/>
         </Box>
         <Box width={[1 / 2, 1 / 3, 1 / 6]}>
           <Flex justify='center'>

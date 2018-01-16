@@ -11,13 +11,12 @@ import Footer from '../components/footer'
 
 injectGlobal`
   @import "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+  @import "//fonts.googleapis.com/css?family=Raleway:100,600,700";
+  @import "//fonts.googleapis.com/css?family=Pacifico:400";
 
-  @font-face {
-    font-family: 'Pacifico';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/Q_Z9mv4hySLTMoMjnk_rCfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+  html {
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 `
 

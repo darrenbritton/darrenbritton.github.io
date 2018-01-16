@@ -1,28 +1,44 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import {Flex, Box} from 'grid-styled'
 
 import Button from '../components/button'
 import Bar from '../components/bar'
 import Breadcrumb from '../components/breadcrumb'
 import Carousel from '../components/carousel'
 import HeroImage from '../components/heroImage'
-import NavBar from '../components/NavBar'
+import NavBar from '../components/navbar'
 
-const ComponentsDemo = () => {
-  return (
-    <div>
-      <h1>Buttons</h1>
-      <Button>Default</Button>
-      <Button dark>Dark</Button>
-      <Button opaque>Opaque</Button>
-      <h1>Bar</h1>
-      <Bar />
-      <h1>Breadcrumb</h1>
-      <Breadcrumb dark crumbs={[{name: 'a', link: '/components#a'}, {name: 'b', link: '/components#b'}, {name: 'c', link: '/components#c'}, {name: 'd', link: '/components#d'}, {name: 'e', link: '/components#e'}, {name: 'f', link: '/components#f'}]} />
-      <h1>Carousel</h1>
-      <Carousel images={['/cdn/images/digicahA.PNG', '/cdn/images/digicahB.PNG', '/cdn/images/digicahC.PNG']} />
-    </div>
-  )
+class ComponentsDemo extends React.Component {
+  render() {
+    const content = (
+      <div>
+        <h1 id='buttons'>Buttons</h1>
+        <Button>Default</Button>
+        <Button dark>Dark</Button>
+        <Button opaque>Opaque</Button>
+        <Button small>small</Button>
+        <h1 id='bar'>Bar</h1>
+        <Bar />
+        <h1 id='breadcrumb'>Breadcrumb</h1>
+        <Breadcrumb dark crumbs={[{name: 'a', link: '/components#a'}, {name: 'b', link: '/components#b'}, {name: 'c', link: '/components#c'}, {name: 'd', link: '/components#d'}, {name: 'e', link: '/components#e'}, {name: 'f', link: '/components#f'}]} />
+        <h1 id='carousel'>Carousel</h1>
+        <Carousel images={['/cdn/images/digicahA.PNG', '/cdn/images/digicahB.PNG', '/cdn/images/digicahC.PNG']} />
+        <h1 id='heroImage'>Hero Image</h1>
+        <HeroImage overlay img='/cdn/images/header.jpg' />
+      </div>
+    )
+    return (
+      <div>
+        <NavBar dark children={content.props.children} />
+        <Flex align='center' justify='center'>
+          <Box width={[9/10 , 2 / 3, 3 / 4]}>
+            {content}
+          </Box>
+        </Flex>
+      </div>
+    );
+  }
 }
 
 export default ComponentsDemo

@@ -6,13 +6,13 @@ const Icon = ({ name, href }) => (
   <a href={href}>
     <FontAwesome
       name={name}
-      size='2x'
     />
   </a>
 )
 
 const Base = styled.div`
   margin: 20px 0;
+  text-align: center;
   & a {
     display: inline-block;
     margin 5px;
@@ -38,7 +38,7 @@ const Base = styled.div`
 class SocialIcons extends React.Component {
   render() {
     const icons = this.props.icons.map(function(icon){
-      return <Icon name={icon.name} href={icon.href} />;
+      return <Icon key={icon.name} name={icon.name} href={icon.href} />;
     })
     return (
       <Base {...this.props}>
