@@ -38,7 +38,7 @@ const Item = ({excerpt, image = null, tags, slug, title, timeToRead}) => (
     <a href={slug}>
       <HeroImage
         overlay
-        img={image ? `/cdn/images/${image}` : '//lorempixel.com/720/720/cats/'}
+        img={image ? `../pages/portfolio/images/${image}` : '//lorempixel.com/720/720/cats/'}
       />
     </a>
     <h1>{title}</h1>
