@@ -2,6 +2,7 @@
 title: "TodoDoingDone"
 date: "2018-01-08"
 tags: ["web app", "javascript", "css", "html"]
+image: 'TodoDoingDone.jpg'
 ---
 
 TodoDoingDone was created out of self need for a simple, self contained, kabanan style, note management web application.

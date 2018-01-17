@@ -6,7 +6,7 @@ const HeroImage = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100vh;
+  padding-top: 100%;
   background-color: #194892;
   background: linear-gradient(270deg,#355e9e,#5478b0,#194892);
   background-size: 600% 600%;
@@ -29,16 +29,19 @@ const HeroImage = styled.div`
     background-image: url(${props => props.img});
     background-repeat: no-repeat;
     background-size: cover;
+    image-rendering: -webkit-optimize-contrast;
   `}
 
   ${props => props.fillPage && css`
+    padding-top: 0;
     width: 100vw;
+    height: 100vh;
   `}
 
   ${props => props.overlay && css`
     &:after {
       background: #292929;
-      opacity: 0.3;
+      opacity: 0.4;
       content: "";
       width: 100%;
       height: auto;
