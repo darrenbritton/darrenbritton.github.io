@@ -2,7 +2,7 @@
 title: "Digicah"
 date: "2018-01-08"
 tags: ["website", "javascript", "css", "html"]
-image: 'digicah.jpg'
+image: './images/digicah.jpg'
 ---
 
 [Digicah] was developed as a C# .NET application using WPF for the client and a command line interface for the server.

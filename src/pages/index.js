@@ -110,7 +110,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             tags
-            image
+            image {
+              childImageSharp {
+                responsiveSizes(maxWidth: 400) {
+                  src
+                }
+              }
+            }
           }
         }
       }

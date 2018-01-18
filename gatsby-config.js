@@ -18,11 +18,12 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-plugin-sharp`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -50,6 +51,13 @@ module.exports = {
           },
         ],
       },
-    }
+    },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-47904062-1`,
+      },
+    },
   ]
 }

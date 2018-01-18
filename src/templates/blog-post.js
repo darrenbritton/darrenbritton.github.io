@@ -41,10 +41,13 @@ const Tags = styled.ol`
 `
 
 const Content = styled.div`
-margin: 0 auto;
-max-width: 960px;
-padding: 0px 1.0875rem 1.45rem;
-padding-top: 5vh;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 5vh;
+  img {
+    padding-bottom: 15px;
+  }
 `
 
 const Title = styled.h1`

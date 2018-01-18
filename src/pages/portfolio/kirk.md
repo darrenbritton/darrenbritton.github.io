@@ -2,7 +2,7 @@
 title: "KIRK"
 date: "2018-01-08"
 tags: ["C#", "bot"]
-image: 'dani.jpg'
+image: './images/dani.jpg'
 ---
 
 KIRK was created as a star trek based chatbot developed for command line access with C#.

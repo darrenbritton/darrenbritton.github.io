@@ -10,12 +10,15 @@ const Card = styled.div`
   margin-bottom: 32px;
   border-radius: 30px;
   overflow: hidden;
-  & > a > div {
+  & > a > div, & > a > div::after {
     z-index: -1;
-    transition: transform .5s ease-in-out;
+    transition: all .5s ease-in-out;
   }
   &:hover > a > div {
     transform: scale(1.1);
+  }
+  &:hover > a > div::after {
+    opacity: 0.5;
   }
   h1 {
     color: #fff;
@@ -38,7 +41,7 @@ const Item = ({excerpt, image = null, tags, slug, title, timeToRead}) => (
     <a href={slug}>
       <HeroImage
         overlay
-        img={image ? `../pages/portfolio/images/${image}` : '//lorempixel.com/720/720/cats/'}
+        img={image ? image.childImageSharp.responsiveSizes.src : '//lorempixel.com/720/720/cats/'}
       />
     </a>
     <h1>{title}</h1>
