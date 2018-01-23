@@ -159,7 +159,6 @@ const Item = styled.div`
 
 class IndexPage extends React.Component {
   render() {
-    console.log(this.props.data)
     const content = (
       <Content>
         <HeroImage overlay fillPage>
