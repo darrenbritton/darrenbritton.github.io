@@ -1,0 +1,14 @@
+machine:
+  node:
+    version: 8.6.0
+
+general:
+  branches:
+    ignore:
+      - master
+
+deployment:
+  staging:
+    branch: source
+    commands:
+      - npm run deploy
