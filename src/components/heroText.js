@@ -21,7 +21,7 @@ const Base = styled.div`
     top: 40%;
   ` }
   ${ media.xs`
-    left: 5%;
+    left: 3%;
     top: 15%;
     letter-spacing: 12px;
   ` }

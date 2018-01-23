@@ -5,13 +5,11 @@ import Helmet from 'react-helmet'
 import styled, { injectGlobal } from 'styled-components'
 import { Flex, Box } from 'grid-styled'
 
-import Breadcrumb from '../components/breadcrumb'
-import Bar from '../components/bar'
 import Footer from '../components/footer'
 
 injectGlobal`
   @import "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-  @import "//fonts.googleapis.com/css?family=Raleway:100,600,700";
+  @import "//fonts.googleapis.com/css?family=Raleway:100,400,600,700";
   @import "//fonts.googleapis.com/css?family=Pacifico:400";
 
   html {
@@ -24,6 +22,7 @@ const Body = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  width: 100vw;
 `
 
 const Content = styled.div`

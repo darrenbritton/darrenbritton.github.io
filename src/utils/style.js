@@ -1,6 +1,11 @@
 import { css } from 'styled-components'
 
 export const media = {
+  ws: (...args) => css`
+    @media (max-width: 280px) {
+      ${ css(...args) }
+    }
+  `,
   xs: (...args) => css`
     @media (max-width: 767px) {
       ${ css(...args) }

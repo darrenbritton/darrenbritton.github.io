@@ -2,9 +2,10 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import {Flex, Box} from 'grid-styled'
 
+import { media } from '../utils/style'
 import HeroImage from '../components/heroImage'
 
-const Card = styled.div`
+const Tile = styled.div`
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   position: relative;
   margin-bottom: 32px;
@@ -20,41 +21,50 @@ const Card = styled.div`
   &:hover > a > div::after {
     opacity: 0.5;
   }
+`
+
+const TileContent = styled.a`
+  color: #fff;
+  text-decoration: none !important;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1vw;
+  left: 5%;
+  max-width: 70%;
   h1 {
-    color: #fff;
-    position: absolute;
-    bottom: 20%;
-    left: 5%;
-    max-width: 70%;
+    margin-bottom: 5px;
   }
-  p {
-    color: #fff;
-    position: absolute;
-    bottom: 2%;
-    left: 5%;
-    max-width: 80%;
-  }
+
+  ${ media.md`
+    max-width: 90%;
+  ` }
+  ${ media.ws`
+    p {
+      display: none;
+    }
+  ` }
 `
 
 const Item = ({excerpt, image = null, tags, slug, title, timeToRead}) => (
-  <Card>
+  <Tile>
     <a href={slug}>
       <HeroImage
         overlay
         img={image ? image.childImageSharp.responsiveSizes.src : '//lorempixel.com/720/720/cats/'}
       />
     </a>
-    <h1>{title}</h1>
-    <p>{excerpt}</p>
-  </Card>
+    <TileContent href={slug}>
+      <h1>{title}</h1>
+      <p>{excerpt}</p>
+    </TileContent>
+  </Tile>
 )
 
 class Portfolio extends React.Component {
   render() {
-    console.log(this.props.items);
     const items = this.props.items.map(item =>
       (
-        <Box px={2} width={[ 1 , 1 / 2, 1 / 3, 1 / 4 ]}>
+        <Box key={item.node.fields.slug} px={2} width={[ 1 , 1 / 2, 1 / 3, 1 / 4 ]}>
           <Item
             key={item.node.fields.slug}
             excerpt={item.node.excerpt}
@@ -66,7 +76,7 @@ class Portfolio extends React.Component {
       )
     )
     return (
-      <Flex wrap>
+      <Flex px={1} wrap>
         {items}
       </Flex>
     )

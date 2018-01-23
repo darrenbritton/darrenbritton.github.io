@@ -7,7 +7,7 @@ import Breadcrumb from '../components/breadcrumb'
 import Bar from '../components/bar'
 
 const Header = styled.div`
-  height: 240px;
+  height: fit-contents;
   padding: 0;
   background: #292929;
   position: relative;
@@ -47,6 +47,9 @@ const Content = styled.div`
   padding-top: 5vh;
   img {
     padding-bottom: 15px;
+  }
+  hr {
+    margin: 0 0 40px;
   }
 `
 
