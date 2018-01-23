@@ -15,4 +15,6 @@ deployment:
   staging:
     branch: source
     commands:
+      - git config --global user.email "deploy@circleci.com"
+      - git config --global user.name "Circle CI"
       - npm run deploy
