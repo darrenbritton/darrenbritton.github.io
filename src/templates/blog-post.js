@@ -45,9 +45,6 @@ const Content = styled.div`
   max-width: 960px;
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 5vh;
-  img {
-    padding-bottom: 15px;
-  }
   hr {
     margin: 0 0 40px;
   }

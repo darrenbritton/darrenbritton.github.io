@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import { Flex, Box } from 'grid-styled'
 import styled, { css } from 'styled-components'
+import Img from 'gatsby-image'
 
 import { media } from '../utils/style'
 
@@ -51,6 +52,10 @@ const Section = styled.div`
   text-align: center;
   padding-top: 45px;
   padding-bottom: 40px;
+
+  a {
+    font-family: 'Lato';
+  }
 
   p {
     margin-bottom: 64px;
@@ -177,10 +182,10 @@ class IndexPage extends React.Component {
           <Title>About Me</Title>
           <Flex align='center' column>
             <Box px={2} width={[ 1 , 1 / 2 ]}>
-              <p>I have just finished my last year as a Computer Science student at the Dublin Institute of Technology. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links above or at the bottom of the page.</p>
+              <p>Currently working as a full stack developer in SAP working on <a href='https://build.me'>BUILD</a>. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links above or at the bottom of the page.</p>
             </Box>
             <Box px={2} width={180}>
-              <img src='/cdn/images/signature.png'></img>
+              <Img sizes={this.props.data.allFile.edges[0].node.childImageSharp.sizes}></Img>
             </Box>
           </Flex>
         </Section>
@@ -277,8 +282,15 @@ export const pageQuery = graphql`
             tags
             image {
               childImageSharp {
-                responsiveSizes(maxWidth: 400) {
-                  src
+                sizes(
+                  maxWidth: 500,
+                  duotone: {
+                    highlight: "#333333",
+                    shadow: "#111111",
+                    opacity: 65
+                  }
+                ) {
+                  ...GatsbyImageSharpSizes
                 }
               }
             }
@@ -296,5 +308,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allFile(filter: {id: {regex: "/signature/"}}) {
+     edges {
+       node {
+         childImageSharp {
+           sizes(maxWidth: 200, grayscale: true) {
+             ...GatsbyImageSharpSizes_tracedSVG
+           }
+         }
+       }
+     }
+   }
   }
 `;

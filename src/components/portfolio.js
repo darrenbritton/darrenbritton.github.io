@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import {Flex, Box} from 'grid-styled'
+import Img from "gatsby-image";
 
 import { media } from '../utils/style'
 import HeroImage from '../components/heroImage'
@@ -32,7 +33,12 @@ const TileContent = styled.a`
   left: 5%;
   max-width: 70%;
   h1 {
+    font-family: 'Raleway';
     margin-bottom: 5px;
+  }
+  p {
+    font-family: 'Lato';
+    font-weight: 500;
   }
 
   ${ media.md`
@@ -48,10 +54,7 @@ const TileContent = styled.a`
 const Item = ({excerpt, image = null, tags, slug, title, timeToRead}) => (
   <Tile>
     <a href={slug}>
-      <HeroImage
-        overlay
-        img={image ? image.childImageSharp.responsiveSizes.src : '//lorempixel.com/720/720/cats/'}
-      />
+      <Img sizes={image.childImageSharp.sizes} />
     </a>
     <TileContent href={slug}>
       <h1>{title}</h1>
