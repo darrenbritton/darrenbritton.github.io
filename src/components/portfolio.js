@@ -5,6 +5,7 @@ import Img from "gatsby-image";
 
 import { media } from '../utils/style'
 import HeroImage from '../components/heroImage'
+import Button from '../components/button'
 
 const Tile = styled.div`
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -51,10 +52,10 @@ const TileContent = styled.a`
   ` }
 `
 
-const Item = ({excerpt, image = null, tags, slug, title, timeToRead}) => (
+const Item = ({excerpt, image, tags, slug, title, timeToRead}) => (
   <Tile>
     <a href={slug}>
-      <Img sizes={image.childImageSharp.sizes} />
+      {image ? (<Img sizes={image.childImageSharp.sizes} />) : (<HeroImage overlay img='//lorempixel.com/720/720/cats/' />)}
     </a>
     <TileContent href={slug}>
       <h1>{title}</h1>
@@ -64,8 +65,24 @@ const Item = ({excerpt, image = null, tags, slug, title, timeToRead}) => (
 )
 
 class Portfolio extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { items: [], viewAll: false};
+  }
+
+  componentWillRecievedProps(newProps, oldProps) {
+    if(newProps.items && JSON.stringify(newProps.items) != JSON.stringify(oldProps.items)) {
+      this.setState(items = newProps.items);
+    }
+  }
+
+  toggleShow() {
+    this.setState({viewAll: !this.state.viewAll});
+  }
+
   render() {
-    const items = this.props.items.map(item =>
+    let items = this.props.items.map(item =>
       (
         <Box key={item.node.fields.slug} px={2} width={[ 1 , 1 / 2, 1 / 3, 1 / 4 ]}>
           <Item
@@ -78,9 +95,15 @@ class Portfolio extends React.Component {
         </Box>
       )
     )
+    if (!this.state.viewAll) {
+      items.splice(4)
+    }
     return (
-      <Flex px={1} wrap>
+      <Flex justify='center' px={1} wrap>
         {items}
+        <Box m='auto'>
+          <Button center onClick={() => this.toggleShow()}>{this.state.viewAll ? 'View Less' : 'View More'}</Button>
+        </Box>
       </Flex>
     )
   }

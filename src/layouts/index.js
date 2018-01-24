@@ -29,7 +29,7 @@ const Content = styled.div`
   flex: 1;
 `
 
-const PageBase = ({ children }) => {
+const PageBase = ({ location, children }) => {
   return (
     <Body>
       <Helmet
@@ -43,8 +43,9 @@ const PageBase = ({ children }) => {
       <Content>
         { children() }
       </Content>
-      <Footer>
-      </Footer>
+      {location.pathname != '/404' &&
+        <Footer />
+      }
     </Body>
   )
 }

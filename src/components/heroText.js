@@ -29,27 +29,37 @@ const Base = styled.div`
 
 class HeroText extends React.Component {
   render() {
-    return (
-      <Typist>
-        <Base {...this.props}>
-          <strong>I Make</strong> Websites
-          <Typist.Backspace count={9} delay={300} />
-          <span> Web Apps</span>
-          <Typist.Backspace count={9} delay={300} />
-          <span> Video Games</span>
-          <Typist.Backspace count={12} delay={300} />
-          <span> Poor Life Decisions</span>
-          <Typist.Delay ms={100} />
-          <span>.</span>
-          <Typist.Delay ms={200} />
-          <span>.</span>
-          <Typist.Delay ms={300} />
-          <span>.</span>
-          <Typist.Backspace count={29} delay={400} />
-          <strong>But Mostly Just</strong> Cool Web Stuff
-        </Base>
-     </Typist>
-    );
+    if(this.props.text) {
+      return (
+        <Typist>
+          <Base {...this.props}>
+            <strong>{this.props.text.split(' ').slice(0,1)}<br /></strong>{this.props.text.split(' ').slice(1).join(' ')}
+          </Base>
+       </Typist>
+      )
+    } else {
+      return (
+        <Typist>
+          <Base {...this.props}>
+            <strong>I Make</strong> Websites
+            <Typist.Backspace count={9} delay={300} />
+            <span> Web Apps</span>
+            <Typist.Backspace count={9} delay={300} />
+            <span> Video Games</span>
+            <Typist.Backspace count={12} delay={300} />
+            <span> Poor Life Decisions</span>
+            <Typist.Delay ms={100} />
+            <span>.</span>
+            <Typist.Delay ms={200} />
+            <span>.</span>
+            <Typist.Delay ms={300} />
+            <span>.</span>
+            <Typist.Backspace count={29} delay={400} />
+            <strong>But Mostly Just</strong> Cool Web Stuff
+          </Base>
+       </Typist>
+      )
+    }
   }
 }
 

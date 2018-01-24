@@ -12,6 +12,12 @@ const HeroImage = styled.div`
   background-size: 600% 600%;
   animation: scroll 30s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
 
+  button {
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+  }
+
 @keyframes scroll {
   0% {
     background-position: 0% 50%;
