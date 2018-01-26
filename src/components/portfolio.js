@@ -11,7 +11,6 @@ const Tile = styled.div`
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   position: relative;
   margin-bottom: 32px;
-  border-radius: 6px;
   overflow: hidden;
   & > a > div, & > a > div::after {
     z-index: -1;
