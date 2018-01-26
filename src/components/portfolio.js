@@ -11,11 +11,16 @@ const Tile = styled.div`
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   position: relative;
   margin-bottom: 32px;
-  border-radius: 30px;
+  border-radius: 6px;
   overflow: hidden;
   & > a > div, & > a > div::after {
     z-index: -1;
     transition: all .5s ease-in-out;
+    transform: skewY(-2.2deg);
+
+  }
+  & a > div {
+    top: -8px;
   }
   &:hover > a > div {
     transform: scale(1.1);
@@ -23,21 +28,36 @@ const Tile = styled.div`
   &:hover > a > div::after {
     opacity: 0.5;
   }
+  img {
+    height: 55% !important;
+  }
+  ${ media.ws`
+    & > a > div, & > a > div::after {
+      transform: skewY(-5.2deg);
+
+    }
+  ` }
 `
 
 const TileContent = styled.a`
   color: #fff;
   text-decoration: none !important;
   cursor: pointer;
-  position: absolute;
-  bottom: 1vw;
-  left: 5%;
-  max-width: 70%;
   h1 {
+    position: absolute;
+    top: 6vw;
+    left: 5%;
+    right: 5%;
     font-family: 'Raleway';
-    margin-bottom: 5px;
+    border: none;
   }
   p {
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 2vw;
+    left: 5%;
+    right: 5%;
+    color: #111;
     font-family: 'Lato';
     font-weight: 500;
   }
@@ -49,13 +69,56 @@ const TileContent = styled.a`
     p {
       display: none;
     }
+    h1 {
+      top: 33vw !important;
+      color: #000;
+    }
   ` }
+  @media (max-width: 1594px) {
+    p {
+      bottom: 0;
+      font-size: 1em;
+    }
+    h1 {
+      top: 1vw;
+    }
+ }
+ @media (max-width: 1258px) {
+   p {
+     line-height: 1em;
+   }
+   h1 {
+     margin-top: 1vw;
+   }
+ @media (max-width: 828px) {
+   p {
+     line-height: inherit;
+   }
+   h1 {
+     margin-top: 12vw;
+   }
+ @media (max-width: 640px) {
+   p {
+     line-height: 1.5em;
+     font-size: 1.5em;
+   }
+ @media (max-width: 440px) {
+   p {
+     line-height: inherit;
+     font-size: 1.1em;
+   }
+ @media (max-width: 342px) {
+   p {
+     line-height: 1.2em;
+     font-size: 0.95em;
+   }
+}
 `
 
 const Item = ({excerpt, image, tags, slug, title, timeToRead}) => (
   <Tile>
     <a href={slug}>
-      {image ? (<Img sizes={image.childImageSharp.sizes} />) : (<HeroImage overlay img='//lorempixel.com/720/720/cats/' />)}
+      {image ? (<Img sizes={image.childImageSharp.sizes} />) : (<div />)}
     </a>
     <TileContent href={slug}>
       <h1>{title}</h1>
