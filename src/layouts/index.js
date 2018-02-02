@@ -23,6 +23,10 @@ const Body = styled.div`
   min-height: 100vh;
   flex-direction: column;
   width: 100vw;
+
+  img {
+    margin-bottom: 0;
+  }
 `
 
 const Content = styled.div`
