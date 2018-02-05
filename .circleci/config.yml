@@ -1,0 +1,58 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.6.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: npm install
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+  deploy:
+      docker:
+        - image: tailor/docker-libvips:node-8.6
+      steps:
+        - run:
+            name: install deps
+            command: apt-get update -y; apt-get install git build-essential -y
+        - checkout
+        - restore_cache:
+            key: dependency-cache-2-{{ checksum "package.json" }}
+        - run:
+            name: npm install
+            command: npm install
+        - save_cache:
+            key: dependency-cache-2-{{ checksum "package.json" }}
+            paths:
+              - node_modules
+        - run:
+            name: git config
+            command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
+        - run:
+            name: copy config
+            command: cp -r .circleci ./static/.circleci
+        - run:
+            name: build and deploy site
+            command: npm run deploy
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: master
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: source
