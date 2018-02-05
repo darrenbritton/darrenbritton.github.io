@@ -58,5 +58,16 @@ module.exports = {
         trackingId: `UA-47904062-1`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Darren Britton Portfolio",
+        short_name: "Darren Britton",
+        start_url: "/",
+        background_color: "#405375",
+        theme_color: "#292929",
+        display: "minimal-ui"
+      },
+    }
   ]
 }
