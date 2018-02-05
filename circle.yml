@@ -6,7 +6,11 @@ general:
   branches:
     ignore:
       - master
-      
+
+dependencies:
+  pre:
+    - sudo apt-get update; sudo apt install libvips
+
 test:
   override:
     - echo "skipping test"
