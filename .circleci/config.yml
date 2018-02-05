@@ -37,7 +37,7 @@ jobs:
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
         - run:
             name: copy config
-            command: cp -r .circleci ./static/.circleci
+            command: cp -r .circleci/ ./static/.circleci/
         - run:
             name: build and deploy site
             command: npm run deploy
