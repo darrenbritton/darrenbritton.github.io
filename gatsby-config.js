@@ -64,8 +64,8 @@ module.exports = {
         name: "Darren Britton Portfolio",
         short_name: "Darren Britton",
         start_url: "/",
-        background_color: "#405375",
-        theme_color: "#292929",
+        background_color: "#292929",
+        theme_color: "#405375",
         display: "minimal-ui"
       },
     }
