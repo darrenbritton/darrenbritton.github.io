@@ -27,6 +27,12 @@ const Base = styled.div`
   ` }
 `
 
+const StyledTypist = styled(Typist)`
+  .Cursor {
+    color: transparent;
+  }
+`
+
 class HeroText extends React.Component {
   render() {
     if(this.props.text) {
@@ -39,7 +45,7 @@ class HeroText extends React.Component {
       )
     } else {
       return (
-        <Typist>
+        <StyledTypist>
           <Base {...this.props}>
             <strong>I Make</strong> Websites
             <Typist.Backspace count={9} delay={300} />
@@ -57,7 +63,7 @@ class HeroText extends React.Component {
             <Typist.Backspace count={29} delay={400} />
             <strong>But Mostly Just</strong> Cool Web Stuff
           </Base>
-       </Typist>
+       </StyledTypist>
       )
     }
   }
