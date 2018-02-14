@@ -82,6 +82,10 @@ const Section = styled.div`
     display: block;
   }
 
+  & > div:last-child {
+    border-bottom: none !important;
+  }
+
   ${props => props.center && css`
 
     text-align: left;
