@@ -29,7 +29,7 @@ class Showcase extends React.Component {
     )
     return (
       <Base>
-        <Flex wrap>
+        <Flex flexWrap='wrap'>
           {images}
         </Flex>
       </Base>

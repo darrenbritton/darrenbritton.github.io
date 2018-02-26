@@ -31,7 +31,7 @@ class ComponentsDemo extends React.Component {
     return (
       <div>
         <NavBar dark children={content.props.children} />
-        <Flex align='center' justify='center'>
+        <Flex alignItems='center' justifyContent='center'>
           <Box width={[9/10 , 2 / 3, 3 / 4]}>
             {content}
           </Box>

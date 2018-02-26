@@ -163,6 +163,7 @@ const Item = styled.div`
 
 class IndexPage extends React.Component {
   render() {
+    console.log(this.props.data)
     const content = (
       <Content>
         <HeroImage overlay fillPage>
@@ -183,7 +184,7 @@ class IndexPage extends React.Component {
         <a id='about-me'>About Me</a>
         <Section>
           <Title>About Me</Title>
-          <Flex align='center' column>
+          <Flex alignItems='center' flexDirection='column'>
             <Box px={2} width={[ 1 , 1 / 2 ]}>
               <p>Currently working as a full stack developer in SAP working on <a href='https://build.me'>BUILD</a>. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links above or at the bottom of the page.</p>
             </Box>
