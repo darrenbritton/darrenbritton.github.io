@@ -161,7 +161,7 @@ class Portfolio extends React.Component {
       items.splice(4)
     }
     return (
-      <Flex justify='center' px={1} wrap>
+      <Flex justifyContent='center' px={1} flexWrap='wrap'>
         {items}
         <Box m='auto'>
           <Button center onClick={() => this.toggleShow()}>{this.state.viewAll ? 'View Less' : 'View More'}</Button>

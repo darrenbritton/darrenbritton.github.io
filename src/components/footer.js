@@ -44,9 +44,9 @@ const GalleryContainer = styled.div`
 class Footer extends React.Component {
   render() {
     return (<Base {...this.props}>
-      <Flex wrap justify='space-around'>
+      <Flex flexWrap='wrap' justifyContent='space-around'>
         <Box px={2} width={[1, 1 / 2, 1 / 3, 1 / 6]}>
-          <Flex direction="column">
+          <Flex flexDirection="column">
             <Box>
               <Name block/>
             </Box>
@@ -67,7 +67,7 @@ class Footer extends React.Component {
           </Flex>
         </Box>
         <Box width={[1, 1 / 2, 1 / 3, 1 / 6]}>
-          <Flex justify='center' direction="column">
+          <Flex justifyContent='center' flexDirection="column">
             <Box>
               <FooterText>
                 <h4>Made with ❤️ using <a href='https://www.gatsbyjs.org/'>GatsbyJS</a></h4>
@@ -79,7 +79,7 @@ class Footer extends React.Component {
           </Flex>
         </Box>
           <Box width={[4 / 5, 1 / 2, 1 / 3, 1 / 6]} pt={2}>
-            <Flex align='center' justify='center'>
+            <Flex alignItems='center' justifyContent='center'>
               <GalleryContainer>
                 <FlickrLightbox api_key='1b4e5b0203fab0d5731afe68f0a543e1' user_id='132343752@N06' limit={8} />
               </GalleryContainer>

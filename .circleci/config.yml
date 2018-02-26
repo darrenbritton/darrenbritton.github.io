@@ -1,46 +1,53 @@
+defaults: &defaults
+  working_directory: /workspace
+
 version: 2
 jobs:
   build:
+    <<: *defaults
     docker:
-      - image: circleci/node:8.6.0
+      - image: tailor/docker-libvips:node-8.6
     steps:
       - checkout
+      - run:
+          name: install deps
+          command: apt-get update -y; apt-get install git build-essential -y
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: npm install
           command: npm install
+      - run:
+          name: update lockfile
+          command: ./node_modules/.bin/greenkeeper-lockfile-update
+      - run:
+          name: gatsby build
+          command: npm run build
+      - run:
+          name: upload lockfile
+          command: ./node_modules/.bin/greenkeeper-lockfile-upload
+      - run:
+          name: copy ci config
+          command: cp -r .circleci/ ./public/.circleci/
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-
+            - package-lock.json
+      - persist_to_workspace:
+          root: .
+          paths:
+            - public
   deploy:
+      <<: *defaults
       docker:
-        - image: tailor/docker-libvips:node-8.6
+        - image: circleci/node:8.6.0
       steps:
-        - run:
-            name: install deps
-            command: apt-get update -y; apt-get install git build-essential -y
-        - checkout
-        - restore_cache:
-            key: dependency-cache-2-{{ checksum "package.json" }}
-        - run:
-            name: npm install
-            command: npm install
-        - save_cache:
-            key: dependency-cache-2-{{ checksum "package.json" }}
-            paths:
-              - node_modules
+        - attach_workspace:
+            at: /workspace
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
-        - run:
-            name: gatsby build
-            command: npm run build
-        - run:
-            name: copy ci config
-            command: cp -r .circleci/ ./public/.circleci/
         - run:
             name: gh-pages deploy
             command: npm run deploy
