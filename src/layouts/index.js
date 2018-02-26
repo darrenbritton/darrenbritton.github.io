@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import styled, { injectGlobal } from 'styled-components'
 import { Flex, Box } from 'grid-styled'
 

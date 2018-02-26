@@ -21,6 +21,7 @@
     "nuka-carousel": "^3.0.0",
     "react-flickr-lightbox": "^1.8.0",
     "react-fontawesome": "^1.6.1",
+    "react-helmet": "^5.2.0",
     "react-timeago": "^3.4.3",
     "react-typist": "^2.0.4",
     "scroll-to-element": "^2.0.0",
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",
+    "greenkeeper-lockfile": "^1.13.2",
     "prettier": "^1.10.2"
   }
 }
