@@ -44,7 +44,7 @@ jobs:
         - image: circleci/node:8.6.0
       steps:
         - attach_workspace:
-            at: /workspace
+            at: .
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
