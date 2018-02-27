@@ -27,7 +27,7 @@ jobs:
           command: npm run build
       - run:
           name: upload lockfile
-          command: yes | ./node_modules/.bin/greenkeeper-lockfile-upload
+          command: ./node_modules/.bin/greenkeeper-lockfile-upload
       - run:
           name: copy ci config
           command: cp -r .circleci/ ./public/.circleci/
