@@ -1,5 +1,4 @@
 defaults: &defaults
-  working_directory: /workspace
   docker:
     - image: tailor/docker-libvips:node-8.6
 
@@ -10,10 +9,10 @@ jobs:
     docker:
       - image: tailor/docker-libvips:node-8.6
     steps:
-      - checkout
       - run:
           name: install deps
           command: apt-get update -y; apt-get install git build-essential -y
+      - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -43,12 +42,12 @@ jobs:
       docker:
         - image: circleci/node:8.6.0
       steps:
-        - checkout
-        - restore_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
         - run:
             name: install deps
             command: apt-get update -y; apt-get install git -y
+        - checkout
+        - restore_cache:
+            key: dependency-cache-{{ checksum "package.json" }}
         - attach_workspace:
             at: /workspace/dist
         - run:
