@@ -38,6 +38,7 @@ jobs:
           root: /workspace
           paths:
             - public
+            - package.json
   deploy:
       <<: *defaults
       steps:
@@ -49,6 +50,9 @@ jobs:
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
+        - run:
+            name: install gh-pages
+            command: npm i gh-pages
         - run:
             name: gh-pages deploy
             command: npm run deploy
