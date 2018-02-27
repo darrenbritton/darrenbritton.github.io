@@ -50,7 +50,7 @@ jobs:
             name: install deps
             command: apt-get update -y; apt-get install git -y
         - attach_workspace:
-            at: .
+            at: /workspace
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
