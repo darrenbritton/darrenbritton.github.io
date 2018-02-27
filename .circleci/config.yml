@@ -1,5 +1,7 @@
 defaults: &defaults
-  working_directory: /temp
+  working_directory: /workspace
+  docker:
+    - image: tailor/docker-libvips:node-8.6
 
 version: 2
 jobs:
@@ -25,7 +27,7 @@ jobs:
           command: npm run build
       - run:
           name: upload lockfile
-          command: ./node_modules/.bin/greenkeeper-lockfile-upload -y
+          command: yes | ./node_modules/.bin/greenkeeper-lockfile-upload
       - run:
           name: copy ci config
           command: cp -r .circleci/ ./public/.circleci/
@@ -36,7 +38,7 @@ jobs:
             - package-lock.json
             - .cache
       - persist_to_workspace:
-          root: /temp
+          root: .
           paths:
             - public
   deploy:
@@ -44,8 +46,11 @@ jobs:
       docker:
         - image: circleci/node:8.6.0
       steps:
+        - run:
+            name: install deps
+            command: apt-get update -y; apt-get install git -y
         - attach_workspace:
-            at: /temp
+            at: 
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
