@@ -1,5 +1,5 @@
 defaults: &defaults
-  working_directory: /workspace
+  working_directory: /tmp
 
 version: 2
 jobs:
@@ -34,8 +34,9 @@ jobs:
           paths:
             - node_modules
             - package-lock.json
+            - .cache
       - persist_to_workspace:
-          root: /workspace
+          root: /tmp/workspace
           paths:
             - public
   deploy:
@@ -44,7 +45,7 @@ jobs:
         - image: circleci/node:8.6.0
       steps:
         - attach_workspace:
-            at: /workspace
+            at: /tmp/workspace
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
