@@ -36,7 +36,7 @@ jobs:
             - package-lock.json
             - .cache
       - persist_to_workspace:
-          root: /temp/workspace
+          root: /temp
           paths:
             - public
   deploy:
@@ -45,7 +45,7 @@ jobs:
         - image: circleci/node:8.6.0
       steps:
         - attach_workspace:
-            at: /temp/workspace
+            at: /temp
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
