@@ -39,6 +39,7 @@ jobs:
           paths:
             - public
             - package.json
+            - .git
   deploy:
       <<: *defaults
       steps:
