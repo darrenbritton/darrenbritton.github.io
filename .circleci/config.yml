@@ -1,4 +1,5 @@
 defaults: &defaults
+  working_directory: /workspace
   docker:
     - image: tailor/docker-libvips:node-8.6
 
@@ -6,13 +7,11 @@ version: 2
 jobs:
   build:
     <<: *defaults
-    docker:
-      - image: tailor/docker-libvips:node-8.6
     steps:
+      - checkout
       - run:
           name: install deps
           command: apt-get update -y; apt-get install git build-essential -y
-      - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -35,21 +34,18 @@ jobs:
           paths:
             - node_modules
             - package-lock.json
-            - .cache
+      - persist_to_workspace:
+          root: /workspace
+          paths:
             - public
   deploy:
       <<: *defaults
-      docker:
-        - image: circleci/node:8.6.0
       steps:
         - run:
             name: install deps
             command: apt-get update -y; apt-get install git -y
-        - checkout
-        - restore_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
         - attach_workspace:
-            at: /workspace/dist
+            at: /workspace
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
