@@ -37,15 +37,14 @@ jobs:
             - node_modules
             - package-lock.json
             - .cache
-      - persist_to_workspace:
-          root: /workspace
-          paths:
             - public
   deploy:
       <<: *defaults
       docker:
         - image: circleci/node:8.6.0
       steps:
+        - restore_cache:
+            key: dependency-cache-{{ checksum "package.json" }}
         - run:
             name: install deps
             command: apt-get update -y; apt-get install git -y
