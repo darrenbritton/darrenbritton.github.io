@@ -24,9 +24,6 @@ jobs:
           name: gatsby build
           command: npm run build
       - run:
-          name: upload lockfile
-          command: yes YES | ./node_modules/.bin/greenkeeper-lockfile-upload
-      - run:
           name: copy ci config
           command: cp -r .circleci/ ./public/.circleci/
       - save_cache:
@@ -60,6 +57,12 @@ jobs:
         - run:
             name: gh-pages deploy
             command: npm run deploy
+        - run:
+            name: checkout master
+            command: git checkout master
+        - run:
+            name: upload lockfile
+            command: yes YES | ./node_modules/.bin/greenkeeper-lockfile-upload
 
 workflows:
   version: 2
