@@ -18,14 +18,8 @@ jobs:
           name: npm install
           command: npm install
       - run:
-          name: update lockfile
-          command: ./node_modules/.bin/greenkeeper-lockfile-update
-      - run:
           name: gatsby build
           command: npm run build
-      - run:
-          name: upload lockfile
-          command: ./node_modules/.bin/greenkeeper-lockfile-upload
       - run:
           name: copy ci config
           command: cp -r .circleci/ ./public/.circleci/
@@ -53,7 +47,7 @@ jobs:
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
         - run:
             name: ssh alias override key verification
-            command: alias ssh='ssh -o StrictHostKeyChecking=no'
+            command: alias ssh='ssh -o StrictHostKeyChecking=no'  && mkdir -p ~/.ssh/ && touch ~/.ssh/known_hosts && ssh-keyscan github.com >> ~/.ssh/known_hosts
         - run:
             name: install gh-pages
             command: npm i gh-pages
