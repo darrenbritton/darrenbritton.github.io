@@ -19,7 +19,7 @@ jobs:
           command: npm install
       - run:
           name: update lockfile
-          command: ./node_modules/.bin/greenkeeper-lockfile-update
+          command: yes YES | ./node_modules/.bin/greenkeeper-lockfile-update
       - run:
           name: gatsby build
           command: npm run build
