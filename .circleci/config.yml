@@ -47,13 +47,13 @@ jobs:
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
         - run:
             name: ssh alias override key verification
-            command: alias ssh='ssh -o StrictHostKeyChecking=no'
+            command: alias ssh='ssh -o StrictHostKeyChecking=no' && ssh-keyscan github.com >> ~/.ssh/known_hosts
         - run:
             name: install gh-pages
             command: npm i gh-pages
         - run:
             name: gh-pages deploy
-            command: yes YES | npm run deploy
+            command: npm run deploy
         - run:
             name: checkout master
             command: git checkout master
