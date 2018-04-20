@@ -18,7 +18,7 @@
     "gatsby-transformer-remark": "^1.7.26",
     "gatsby-transformer-sharp": "^1.6.16",
     "grid-styled": "^4.0.0",
-    "nuka-carousel": "^3.0.0",
+    "nuka-carousel": "^4.0.0",
     "react-flickr-lightbox": "^1.8.0",
     "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
