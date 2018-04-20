@@ -18,9 +18,6 @@ jobs:
           name: npm install
           command: npm install
       - run:
-          name: update lockfile
-          command: ./node_modules/.bin/greenkeeper-lockfile-update
-      - run:
           name: gatsby build
           command: npm run build
       - run:
@@ -56,13 +53,10 @@ jobs:
             command: npm i gh-pages
         - run:
             name: gh-pages deploy
-            command: npm run deploy
+            command: yes YES | npm run deploy
         - run:
             name: checkout master
             command: git checkout master
-        - run:
-            name: upload lockfile
-            command: yes YES | ./node_modules/.bin/greenkeeper-lockfile-upload
 
 workflows:
   version: 2
