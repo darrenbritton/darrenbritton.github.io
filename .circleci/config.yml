@@ -54,9 +54,6 @@ jobs:
         - run:
             name: gh-pages deploy
             command: npm run deploy
-        - run:
-            name: checkout master
-            command: git checkout master
 
 workflows:
   version: 2
