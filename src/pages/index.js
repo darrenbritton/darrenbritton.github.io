@@ -59,6 +59,7 @@ const Section = styled.div`
 
   p {
     margin-bottom: 64px;
+    font-size: large;
     color: #666;
   }
 

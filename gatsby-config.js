@@ -4,6 +4,15 @@ module.exports = {
   },
   plugins: [
     {
+     resolve: `gatsby-plugin-google-fonts`,
+     options: {
+       fonts: [
+         `pacifico\:400`,
+         `raleway\:100,400,600,700`
+       ]
+     }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
