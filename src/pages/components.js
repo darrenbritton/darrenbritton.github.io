@@ -6,7 +6,6 @@ import Button from '../components/button'
 import Bar from '../components/bar'
 import Breadcrumb from '../components/breadcrumb'
 import Carousel from '../components/carousel'
-import HeroImage from '../components/heroImage'
 import NavBar from '../components/navbar'
 
 class ComponentsDemo extends React.Component {
@@ -24,8 +23,6 @@ class ComponentsDemo extends React.Component {
         <Breadcrumb dark crumbs={[{name: 'a', link: '/components#a'}, {name: 'b', link: '/components#b'}, {name: 'c', link: '/components#c'}, {name: 'd', link: '/components#d'}, {name: 'e', link: '/components#e'}, {name: 'f', link: '/components#f'}]} />
         <h1 id='carousel'>Carousel</h1>
         <Carousel images={['/cdn/images/digicahA.PNG', '/cdn/images/digicahB.PNG', '/cdn/images/digicahC.PNG']} />
-        <h1 id='heroImage'>Hero Image</h1>
-        <HeroImage overlay img='/cdn/images/header.jpg' />
       </div>
     )
     return (

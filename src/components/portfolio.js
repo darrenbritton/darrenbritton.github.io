@@ -4,7 +4,6 @@ import {Flex, Box} from 'grid-styled'
 import Img from "gatsby-image";
 
 import { media } from '../utils/style'
-import HeroImage from '../components/heroImage'
 import Button from '../components/button'
 
 const Tile = styled.div`
