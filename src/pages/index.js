@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import { Flex, Box } from 'grid-styled'
 import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
+import FlickrHero from 'react-flickr-hero'
 
 import { media } from '../utils/style'
 
@@ -10,7 +11,6 @@ import Button from '../components/button'
 import Bar from '../components/bar'
 import Breadcrumb from '../components/breadcrumb'
 import Carousel from '../components/carousel'
-import HeroImage from '../components/heroImage'
 import NavBar from '../components/navbar'
 import HeroText from '../components/heroText'
 import SocialIcons from '../components/socialIcons'
@@ -164,24 +164,22 @@ const Item = styled.div`
 
 class IndexPage extends React.Component {
   render() {
-    console.log(this.props.data)
     const content = (
       <Content>
-        <HeroImage overlay fillPage>
-          <HeroText />
-          <SocialIcons style={{position: 'absolute', margin: '0 auto', left: 0, right: 0, bottom: 16}} icons={[
-              {
-                name: 'twitter',
-                href: 'https://twitter.com/darren_britton'
-              }, {
-                name: 'github-alt',
-                href: 'https://github.com/darrenbritton'
-              }, {
-                name: 'linkedin',
-                href: 'https://ie.linkedin.com/in/darrenbritton'
-              }
-            ]}/>
-        </HeroImage>
+        <FlickrHero api_key='1b4e5b0203fab0d5731afe68f0a543e1' user_id='132343752@N06' album_id='72157694825254121' fillPage />
+        <HeroText />
+        <SocialIcons style={{position: 'absolute', margin: '0 auto', left: 0, right: 0, bottom: 16}} icons={[
+            {
+              name: 'twitter',
+              href: 'https://twitter.com/darren_britton'
+            }, {
+              name: 'github-alt',
+              href: 'https://github.com/darrenbritton'
+            }, {
+              name: 'linkedin',
+              href: 'https://ie.linkedin.com/in/darrenbritton'
+            }
+          ]}/>
         <a id='about-me'>About Me</a>
         <Section>
           <Title>About Me</Title>

@@ -8,6 +8,8 @@ import { Flex, Box } from 'grid-styled'
 import Footer from '../components/footer'
 
 injectGlobal`
+  @import "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+  
   html {
     max-width: 100vw;
     overflow-x: hidden;
