@@ -35,6 +35,11 @@ const Button = styled.button`
     }
   `}
 
+  ${props => props.light && css`
+    color: #ddd;
+    border-color: #ddd;
+  `}
+
   ${props => props.opaque && css`
     background: none;
     &:hover {
