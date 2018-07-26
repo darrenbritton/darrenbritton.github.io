@@ -75,7 +75,7 @@ export default ({ data, location }) => {
   return (
     <div>
       <Header>
-        <Flex wrap >
+        <Flex flexWrap='wrap' >
           <Box px={2} width={[ 1, 2/3, 1/3 ]}>
             <Title>{post.frontmatter.title}</Title>
           </Box>
