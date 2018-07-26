@@ -8,7 +8,8 @@ module.exports = {
      options: {
        fonts: [
          `pacifico:400`,
-         `raleway:100,400,600,700`
+         `raleway:100,400,600,700`,
+         'lato: 300,400,500'
        ]
      }
     },
