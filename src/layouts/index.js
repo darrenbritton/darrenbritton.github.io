@@ -8,7 +8,11 @@ import { Flex, Box } from 'grid-styled'
 import Footer from '../components/footer'
 
 injectGlobal`
+<<<<<<< Updated upstream
   @import "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css";
+=======
+  @import "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+>>>>>>> Stashed changes
 
   html {
     max-width: 100vw;
