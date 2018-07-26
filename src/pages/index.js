@@ -185,7 +185,7 @@ class IndexPage extends React.Component {
           <Title>About Me</Title>
           <Flex alignItems='center' flexDirection='column'>
             <Box px={2} width={[ 1 , 1 / 2 ]}>
-              <p>Currently working as a full stack developer in SAP working on <a href='https://build.me'>BUILD</a>. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links above or at the bottom of the page.</p>
+              <p>Currently working as a software engineer at <a href='https://shutterstock.com'>Shutterstock</a> focusing on the editorial content platform. As far as my work goes I've probably worn every hat on the rack, most notible being Web Developer, Software Engineer and Photographer. Don’t let my clean lines and weakness for Swiss type fool you; My work has been pretty diverse and enjoyable. For more information about me follow one of my social media links above or at the bottom of the page.</p>
             </Box>
             <Box px={2} width={180}>
               <Img sizes={this.props.data.allFile.edges[0].node.childImageSharp.sizes}></Img>
@@ -200,7 +200,12 @@ class IndexPage extends React.Component {
           <h4>Experience</h4>
           <span>Where I've worked.</span>
           <Item>
-            <span>JUNE 2016 - CURRENT</span>
+            <span>MAY 2018 - CURRENT</span>
+            <h6>SHUTTERSTOCK</h6>
+            <p>Software Engineer</p>
+          </Item>
+          <Item>
+            <span>JUNE 2016 - APRIL 2018</span>
             <h6>SAP IRELAND</h6>
             <p>Full Stack Developer</p>
           </Item>
