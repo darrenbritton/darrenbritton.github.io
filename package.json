@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.9.165",
+    "gatsby": "^1.9.277",
     "gatsby-image": "^1.0.31",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-google-analytics": "^1.0.15",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-manifest": "^1.0.13",
     "gatsby-plugin-react-helmet": "^2.0.5",
-    "gatsby-plugin-sentry": "0.0.4",
+    "gatsby-plugin-sentry": "0.1.0",
     "gatsby-plugin-sharp": "^1.6.25",
     "gatsby-plugin-styled-components": "^2.0.4",
     "gatsby-plugin-typography": "^1.7.10",
@@ -49,6 +49,6 @@
     "gatsby-cli": "^1.1.44",
     "gh-pages": "^1.1.0",
     "greenkeeper-lockfile": "^1.13.2",
-    "prettier": "^1.10.2"
+    "prettier": "^1.13.7"
   }
 }
