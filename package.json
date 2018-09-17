@@ -46,7 +46,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "gatsby-cli": "^1.1.44",
+    "gatsby-cli": "^2.4.0",
     "gh-pages": "^1.1.0",
     "greenkeeper-lockfile": "^1.13.2",
     "prettier": "^1.13.7"
