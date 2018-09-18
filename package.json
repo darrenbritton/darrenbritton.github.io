@@ -17,7 +17,7 @@
     "gatsby-plugin-typography": "^1.7.10",
     "gatsby-remark-images": "^1.5.37",
     "gatsby-source-filesystem": "^1.5.11",
-    "gatsby-transformer-remark": "^1.7.26",
+    "gatsby-transformer-remark": "^2.1.1",
     "gatsby-transformer-sharp": "^1.6.16",
     "grid-styled": "^4.0.0",
     "nuka-carousel": "^3.0.0",
