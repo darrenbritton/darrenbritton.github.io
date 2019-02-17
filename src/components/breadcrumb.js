@@ -1,6 +1,6 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import Link from 'gatsby-link'
+import React from "react";
+import styled, { css } from "styled-components";
+import Link from "gatsby-link";
 
 const Base = styled.ol`
   padding-top: 10px;
@@ -34,25 +34,27 @@ const Base = styled.ol`
   @media (min-width: 831px) {
     float: right;
   }
-  ${props => props.dark && css`
-    & li a,
-    & li {
-      color: #444;
-    }
-  `}
-`
+  ${props =>
+    props.dark &&
+    css`
+      & li a,
+      & li {
+        color: #444;
+      }
+    `}
+`;
 
 class Breadcrumb extends React.Component {
   render() {
-    const crumbs = this.props.crumbs.map(function(crumb){
-      return <li key={crumb.name}><Link to={crumb.link}>{crumb.name}</Link></li>;
-    })
-    return (
-      <Base {...this.props}>
-        {crumbs}
-      </Base>
-    );
+    const crumbs = this.props.crumbs.map(function(crumb) {
+      return (
+        <li key={crumb.name}>
+          <Link to={crumb.link}>{crumb.name}</Link>
+        </li>
+      );
+    });
+    return <Base {...this.props}>{crumbs}</Base>;
   }
 }
 
-export default Breadcrumb
+export default Breadcrumb;
