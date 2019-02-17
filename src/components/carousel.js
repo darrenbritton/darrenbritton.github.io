@@ -1,19 +1,17 @@
-import React from 'react'
-import Img from "gatsby-image"
-import NukaCarousel from 'nuka-carousel'
-import DefaultDecorators from 'nuka-carousel/lib/decorators'
+import React from "react";
+import NukaCarousel from "nuka-carousel";
 
 class Carousel extends React.Component {
   render() {
-    const images = this.props.images.map(function(image){
-      return <img key={image} src={image}/>;
-    })
+    const images = this.props.images.map(function(image) {
+      return <img key={image} src={image} />;
+    });
     return (
-      <NukaCarousel decorators={DefaultDecorators.slice(2)} wrapAround={true} dragging={true} autoplay={true}>
+      <NukaCarousel wrapAround dragging autoplay>
         {images}
       </NukaCarousel>
     );
   }
 }
 
-export default Carousel
+export default Carousel;

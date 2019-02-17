@@ -1,5 +1,5 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
+import React from "react";
+import styled, { css } from "styled-components";
 
 const Base = styled.a`
   font-size: 20pt;
@@ -20,31 +20,39 @@ const Base = styled.a`
     -webkit-transform:rotate(354deg);
   }
 
-  ${props => props.dark && css`
-    color: #444;
-  `}
+  ${props =>
+    props.dark &&
+    css`
+      color: #444;
+    `}
 
-  ${props => props.block && css`
-    display: block;
-  `}
+  ${props =>
+    props.block &&
+    css`
+      display: block;
+    `}
 
-  ${props => props.small && css`
-    font-size: 1em;
-  `}
+  ${props =>
+    props.small &&
+    css`
+      font-size: 1em;
+    `}
 
-  ${props => props.big && css`
-    font-size: 2em;
-  `}
-`
+  ${props =>
+    props.big &&
+    css`
+      font-size: 2em;
+    `}
+`;
 
 class Name extends React.Component {
   render() {
     return (
-      <Base {...this.props} href='/'>
+      <Base {...this.props} href="/">
         Darren Britton
       </Base>
     );
   }
 }
 
-export default Name
+export default Name;

@@ -1,14 +1,12 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import FontAwesome from 'react-fontawesome'
+import React from "react";
+import styled, { css } from "styled-components";
+import FontAwesome from "react-fontawesome";
 
 const Icon = ({ name, href }) => (
   <a href={href}>
-    <FontAwesome
-      name={name}
-    />
+    <FontAwesome name={name} />
   </a>
-)
+);
 
 const Base = styled.div`
   margin: 20px 0;
@@ -33,19 +31,15 @@ const Base = styled.div`
   & a:hover span.fa-github-alt {
     color: #fc6d26;
   }
-`
+`;
 
 class SocialIcons extends React.Component {
   render() {
-    const icons = this.props.icons.map(function(icon){
+    const icons = this.props.icons.map(function(icon) {
       return <Icon key={icon.name} name={icon.name} href={icon.href} />;
-    })
-    return (
-      <Base {...this.props}>
-        {icons}
-      </Base>
-    );
+    });
+    return <Base {...this.props}>{icons}</Base>;
   }
 }
 
-export default SocialIcons
+export default SocialIcons;
