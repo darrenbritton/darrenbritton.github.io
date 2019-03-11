@@ -16,7 +16,7 @@
     "gatsby-plugin-styled-components": "^3.0.6",
     "gatsby-plugin-typography": "^2.2.8",
     "gatsby-remark-images": "^3.0.7",
-    "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "^2.2.5",
     "gatsby-transformer-sharp": "^2.1.13",
     "grid-styled": "^5.0.2",
