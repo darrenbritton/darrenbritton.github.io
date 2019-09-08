@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: /workspace
   docker:
-    - image: tailor/docker-libvips:node-8.6
+    - image: tailor/docker-libvips:node-10.9
 
 version: 2
 jobs:
