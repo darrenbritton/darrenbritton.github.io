@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Bar = styled.hr`
   margin-bottom: 48px;
@@ -8,6 +8,6 @@ const Bar = styled.hr`
   width: 100%;
   height: 0;
   box-sizing: content-box;
-`;
+`
 
-export default Bar;
+export default Bar

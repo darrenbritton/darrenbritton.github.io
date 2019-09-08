@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 const Button = styled.button`
   border: 2px solid #47b475;
@@ -63,6 +63,6 @@ const Button = styled.button`
       line-height: 27px;
       min-width: 0;
     `}
-`;
+`
 
-export default Button;
+export default Button

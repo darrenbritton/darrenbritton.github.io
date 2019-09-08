@@ -1,8 +1,8 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import Typist from "react-typist";
+import React from 'react'
+import styled, { css } from 'styled-components'
+import Typist from 'react-typist'
 
-import { media } from "../utils/style";
+import { media } from '../utils/style'
 
 const StyledTypist = styled(Typist)`
   color: #fff;
@@ -12,7 +12,7 @@ const StyledTypist = styled(Typist)`
   line-height: 80px;
   font-weight: 100;
   text-transform: uppercase;
-  font-family: "Raleway";
+  font-family: 'Raleway';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -25,7 +25,7 @@ const StyledTypist = styled(Typist)`
   top: 15%;
   letter-spacing: 12px;
 `}
-`;
+`
 
 class HeroText extends React.Component {
   render() {
@@ -34,16 +34,16 @@ class HeroText extends React.Component {
         <Typist>
           <StyledTypist {...this.props}>
             <strong>
-              {this.props.text.split(" ").slice(0, 1)}
+              {this.props.text.split(' ').slice(0, 1)}
               <br />
             </strong>
             {this.props.text
-              .split(" ")
+              .split(' ')
               .slice(1)
-              .join(" ")}
+              .join(' ')}
           </StyledTypist>
         </Typist>
-      );
+      )
     }
     return (
       <StyledTypist cursor={{ show: false }} {...this.props}>
@@ -63,8 +63,8 @@ class HeroText extends React.Component {
         <Typist.Backspace count={29} delay={10} />
         <strong>But Mostly Just</strong> Cool Web Stuff
       </StyledTypist>
-    );
+    )
   }
 }
 
-export default HeroText;
+export default HeroText

@@ -4,13 +4,9 @@ module.exports = {
   },
   plugins: [
     {
-     resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-       fonts: [
-         `pacifico:400`,
-         `raleway:100,400,600,700`,
-         'lato: 300,400,500'
-        ]
+        fonts: [`pacifico:400`, `raleway:100,400,600,700`, "lato: 300,400,500"]
       }
     },
     {
@@ -81,7 +77,7 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-sentry",
-        options: {
+      options: {
         dsn: "https://23d8e0b792d442d29d0b4344a79ef87d@sentry.io/170806"
       }
     }

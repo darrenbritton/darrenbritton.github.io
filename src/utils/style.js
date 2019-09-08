@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from 'styled-components'
 
 export const media = {
   ws: (...args) => css`
@@ -25,5 +25,5 @@ export const media = {
     @media (min-width: 1200px) {
       ${css(...args)}
     }
-  `
-};
+  `,
+}

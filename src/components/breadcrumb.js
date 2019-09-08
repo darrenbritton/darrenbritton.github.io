@@ -1,6 +1,6 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import Link from "gatsby-link";
+import React from 'react'
+import styled, { css } from 'styled-components'
+import Link from 'gatsby-link'
 
 const Base = styled.ol`
   padding-top: 10px;
@@ -8,7 +8,7 @@ const Base = styled.ol`
   margin: 0;
   & li a,
   & li {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 24px;
     font-weight: 400;
@@ -24,7 +24,7 @@ const Base = styled.ol`
   & > li + li:before {
     padding: 0 8px;
     color: #ccc;
-    content: "/\00a0";
+    content: '>';
   }
   & > li:last-child > a {
     color: #777;
@@ -42,7 +42,7 @@ const Base = styled.ol`
         color: #444;
       }
     `}
-`;
+`
 
 class Breadcrumb extends React.Component {
   render() {
@@ -51,10 +51,10 @@ class Breadcrumb extends React.Component {
         <li key={crumb.name}>
           <Link to={crumb.link}>{crumb.name}</Link>
         </li>
-      );
-    });
-    return <Base {...this.props}>{crumbs}</Base>;
+      )
+    })
+    return <Base {...this.props}>{crumbs}</Base>
   }
 }
 
-export default Breadcrumb;
+export default Breadcrumb

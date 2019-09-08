@@ -1,11 +1,11 @@
-import React from "react";
-import { graphql } from "gatsby";
-import styled from "styled-components";
-import TimeAgo from "react-timeago";
-import { Flex, Box } from "grid-styled";
+import React from 'react'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
+import TimeAgo from 'react-timeago'
+import { Flex, Box } from 'grid-styled'
 
-import Breadcrumb from "../components/breadcrumb";
-import Bar from "../components/bar";
+import Breadcrumb from '../components/breadcrumb'
+import Bar from '../components/bar'
 
 const Header = styled.div`
   height: fit-contents;
@@ -19,7 +19,7 @@ const Header = styled.div`
     margin: auto;
     max-width: 600px;
   }
-`;
+`
 
 const Tags = styled.ol`
   float: right;
@@ -37,9 +37,9 @@ const Tags = styled.ol`
     padding: 0 8px;
     font-weight: 400;
     color: #444;
-    content: "|";
+    content: '|';
   }
-`;
+`
 
 const Content = styled.div`
   margin: 0 auto;
@@ -49,34 +49,34 @@ const Content = styled.div`
   hr {
     margin: 0 0 40px;
   }
-`;
+`
 
 const Title = styled.h1`
   margin-top: 0;
   text-transform: capitalize;
   color: #fff;
-`;
+`
 
 const Timestamp = styled.i`
   float: right;
-`;
+`
 
 const TimeToRead = styled.h5`
   text-transform: uppercase;
   margin-top: 0.5em;
   display: inline-block;
-`;
+`
 
 export default ({ data, location }) => {
-  const post = data.markdownRemark;
+  const post = data.markdownRemark
   const crumbs = [
-    { name: "home", link: "/" },
-    { name: "portfolio", link: "/#portfolio" },
-    { name: post.frontmatter.title, link: location.pathname }
-  ];
+    { name: 'home', link: '/' },
+    { name: 'portfolio', link: '/#portfolio' },
+    { name: post.frontmatter.title, link: location.pathname },
+  ]
   const tags = post.frontmatter.tags.map(function(tag) {
-    return <li key={tag}>{tag}</li>;
-  });
+    return <li key={tag}>{tag}</li>
+  })
   return (
     <div>
       <Header>
@@ -102,8 +102,8 @@ export default ({ data, location }) => {
         </Timestamp>
       </Content>
     </div>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -117,4 +117,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

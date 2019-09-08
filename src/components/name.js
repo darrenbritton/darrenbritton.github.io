@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react'
+import styled, { css } from 'styled-components'
 
 const Base = styled.a`
   font-size: 20pt;
@@ -43,7 +43,7 @@ const Base = styled.a`
     css`
       font-size: 2em;
     `}
-`;
+`
 
 class Name extends React.Component {
   render() {
@@ -51,8 +51,8 @@ class Name extends React.Component {
       <Base {...this.props} href="/">
         Darren Britton
       </Base>
-    );
+    )
   }
 }
 
-export default Name;
+export default Name

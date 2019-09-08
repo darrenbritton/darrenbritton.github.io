@@ -1,17 +1,17 @@
-import React from "react";
-import { navigate } from "gatsby";
-import FlickrHero from "react-flickr-hero";
-import styled from "styled-components";
+import React from 'react'
+import { navigate } from 'gatsby'
+import FlickrHero from 'react-flickr-hero'
+import styled from 'styled-components'
 
-import Layout from "../components/layout";
-import Button from "../components/button";
-import HeroText from "../components/heroText";
+import Layout from '../components/layout'
+import Button from '../components/button'
+import HeroText from '../components/heroText'
 
 const HomeButton = styled(Button)`
   position: absolute;
   bottom: 35%;
   left: 20%;
-`;
+`
 
 const PageNotFound = () => (
   <Layout>
@@ -21,11 +21,11 @@ const PageNotFound = () => (
       album_id="72157694825254121"
       fillPage
     />
-    <HomeButton opaque light onClick={() => navigate("/")}>
+    <HomeButton opaque light onClick={() => navigate('/')}>
       Return To Home Page
     </HomeButton>
     <HeroText text="404 Page Not Found" />
   </Layout>
-);
+)
 
-export default PageNotFound;
+export default PageNotFound

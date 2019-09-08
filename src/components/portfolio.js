@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { Flex, Box } from "grid-styled";
-import Img from "gatsby-image";
+import React from 'react'
+import styled from 'styled-components'
+import { Flex, Box } from 'grid-styled'
+import Img from 'gatsby-image'
 
-import { media } from "../utils/style";
-import Button from "./button";
+import { media } from '../utils/style'
+import Button from './button'
 
 const Tile = styled.div`
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -35,7 +35,7 @@ const Tile = styled.div`
 
     }
   `}
-`;
+`
 
 const TileContent = styled.a`
   color: #fff;
@@ -111,7 +111,7 @@ const TileContent = styled.a`
      font-size: 0.95em;
    }
 }
-`;
+`
 
 const Item = ({ excerpt, image, tags, slug, title, timeToRead }) => (
   <Tile>
@@ -123,13 +123,13 @@ const Item = ({ excerpt, image, tags, slug, title, timeToRead }) => (
       <p>{excerpt}</p>
     </TileContent>
   </Tile>
-);
+)
 
 class Portfolio extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = { items: [], viewAll: false };
+    this.state = { items: [], viewAll: false }
   }
 
   componentWillRecievedProps(newProps, oldProps) {
@@ -137,12 +137,12 @@ class Portfolio extends React.Component {
       newProps.items &&
       JSON.stringify(newProps.items) !== JSON.stringify(oldProps.items)
     ) {
-      this.setState({ items: newProps.items });
+      this.setState({ items: newProps.items })
     }
   }
 
   toggleShow() {
-    this.setState({ viewAll: !this.state.viewAll });
+    this.setState({ viewAll: !this.state.viewAll })
   }
 
   render() {
@@ -156,21 +156,21 @@ class Portfolio extends React.Component {
           {...item.node.frontmatter}
         />
       </Box>
-    ));
+    ))
     if (!this.state.viewAll) {
-      items.splice(4);
+      items.splice(4)
     }
     return (
       <Flex justifyContent="center" px={1} flexWrap="wrap">
         {items}
         <Box m="auto">
           <Button center onClick={() => this.toggleShow()}>
-            {this.state.viewAll ? "View Less" : "View More"}
+            {this.state.viewAll ? 'View Less' : 'View More'}
           </Button>
         </Box>
       </Flex>
-    );
+    )
   }
 }
 
-export default Portfolio;
+export default Portfolio
