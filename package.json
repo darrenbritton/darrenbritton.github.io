@@ -23,7 +23,7 @@
     "nuka-carousel": "^4.5.11",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-error-overlay": "^6.0.1",
+    "react-error-overlay": "^6.0.2",
     "react-flickr-hero": "^1.4.0",
     "react-flickr-lightbox": "^1.8.0",
     "react-fontawesome": "^1.6.1",
