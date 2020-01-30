@@ -20,7 +20,7 @@
     "gatsby-transformer-remark": "^2.6.21",
     "gatsby-transformer-sharp": "^2.2.13",
     "grid-styled": "^5.0.2",
-    "nuka-carousel": "^4.5.11",
+    "nuka-carousel": "^4.6.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-error-overlay": "^6.0.1",
