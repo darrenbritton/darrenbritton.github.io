@@ -32,7 +32,7 @@
     "react-typist": "^2.0.5",
     "react-typography": "^0.16.19",
     "scroll-to-element": "^2.0.3",
-    "sharp": "^0.23.0",
+    "sharp": "^0.24.1",
     "styled-components": "^4.3.2",
     "tween": "^0.9.0",
     "typography": "^0.16.19",
