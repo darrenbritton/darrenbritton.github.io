@@ -27,7 +27,7 @@
     "react-flickr-hero": "^1.4.0",
     "react-flickr-lightbox": "^1.8.0",
     "react-fontawesome": "^1.6.1",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.0.0",
     "react-timeago": "^4.4.0",
     "react-typist": "^2.0.5",
     "react-typography": "^0.16.19",
