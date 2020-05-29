@@ -64,7 +64,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.0.1",
     "gatsby-cli": "^2.7.44",
-    "gh-pages": "^2.1.1",
+    "gh-pages": "^3.0.0",
     "greenkeeper-lockfile": "^1.15.1",
     "prettier": "^1.18.2",
     "stylelint": "^11.0.0",
