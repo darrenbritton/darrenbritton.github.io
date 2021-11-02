@@ -29,6 +29,8 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        footnotes: true,
+        gfm: true,
         plugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -72,7 +74,8 @@ module.exports = {
         start_url: "/",
         background_color: "#292929",
         theme_color: "#405375",
-        display: "minimal-ui"
+        display: "minimal-ui",
+        icon: "./static/safari-pinned-tab.svg"
       }
     },
     {

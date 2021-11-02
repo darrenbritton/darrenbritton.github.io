@@ -67,8 +67,9 @@ const TimeToRead = styled.h5`
   display: inline-block;
 `
 
-export default ({ data, location }) => {
+const BlogPost = ({ data, location }) => {
   const post = data.markdownRemark
+  console.log(data);
   const crumbs = [
     { name: 'home', link: '/' },
     { name: 'portfolio', link: '/#portfolio' },
@@ -105,11 +106,16 @@ export default ({ data, location }) => {
   )
 }
 
+export default BlogPost;
+
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: {slug: { eq: $slug }}) {
       html
       timeToRead
+      fields {
+        slug
+      }
       frontmatter {
         title
         date

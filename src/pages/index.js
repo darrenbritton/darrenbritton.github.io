@@ -170,7 +170,7 @@ const Item = styled.div`
   `}
 `
 
-export default props => {
+const Index = props => {
   const content = (
     <Content>
       <FlickrHero
@@ -221,9 +221,9 @@ export default props => {
           </Box>
           <Box px={2} width={180}>
             <Img
-              sizes={
+              fluid={
                 props.data.allFile
-                  ? props.data.allFile.edges[0].node.childImageSharp.sizes
+                  ? props.data.allFile.edges[0].node.childImageSharp.fluid
                   : {}
               }
             />
@@ -313,6 +313,8 @@ export default props => {
   )
 }
 
+export default Index;
+
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -329,7 +331,7 @@ export const pageQuery = graphql`
             tags
             image {
               childImageSharp {
-                sizes(
+                fluid(
                   maxWidth: 500
                   duotone: {
                     highlight: "#333333"
@@ -337,7 +339,7 @@ export const pageQuery = graphql`
                     opacity: 65
                   }
                   ) {
-                  ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -350,8 +352,11 @@ export const pageQuery = graphql`
         node {
           id
           childImageSharp {
-            sizes(maxWidth: 300, grayscale: true) {
-              ...GatsbyImageSharpSizes_tracedSVG
+            fluid(maxWidth: 300, duotone: {
+              highlight: "#000000",
+              shadow: "#ffffff"
+            }) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -361,8 +366,8 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 200, grayscale: true) {
-              ...GatsbyImageSharpSizes_tracedSVG
+            fluid(maxWidth: 200, grayscale: true) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }

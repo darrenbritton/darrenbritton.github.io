@@ -116,7 +116,7 @@ const TileContent = styled.a`
 const Item = ({ excerpt, image, tags, slug, title, timeToRead }) => (
   <Tile>
     <a href={slug}>
-      {image ? <Img sizes={image.childImageSharp.sizes} /> : <div />}
+      {image ? <Img fluid={image.childImageSharp.fluid} /> : <div />}
     </a>
     <TileContent href={slug}>
       <h1>{title}</h1>
@@ -146,6 +146,7 @@ class Portfolio extends React.Component {
   }
 
   render() {
+    console.log(this.props.items);
     const items = this.props.items.map(item => (
       <Box key={item.node.fields.slug} px={2} width={[1, 1 / 2, 1 / 3, 1 / 4]}>
         <Item

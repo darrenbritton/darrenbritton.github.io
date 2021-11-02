@@ -21,7 +21,7 @@ class Showcase extends React.Component {
   render() {
     const images = this.props.images.reverse().map(image => (
       <Box key={image.node.id} px={2} width={[1 / 2, 1 / 3]}>
-        <Img sizes={image.node.childImageSharp.sizes} />
+        <Img fluid={image.node.childImageSharp.fluid} />
       </Box>
     ))
     return (

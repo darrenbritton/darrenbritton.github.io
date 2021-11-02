@@ -9,6 +9,7 @@ This game was created with [Sam Boles](https://github.com/Xaeonn) to compete in 
 
 [Play in Browser](/H2G2/WebBuild.html)
 
+<!-- reference links -->
 ![](./images/h2g2A.PNG "h2g2 start screen")
 ![](./images/h2g2B.PNG "h2g2 first text")
 ![](./images/h2g2c.png "h2g2 launch poster")
