@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: /workspace
   docker:
-    - image: tailor/docker-libvips:node-10.9
+    - image: node:17
 
 version: 2
 jobs:
@@ -11,15 +11,15 @@ jobs:
       - checkout
       - run:
           name: install deps
-          command: apt-get update -y; apt-get install git build-essential -y
+          command: apt-get update -y; apt-get install git build-essential libvips -y
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: npm install
-          command: npm install
+          name: yarn install
+          command: yarn install --ignore-engines
       - run:
           name: gatsby build
-          command: npm run build
+          command: yarn build
       - run:
           name: copy ci config
           command: cp -r .circleci/ ./public/.circleci/
