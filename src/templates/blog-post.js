@@ -69,7 +69,6 @@ const TimeToRead = styled.h5`
 
 const BlogPost = ({ data, location }) => {
   const post = data.markdownRemark
-  console.log(data);
   const crumbs = [
     { name: 'home', link: '/' },
     { name: 'portfolio', link: '/#portfolio' },

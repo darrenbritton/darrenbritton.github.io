@@ -146,7 +146,6 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    console.log(this.props.items);
     const items = this.props.items.map(item => (
       <Box key={item.node.fields.slug} px={2} width={[1, 1 / 2, 1 / 3, 1 / 4]}>
         <Item
