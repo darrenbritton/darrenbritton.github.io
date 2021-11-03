@@ -9,9 +9,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run:
-          name: install deps
-          command: apt-get update -y; apt-get install git build-essential -y
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -37,9 +34,6 @@ jobs:
   deploy:
       <<: *defaults
       steps:
-        - run:
-            name: install deps
-            command: apt-get update -y; apt-get install git -y
         - attach_workspace:
             at: ~/workspace
         - run:
