@@ -1,5 +1,5 @@
 defaults: &defaults
-  working_directory: /workspace
+  working_directory: ~/workspace
   docker:
     - image: circleci/node:17
 
@@ -29,7 +29,7 @@ jobs:
             - node_modules
             - package-lock.json
       - persist_to_workspace:
-          root: /workspace
+          root: ~/workspace
           paths:
             - public
             - package.json
@@ -41,7 +41,7 @@ jobs:
             name: install deps
             command: apt-get update -y; apt-get install git -y
         - attach_workspace:
-            at: /workspace
+            at: ~/workspace
         - run:
             name: git config
             command: git config --global user.email "deploy@circleci.com" && git config --global user.name "Circle CI"
