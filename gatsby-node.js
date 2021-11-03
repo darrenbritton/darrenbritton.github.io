@@ -8,14 +8,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: slug
+      value: slug,
     });
   }
 };
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     graphql(`
       {
         allMarkdownRemark {
@@ -28,15 +28,15 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `).then(result => {
+    `).then((result) => {
       result.data.allMarkdownRemark.edges.map(({ node }) => {
         createPage({
           path: node.fields.slug,
           component: path.resolve(`./src/templates/blog-post.js`),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
-            slug: node.fields.slug
-          }
+            slug: node.fields.slug,
+          },
         });
       });
       resolve();

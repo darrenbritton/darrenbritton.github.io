@@ -1,28 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `Darren Britton`
+    title: `Darren Britton`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`pacifico:400`, `raleway:100,400,600,700`, "lato: 300,400,500"]
-      }
+        fonts: [`pacifico:400`, `raleway:100,400,600,700`, "lato: 300,400,500"],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src/`
-      }
+        path: `${__dirname}/src/`,
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -41,17 +41,17 @@ module.exports = {
               maxWidth: 925,
               // Remove the default behavior of adding a link to each
               // image.
-              linkImagesToOriginal: true
-            }
-          }
-        ]
-      }
+              linkImagesToOriginal: true,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-47904062-1`
-      }
+        trackingId: `UA-47904062-1`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -62,14 +62,14 @@ module.exports = {
         background_color: "#292929",
         theme_color: "#405375",
         display: "minimal-ui",
-        icon: "./static/safari-pinned-tab.svg"
-      }
+        icon: "./static/safari-pinned-tab.svg",
+      },
     },
     {
       resolve: "gatsby-plugin-sentry",
       options: {
-        dsn: "https://23d8e0b792d442d29d0b4344a79ef87d@sentry.io/170806"
-      }
-    }
-  ]
+        dsn: "https://23d8e0b792d442d29d0b4344a79ef87d@sentry.io/170806",
+      },
+    },
+  ],
 };
