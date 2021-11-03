@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: /workspace
   docker:
-    - image: node:17
+    - image: circleci/node:17
 
 version: 2
 jobs:
@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: install deps
-          command: apt-get update -y; apt-get install git build-essential libvips -y
+          command: apt-get update -y; apt-get install git build-essential -y
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
