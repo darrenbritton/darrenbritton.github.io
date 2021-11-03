@@ -10,10 +10,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
           name: yarn install
-          command: yarn install --ignore-engines
+          command: yarn install
       - run:
           name: gatsby build
           command: yarn build
@@ -21,7 +21,7 @@ jobs:
           name: copy ci config
           command: cp -r .circleci/ ./public/.circleci/
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
             - package-lock.json
