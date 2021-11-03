@@ -1,18 +1,18 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { Flex, Box } from 'grid-styled'
-import styled, { css } from 'styled-components'
-import Img from 'gatsby-image'
-import FlickrHero from 'react-flickr-hero'
+import React from "react";
+import { graphql } from "gatsby";
+import { Flex, Box } from "grid-styled";
+import styled, { css } from "styled-components";
+import Img from "gatsby-image";
+import FlickrHero from "react-flickr-hero";
 
-import { media } from '../utils/style'
+import { media } from "../utils/style";
 
-import Layout from '../components/layout'
-import NavBar from '../components/navbar'
-import HeroText from '../components/heroText'
-import SocialIcons from '../components/socialIcons'
-import Portfolio from '../components/portfolio'
-import Showcase from '../components/showcase'
+import Layout from "../components/layout";
+import NavBar from "../components/navbar";
+import HeroText from "../components/heroText";
+import SocialIcons from "../components/socialIcons";
+import Portfolio from "../components/portfolio";
+import Showcase from "../components/showcase";
 
 const Content = styled.div`
   & > a {
@@ -23,10 +23,10 @@ const Content = styled.div`
   & > h1 {
     text-align: center;
   }
-`
+`;
 
 const Title = styled.h1`
-  font-family: 'Raleway';
+  font-family: "Raleway";
   text-transform: uppercase;
   letter-spacing: 6px;
   margin-bottom: 40px;
@@ -36,7 +36,7 @@ const Title = styled.h1`
   border: none;
   color: #292929;
 
-  ${props =>
+  ${(props) =>
     props.small &&
     css`
       font-size: 12px;
@@ -44,7 +44,7 @@ const Title = styled.h1`
       font-weight: 700;
       line-height: 24px;
     `}
-`
+`;
 
 const Section = styled.div`
   text-align: center;
@@ -52,7 +52,7 @@ const Section = styled.div`
   padding-bottom: 40px;
 
   a {
-    font-family: 'Lato';
+    font-family: "Lato";
   }
 
   p {
@@ -67,7 +67,7 @@ const Section = styled.div`
   h4,
   h5,
   h6 {
-    font-family: 'Raleway';
+    font-family: "Raleway";
     text-transform: uppercase;
     color: #292929;
   }
@@ -90,7 +90,7 @@ const Section = styled.div`
     border-bottom: none !important;
   }
 
-  ${props =>
+  ${(props) =>
     props.center &&
     css`
       text-align: left;
@@ -108,7 +108,7 @@ const Section = styled.div`
     `}
     `}
 
-  ${props =>
+  ${(props) =>
     props.dark &&
     css`
       background: #292929;
@@ -137,7 +137,7 @@ const Section = styled.div`
         border-bottom: 1px solid #333 !important;
       }
     `}
-`
+`;
 
 const Item = styled.div`
   width: 40%;
@@ -168,9 +168,9 @@ const Item = styled.div`
     width: 90%;
 
   `}
-`
+`;
 
-export default props => {
+const Index = (props) => {
   const content = (
     <Content>
       <FlickrHero
@@ -182,24 +182,24 @@ export default props => {
       <HeroText />
       <SocialIcons
         style={{
-          position: 'absolute',
-          margin: '0 auto',
+          position: "absolute",
+          margin: "0 auto",
           left: 0,
           right: 0,
           bottom: 16,
         }}
         icons={[
           {
-            name: 'twitter',
-            href: 'https://twitter.com/darren_britton',
+            name: "twitter",
+            href: "https://twitter.com/darren_britton",
           },
           {
-            name: 'github-alt',
-            href: 'https://github.com/darrenbritton',
+            name: "github-alt",
+            href: "https://github.com/darrenbritton",
           },
           {
-            name: 'linkedin',
-            href: 'https://ie.linkedin.com/in/darrenbritton',
+            name: "linkedin",
+            href: "https://ie.linkedin.com/in/darrenbritton",
           },
         ]}
       />
@@ -209,7 +209,7 @@ export default props => {
         <Flex alignItems="center" flexDirection="column">
           <Box px={2} width={[1, 1 / 2]}>
             <p>
-              Currently working as a software engineer at{' '}
+              Currently working as a software engineer at{" "}
               <a href="https://shutterstock.com">Shutterstock</a> focusing on
               the editorial content platform. As far as my work goes I've
               probably worn every hat on the rack, most notable being Web
@@ -221,9 +221,9 @@ export default props => {
           </Box>
           <Box px={2} width={180}>
             <Img
-              sizes={
+              fluid={
                 props.data.allFile
-                  ? props.data.allFile.edges[0].node.childImageSharp.sizes
+                  ? props.data.allFile.edges[0].node.childImageSharp.fluid
                   : {}
               }
             />
@@ -304,14 +304,16 @@ export default props => {
         </Item>
       </Section>
     </Content>
-  )
+  );
   return (
     <Layout location={props.location}>
       <NavBar main children={content.props.children} />
       {content}
     </Layout>
-  )
-}
+  );
+};
+
+export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -329,15 +331,15 @@ export const pageQuery = graphql`
             tags
             image {
               childImageSharp {
-                sizes(
+                fluid(
                   maxWidth: 500
                   duotone: {
                     highlight: "#333333"
                     shadow: "#111111"
                     opacity: 65
                   }
-                  ) {
-                  ...GatsbyImageSharpSizes
+                ) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -350,8 +352,11 @@ export const pageQuery = graphql`
         node {
           id
           childImageSharp {
-            sizes(maxWidth: 300, grayscale: true) {
-              ...GatsbyImageSharpSizes_tracedSVG
+            fluid(
+              maxWidth: 300
+              duotone: { highlight: "#000000", shadow: "#ffffff" }
+            ) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
@@ -361,12 +366,12 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 200, grayscale: true) {
-              ...GatsbyImageSharpSizes_tracedSVG
+            fluid(maxWidth: 200, grayscale: true) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
       }
     }
   }
-`
+`;

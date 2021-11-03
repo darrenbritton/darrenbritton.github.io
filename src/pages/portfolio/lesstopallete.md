@@ -7,5 +7,5 @@ image: './images/less-palette.jpg'
 
 [Less Palette] is an open source react web app that can transform CSS, SASS, and, LESS files into an interactive colour palette by extracting their colour variables. The palette can also be sorted based on a wide variety of data points. **You can visit the site here:** [Less Palette]
 
-<!--- reference links --->
+<!-- reference links -->
 [Less Palette]: <https://darrenbritton.com/less-to-palette/?file=https://raw.githubusercontent.com/darrenbritton/less-to-palette/master/tests/files/test.less>

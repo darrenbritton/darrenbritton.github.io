@@ -1,19 +1,19 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import Link from 'gatsby-link'
-import { Flex, Box } from 'grid-styled'
-import scrollToElement from 'scroll-to-element'
-import FlickrLightbox from 'react-flickr-lightbox'
+import React from "react";
+import styled, { css } from "styled-components";
+import Link from "gatsby-link";
+import { Flex, Box } from "grid-styled";
+import scrollToElement from "scroll-to-element";
+import FlickrLightbox from "react-flickr-lightbox";
 
-import Name from './name'
-import Button from './button'
-import SocialIcons from './socialIcons'
+import Name from "./name";
+import Button from "./button";
+import SocialIcons from "./socialIcons";
 
 const Base = styled.div`
   height: fit-contents;
   padding: 0;
   background: #292929;
-`
+`;
 
 const FooterText = styled.div`
   padding-top: 6px;
@@ -22,16 +22,16 @@ const FooterText = styled.div`
   a {
     color: #9880dc;
   }
-`
+`;
 
 const SocialIconsStyled = styled(SocialIcons)`
   margin-left: -8px;
   text-align: left;
-`
+`;
 
 const CenteredButtonBox = styled(Box)`
   margin: 2em auto;
-`
+`;
 
 const GalleryContainer = styled.div`
   & > div > div {
@@ -39,7 +39,7 @@ const GalleryContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
-`
+`;
 
 class Footer extends React.Component {
   render() {
@@ -55,16 +55,16 @@ class Footer extends React.Component {
                 <SocialIconsStyled
                   icons={[
                     {
-                      name: 'twitter',
-                      href: 'https://twitter.com/darren_britton',
+                      name: "twitter",
+                      href: "https://twitter.com/darren_britton",
                     },
                     {
-                      name: 'github-alt',
-                      href: 'https://github.com/darrenbritton',
+                      name: "github-alt",
+                      href: "https://github.com/darrenbritton",
                     },
                     {
-                      name: 'linkedin',
-                      href: 'https://ie.linkedin.com/in/darrenbritton',
+                      name: "linkedin",
+                      href: "https://ie.linkedin.com/in/darrenbritton",
                     },
                   ]}
                 />
@@ -76,7 +76,7 @@ class Footer extends React.Component {
               <Box>
                 <FooterText>
                   <h4>
-                    Made with ❤️ using{' '}
+                    Made with ❤️ using{" "}
                     <a href="https://www.gatsbyjs.org/">GatsbyJS</a>
                   </h4>
                 </FooterText>
@@ -84,7 +84,7 @@ class Footer extends React.Component {
               <CenteredButtonBox>
                 <Button
                   onClick={() => {
-                    scrollToElement('html')
+                    scrollToElement("html");
                   }}
                   small="small"
                   dark="dark"
@@ -108,8 +108,8 @@ class Footer extends React.Component {
           </Box>
         </Flex>
       </Base>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

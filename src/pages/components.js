@@ -1,13 +1,13 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import { Flex, Box } from 'grid-styled'
+import React from "react";
+import Link from "gatsby-link";
+import { Flex, Box } from "grid-styled";
 
-import Layout from '../components/layout'
-import Button from '../components/button'
-import Bar from '../components/bar'
-import Breadcrumb from '../components/breadcrumb'
-import Carousel from '../components/carousel'
-import NavBar from '../components/navbar'
+import Layout from "../components/layout";
+import Button from "../components/button";
+import Bar from "../components/bar";
+import Breadcrumb from "../components/breadcrumb";
+import Carousel from "../components/carousel";
+import NavBar from "../components/navbar";
 
 class ComponentsDemo extends React.Component {
   render() {
@@ -24,24 +24,24 @@ class ComponentsDemo extends React.Component {
         <Breadcrumb
           dark
           crumbs={[
-            { name: 'a', link: '/components#a' },
-            { name: 'b', link: '/components#b' },
-            { name: 'c', link: '/components#c' },
-            { name: 'd', link: '/components#d' },
-            { name: 'e', link: '/components#e' },
-            { name: 'f', link: '/components#f' },
+            { name: "a", link: "/components#a" },
+            { name: "b", link: "/components#b" },
+            { name: "c", link: "/components#c" },
+            { name: "d", link: "/components#d" },
+            { name: "e", link: "/components#e" },
+            { name: "f", link: "/components#f" },
           ]}
         />
         <h1 id="carousel">Carousel</h1>
         <Carousel
           images={[
-            '/cdn/images/digicahA.PNG',
-            '/cdn/images/digicahB.PNG',
-            '/cdn/images/digicahC.PNG',
+            "/cdn/images/digicahA.PNG",
+            "/cdn/images/digicahB.PNG",
+            "/cdn/images/digicahC.PNG",
           ]}
         />
       </div>
-    )
+    );
     return (
       <Layout>
         <NavBar dark children={content.props.children} />
@@ -49,8 +49,8 @@ class ComponentsDemo extends React.Component {
           <Box width={[9 / 10, 2 / 3, 3 / 4]}>{content}</Box>
         </Flex>
       </Layout>
-    )
+    );
   }
 }
 
-export default ComponentsDemo
+export default ComponentsDemo;

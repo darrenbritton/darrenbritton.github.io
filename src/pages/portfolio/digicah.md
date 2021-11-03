@@ -12,5 +12,5 @@ It has been released in alpha and can be downloaded from the dedicated Digicah w
 ![](./images/digicahB.PNG "Digicah website about page")
 ![](./images/digicahC.PNG "Digicah website client preview page")
 
-<!--- reference links --->
+<!-- reference links -->
 [here]: <https://web.archive.org/web/20160307075031/http://digicah.com>

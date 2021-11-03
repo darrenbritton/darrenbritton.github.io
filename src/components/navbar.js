@@ -1,11 +1,11 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import { Flex, Box } from 'grid-styled'
-import scrollToElement from 'scroll-to-element'
+import React from "react";
+import styled, { css } from "styled-components";
+import { Flex, Box } from "grid-styled";
+import scrollToElement from "scroll-to-element";
 
-import Name from './name'
+import Name from "./name";
 
-import { media } from '../utils/style'
+import { media } from "../utils/style";
 
 const Base = styled.div`
   padding: 0;
@@ -30,17 +30,17 @@ const Base = styled.div`
     color: #fff;
     text-decoration: none;
     cursor: pointer;
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
   }
   & ul > li a {
-    font-family: 'Raleway';
+    font-family: "Raleway";
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
     margin-right: 32px;
   }
 
-  ${props =>
+  ${(props) =>
     props.dark &&
     css`
       background: #fff;
@@ -57,7 +57,7 @@ const Base = styled.div`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.main &&
     css`
       background: transparent;
@@ -72,30 +72,30 @@ const Base = styled.div`
       display: none;
     }
   `}
-`
+`;
 
 class NavBar extends React.Component {
   render() {
     const linkMap = this.props.children
-      .map(el => {
+      .map((el) => {
         if (el.props.id)
-          return { name: el.props.children, href: `#${el.props.id}` }
+          return { name: el.props.children, href: `#${el.props.id}` };
       })
-      .filter(n => n != undefined)
-      .reverse()
-    const links = linkMap.map(function(link) {
+      .filter((n) => n != undefined)
+      .reverse();
+    const links = linkMap.map(function (link) {
       return (
         <li key={link.name}>
           <a
             onClick={() => {
-              scrollToElement(link.href)
+              scrollToElement(link.href);
             }}
           >
             {link.name}
           </a>
         </li>
-      )
-    })
+      );
+    });
     return (
       <Base {...this.props}>
         <Flex>
@@ -107,8 +107,8 @@ class NavBar extends React.Component {
           </Box>
         </Flex>
       </Base>
-    )
+    );
   }
 }
 
-export default NavBar
+export default NavBar;
