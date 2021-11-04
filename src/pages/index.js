@@ -25,6 +25,11 @@ const Content = styled.div`
   }
 `;
 
+const StyledFlickrHero = styled(FlickrHero)`
+  min-height: 100vh;
+  min-width: 100vw;
+`
+
 const Title = styled.h1`
   font-family: "Raleway";
   text-transform: uppercase;
@@ -173,7 +178,7 @@ const Item = styled.div`
 const Index = (props) => {
   const content = (
     <Content>
-      <FlickrHero
+      <StyledFlickrHero
         api_key="1b4e5b0203fab0d5731afe68f0a543e1"
         user_id="132343752@N06"
         album_id="72157694825254121"
