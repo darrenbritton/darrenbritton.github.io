@@ -205,9 +205,8 @@ const Index = (props) => {
         <Flex alignItems="center" flexDirection="column">
           <Box px={2} width={[1, 1 / 2]}>
             <p>
-              Currently working as a software engineer at{" "}
-              <a href="https://shutterstock.com">Shutterstock</a> focusing on
-              the editorial content platform. As far as my work goes I've
+              Currently working as a Staff Software Engineer at{" "}
+              <a href="https://shutterstock.com">Shutterstock</a> on the Content Platform team, previously Editorial. As far as my work goes I've
               probably worn every hat on the rack, most notable being Web
               Developer, Software Engineer and Photographer. Don’t let my clean
               lines and weakness for Swiss type fool you; My work has been
