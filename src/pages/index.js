@@ -193,19 +193,10 @@ const Index = (props) => {
           right: 0,
           bottom: 16,
         }}
-        icons={[
-          {
-            name: "twitter",
-            href: "https://twitter.com/darren_britton",
-          },
-          {
-            name: "github-alt",
-            href: "https://github.com/darrenbritton",
-          },
-          {
-            name: "linkedin",
-            href: "https://ie.linkedin.com/in/darrenbritton",
-          },
+        urls={[
+          "https://twitter.com/darren_britton",
+          "https://github.com/darrenbritton",
+          "https://ie.linkedin.com/in/darrenbritton"
         ]}
       />
       <a id="about-me">About Me</a>
