@@ -1,20 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
 import { Helmet } from "react-helmet";
-import styled, { createGlobalStyle } from "styled-components";
-import { Flex, Box } from "grid-styled";
+import styled from "styled-components";
 
 import Footer from "./footer";
-
-const GlobalStyle = createGlobalStyle`
-  @import "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-
-  html {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-`;
 
 const Body = styled.div`
   display: flex;
@@ -34,7 +22,6 @@ const Content = styled.div`
 const PageBase = ({ location, children }) => {
   return (
     <Body>
-      <GlobalStyle />
       <Helmet
         title="Darren Britton"
         meta={[
