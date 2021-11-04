@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { SocialIcon } from 'react-social-icons';
+import { SocialIcon } from "react-social-icons";
 
 const Base = styled.div`
   margin: 20px 0;
@@ -18,8 +18,7 @@ const StyledSocialIcon = styled(SocialIcon)`
 class SocialIcons extends React.Component {
   render() {
     const icons = this.props.urls.map(function (url) {
-      return <StyledSocialIcon fgColor='#fff' url={url} />
-      ;
+      return <StyledSocialIcon fgColor="#fff" url={url} />;
     });
     return <Base {...this.props}>{icons}</Base>;
   }

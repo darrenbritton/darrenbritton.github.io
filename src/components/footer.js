@@ -56,7 +56,7 @@ class Footer extends React.Component {
                   urls={[
                     "https://twitter.com/darren_britton",
                     "https://github.com/darrenbritton",
-                    "https://ie.linkedin.com/in/darrenbritton"
+                    "https://ie.linkedin.com/in/darrenbritton",
                   ]}
                 />
               </Box>
