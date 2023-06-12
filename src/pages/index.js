@@ -234,23 +234,28 @@ const Index = (props) => {
         <h4>Experience</h4>
         <span>Where I've worked.</span>
         <Item>
-          <span>MAY 2018 - CURRENT</span>
+          <span>JUNE 2023 - CURRENT</span>
+          <h6>SHUTTERSTOCK</h6>
+          <p>Principle Software Engineer</p>
+        </Item>
+        <Item>
+          <span>OCTOBER 2021 - MAY 2023</span>
+          <h6>SHUTTERSTOCK</h6>
+          <p>Staff Software Engineer</p>
+        </Item>
+        <Item>
+          <span>OCTOBER 2019 - SEPTEMBER 2021</span>
+          <h6>SHUTTERSTOCK</h6>
+          <p>Senior Software Engineer</p>
+        </Item>
+        <Item>
+          <span>MAY 2018 - SEPTEMBER 2019</span>
           <h6>SHUTTERSTOCK</h6>
           <p>Software Engineer</p>
         </Item>
         <Item>
           <span>JUNE 2016 - APRIL 2018</span>
           <h6>SAP IRELAND</h6>
-          <p>Full Stack Developer</p>
-        </Item>
-        <Item>
-          <span>FEB 2015 - AUG 2015</span>
-          <h6>SAP IRELAND</h6>
-          <p>Support Engineer</p>
-        </Item>
-        <Item>
-          <span>JAN 2014 - JULY 2014</span>
-          <h6>ST DECLAN'S COLLEGE</h6>
           <p>Full Stack Developer</p>
         </Item>
       </Section>
