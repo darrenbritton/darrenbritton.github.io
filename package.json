@@ -67,7 +67,7 @@
     "gh-pages": "^3.2.3",
     "greenkeeper-lockfile": "^1.15.1",
     "prettier": "^2.4.1",
-    "stylelint": "^14.0.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended": "^6.0.0",
