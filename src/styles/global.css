@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply text-slate-900
+}
+
+html {
+  background-color: cornsilk;
+}
+
+.text-shadow-sm {
+  text-shadow: 0px 8px 4px #00000025;
+}

@@ -28,7 +28,7 @@ const Content = styled.div`
 const StyledFlickrHero = styled(FlickrHero)`
   min-height: 100vh;
   min-width: 100vw;
-`;
+`
 
 const Title = styled.h1`
   font-family: "Raleway";
@@ -196,7 +196,7 @@ const Index = (props) => {
         urls={[
           "https://twitter.com/darren_britton",
           "https://github.com/darrenbritton",
-          "https://ie.linkedin.com/in/darrenbritton",
+          "https://ie.linkedin.com/in/darrenbritton"
         ]}
       />
       <a id="about-me">About Me</a>
@@ -206,8 +206,7 @@ const Index = (props) => {
           <Box px={2} width={[1, 1 / 2]}>
             <p>
               Currently working as a Staff Software Engineer at{" "}
-              <a href="https://shutterstock.com">Shutterstock</a> on the Content
-              Platform team, previously Editorial. As far as my work goes I've
+              <a href="https://shutterstock.com">Shutterstock</a> on the Content Platform team, previously Editorial. As far as my work goes I've
               probably worn every hat on the rack, most notable being Web
               Developer, Software Engineer and Photographer. Don’t let my clean
               lines and weakness for Swiss type fool you; My work has been
@@ -234,28 +233,23 @@ const Index = (props) => {
         <h4>Experience</h4>
         <span>Where I've worked.</span>
         <Item>
-          <span>JUNE 2023 - CURRENT</span>
-          <h6>SHUTTERSTOCK</h6>
-          <p>Principle Software Engineer</p>
-        </Item>
-        <Item>
-          <span>OCTOBER 2021 - MAY 2023</span>
-          <h6>SHUTTERSTOCK</h6>
-          <p>Staff Software Engineer</p>
-        </Item>
-        <Item>
-          <span>OCTOBER 2019 - SEPTEMBER 2021</span>
-          <h6>SHUTTERSTOCK</h6>
-          <p>Senior Software Engineer</p>
-        </Item>
-        <Item>
-          <span>MAY 2018 - SEPTEMBER 2019</span>
+          <span>MAY 2018 - CURRENT</span>
           <h6>SHUTTERSTOCK</h6>
           <p>Software Engineer</p>
         </Item>
         <Item>
           <span>JUNE 2016 - APRIL 2018</span>
           <h6>SAP IRELAND</h6>
+          <p>Full Stack Developer</p>
+        </Item>
+        <Item>
+          <span>FEB 2015 - AUG 2015</span>
+          <h6>SAP IRELAND</h6>
+          <p>Support Engineer</p>
+        </Item>
+        <Item>
+          <span>JAN 2014 - JULY 2014</span>
+          <h6>ST DECLAN'S COLLEGE</h6>
           <p>Full Stack Developer</p>
         </Item>
       </Section>
