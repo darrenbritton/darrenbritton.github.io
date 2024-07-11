@@ -12,13 +12,9 @@ import {
 } from '@/components/ui/carousel'
 import { Separator } from '@/components/ui/separator'
 
-function BlogPost({ data, location }) {
+function BlogPost({ data }) {
   const post = data.markdownRemark
-  const image = post.frontmatter.image;
-  console.log({ post })
-  const tags = post.frontmatter.tags.map(function (tag) {
-    return <li key={tag}>{tag}</li>
-  })
+  const image = post.frontmatter.image
   const images = (
     post?.frontmatter?.otherImages
       ? post.frontmatter.otherImages
@@ -37,10 +33,12 @@ function BlogPost({ data, location }) {
   })
   return (
     <>
-      <div className="rainbow-anchors container relative hidden flex-col items-center justify-center md:grid lg:max-w-none text-zinc-800 lg:grid-cols-2 lg:px-0"
-              style={{
-                'background-image': `linear-gradient(to top right, ${image.colors.lightMuted}80, ${image.colors.vibrant}50)`,
-              }}>
+      <div
+        className="rainbow-anchors container relative hidden flex-col items-center justify-center md:grid lg:max-w-none text-zinc-800 lg:grid-cols-2 lg:px-0"
+        style={{
+          'background-image': `linear-gradient(to top right, ${image.colors.lightMuted}80, ${image.colors.vibrant}50)`,
+        }}
+      >
         <div className="relative hidden h-screen flex-col p-5 dark:border-r lg:flex">
           <div className="absolute inset-0" />
           <div className="relative z-20 flex items-center text-lg font-medium">

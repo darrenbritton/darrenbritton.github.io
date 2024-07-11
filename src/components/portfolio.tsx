@@ -3,10 +3,6 @@ import Img from 'gatsby-image'
 
 import { Badge } from '@/components/ui/badge'
 
-function random(min = 1, max = 9) {
-  return Math.floor(Math.random() * max) + min
-}
-
 function Item({ excerpt, image, tags, slug, title }) {
   console.log(image)
   return (
@@ -36,8 +32,10 @@ function Item({ excerpt, image, tags, slug, title }) {
             {excerpt}
           </p>
           <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-            {tags.map((tag: string) => (
-              <Badge variant="secondary">{tag}</Badge>
+            {tags.map((tag: string, i: number) => (
+              <Badge key={i} variant="secondary">
+                {tag}
+              </Badge>
             ))}
           </h4>
         </div>
