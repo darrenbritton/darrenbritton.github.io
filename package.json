@@ -18,6 +18,9 @@
     "lint:fix": "eslint --fix ./src",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.{ts,tsx,js}\""
   },
+  "overrides": {
+    "jpeg-js": "^0.4.0"
+  },
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
     "@radix-ui/react-avatar": "^1.1.0",
