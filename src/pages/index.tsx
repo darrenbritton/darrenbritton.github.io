@@ -9,7 +9,7 @@ const IndexPage: React.FC<PageProps> = (props) => {
   console.log(props)
   return (
     <div className="mx-auto">
-      <div className="container pt-3 flex">
+      <div className="container pt-3 flex sm:w-5/6">
         <div className="inline">
           <Avatar>
             <AvatarImage src="/me.jpg" alt="@darrenbritton" />
@@ -22,7 +22,7 @@ const IndexPage: React.FC<PageProps> = (props) => {
           </h2>
         </div>
       </div>
-      <div className="container pt-10">
+      <div className="container pt-10 sm:w-5/6">
         <div className="columns-auto">
           <h1 className="scroll-m-20 text-left text-7xl font-bold max-md:text-5xl tracking-tight">
             👋 I’m a Principle Software Engineer at Shutterstock, working from
@@ -30,7 +30,7 @@ const IndexPage: React.FC<PageProps> = (props) => {
           </h1>
         </div>
       </div>
-      <div className="container pt-10">
+      <div className="container pt-10 sm:w-5/6">
         <Portfolio items={props.data.allMarkdownRemark.edges} />
       </div>
     </div>
@@ -56,6 +56,9 @@ export const pageQuery = graphql`
             title
             tags
             image {
+              colors {
+                ...GatsbyImageColors
+              }
               childImageSharp {
                 fluid(
                   maxWidth: 500

@@ -2,114 +2,40 @@ import React from 'react'
 import Img from 'gatsby-image'
 
 import { Badge } from '@/components/ui/badge'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-
-// function Item({ excerpt, image, tags, slug, title, timeToRead }) {
-//   return (
-//     <a href={slug}>
-//       {image ? (
-//         <Img fluid={image.childImageSharp.fluid} className="max-h-48" />
-//       ) : (
-//         <div />
-//       )}
-//       <CardHeader>
-//         <CardTitle>{title}</CardTitle>
-//         <CardDescription>{excerpt}</CardDescription>
-//       </CardHeader>
-//       <CardFooter className="flex justify-between"></CardFooter>
-//     </a>
-//   )
-//
 
 function random(min = 1, max = 9) {
   return Math.floor(Math.random() * max) + min
 }
 
-function randomGradient() {
-  const colours = [
-    'slate',
-    'slate',
-    'gray',
-    'gray',
-    'zinc',
-    'zinc',
-    'neutral',
-    'neutral',
-    'stone',
-    'stone',
-    'red',
-    'red',
-    'orange',
-    'orange',
-    'amber',
-    'amber',
-    'yellow',
-    'yellow',
-    'lime',
-    'lime',
-    'green',
-    'green',
-    'emerald',
-    'emerald',
-    'teal',
-    'teal',
-    'cyan',
-    'cyan',
-    'sky',
-    'sky',
-    'blue',
-    'blue',
-    'indigo',
-    'indigo',
-    'violet',
-    'violet',
-    'purple',
-    'purple',
-    'fuchsia',
-    'fuchsia',
-    'pink',
-    'pink',
-    'rose',
-  ]
-  const number = 100
-  const fromColour = random(0, colours.length - 1)
-  let toColour = fromColour
-  while (toColour === fromColour) {
-    toColour = random(0, colours.length - 1)
-  }
-  return `bg-gradient-to-tr from-${colours[fromColour]}-${number} to-${colours[toColour]}-${number}`
-}
-
-function Item({ excerpt, image, tags, slug, title, timeToRead }) {
-  const gradient = randomGradient()
+function Item({ excerpt, image, tags, slug, title }) {
+  console.log(image)
   return (
     <a href={slug}>
       <div
-        className={`relative flex max-w-[90vw] min-h-full bg-clip-border rounded-xl text-gray-700 shadow-md w-full max-w-[48rem] flex-row hover:drop-shadow-2xl transition-all transition duration-300 ${gradient}`}
+        style={{
+          'background-image': `linear-gradient(to top right, ${image.colors.lightMuted}80, ${image.colors.vibrant}30)`,
+        }}
+        className={`relative flex max-w-[90vw] min-h-full bg-clip-border rounded-xl text-gray-700 shadow-md w-full max-w-[48rem] flex-row hover:drop-shadow-2xl transition-all transition duration-300`}
       >
         <div
-          className={`relative w-2/5 m-0 overflow-hidden text-gray-700 rounded-r-none bg-clip-border rounded-xl shrink-0 ${gradient}`}
+          style={{
+            'background-image': `linear-gradient(to top right, ${image.colors.lightMuted}80, ${image.colors.vibrant}30)`,
+          }}
+          className={`relative w-2/5 m-0 overflow-hidden text-gray-700 rounded-r-none bg-clip-border rounded-xl shrink-0`}
         >
           <Img
             fluid={image.childImageSharp.fluid}
             className="object-cover w-full h-full"
           />
         </div>
-        <div class="p-6">
-          <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+        <div className="p-6">
+          <h6 className="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
             {title}
           </h6>
-          <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
             {excerpt}
           </p>
-          <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
             {tags.map((tag: string) => (
               <Badge variant="secondary">{tag}</Badge>
             ))}
@@ -127,7 +53,7 @@ class Portfolio extends React.Component {
     this.state = { items: [], viewAll: false }
   }
 
-  componentWillRecievedProps(newProps, oldProps) {
+  async componentWillRecievedProps(newProps, oldProps) {
     if (
       newProps.items &&
       JSON.stringify(newProps.items) !== JSON.stringify(oldProps.items)
@@ -138,12 +64,13 @@ class Portfolio extends React.Component {
 
   render() {
     const items = this.props.items.map((item) => (
-      <div key={item.node.fields.slug} className="w-[620px] mb-10">
+      <div key={item.node.fields.slug} className="w-[620px] mb-10 max-w-full">
         <Item
           key={item.node.fields.slug}
           excerpt={item.node.excerpt}
           slug={item.node.fields.slug}
           timeToRead={item.node.timeToRead}
+          gradient={item.node.gradient}
           {...item.node.frontmatter}
         />
       </div>

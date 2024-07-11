@@ -4,8 +4,11 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     safelist: [
       {
-        pattern: /.*-.*-100/,
+        pattern: /(from|to).*-.*-100/,
       },
+      {
+        pattern: /(from|to)\[.*\]/
+      }
     ]      
   },
   darkMode: ["class"],
