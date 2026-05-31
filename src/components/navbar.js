@@ -1,114 +1,42 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { Flex, Box } from "grid-styled";
-import scrollToElement from "scroll-to-element";
 
-import Name from "./name";
+import ThemeToggle from "./themeToggle";
 
-import { media } from "../utils/style";
+const LINKS = [
+  { ix: "01", label: "About", hash: "#about" },
+  { ix: "02", label: "DevAlly", hash: "#devally" },
+  { ix: "03", label: "Experience", hash: "#experience" },
+  { ix: "04", label: "Contact", hash: "#contact" },
+];
 
-const Base = styled.div`
-  padding: 0;
-  margin: 0;
-  max-height: 62px;
-  line-height: 62px;
-  width: 100vw;
-  & ul {
-    width: 100%;
-    height: 62px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    font-size: 13px;
-  }
-  & ul > li a,
-  & ul > li {
-    height: 62px;
-    font-size: 11px;
-    float: right;
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-  & ul > li a {
-    font-family: "Raleway";
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-right: 32px;
-  }
-
-  ${(props) =>
-    props.dark &&
-    css`
-      background: #fff;
-      & ul > li a,
-      & ul > li {
-        color: #242424;
-        opacity: 0.6;
-      }
-      & ul > li a:hover {
-        opacity: 1;
-      }
-      a {
-        color: #000;
-      }
-    `}
-
-  ${(props) =>
-    props.main &&
-    css`
-      background: transparent;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 100;
-    `}
-
-  ${media.xs`
-    & ul {
-      display: none;
-    }
-  `}
-`;
-
-class NavBar extends React.Component {
-  render() {
-    const linkMap = this.props.children
-      .map((el) => {
-        if (el.props.id)
-          return { name: el.props.children, href: `#${el.props.id}` };
-      })
-      .filter((n) => n != undefined)
-      .reverse();
-    const links = linkMap.map(function (link) {
-      return (
-        <li key={link.name}>
-          <a
-            onClick={() => {
-              scrollToElement(link.href);
-            }}
-          >
-            {link.name}
-          </a>
-        </li>
-      );
-    });
-    return (
-      <Base {...this.props}>
-        <Flex>
-          <Box px={2} width={[1, 1 / 3, 2 / 6]}>
-            <Name />
-          </Box>
-          <Box px={2} width={[0, 2 / 3, 4 / 6]}>
-            <ul>{links}</ul>
-          </Box>
-        </Flex>
-      </Base>
-    );
-  }
-}
+// `home` => anchors are same-page (#about); otherwise they point back to the
+// homepage (/#about) and the wordmark returns home.
+const NavBar = ({ home = false }) => {
+  const prefix = home ? "" : "/";
+  const brandHref = home ? "#top" : "/";
+  return (
+    <nav className="nav" aria-label="Primary">
+      <div className="wrap">
+        <a href={brandHref} className="name">
+          <span className="dot" aria-hidden="true" />
+          <span className="wm">
+            Darren <span className="wm-last">Britton</span>
+          </span>
+        </a>
+        <div className="nav-right">
+          <div className="links">
+            {LINKS.map((l) => (
+              <a key={l.ix} href={`${prefix}${l.hash}`}>
+                <span className="ix">{l.ix}</span>
+                {l.label}
+              </a>
+            ))}
+          </div>
+          <ThemeToggle />
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export default NavBar;

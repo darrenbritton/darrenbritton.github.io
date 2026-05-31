@@ -7,3 +7,9 @@ package-lock.json
 public/
 .DS_Store
 yarn-error.log
+
+# Gatsby generated types
+src/gatsby-types.d.ts
+
+# Claude Code local config
+.claude/

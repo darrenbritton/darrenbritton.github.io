@@ -1,39 +1,23 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import styled from "styled-components";
 
+import NavBar from "./navbar";
 import Footer from "./footer";
 
-const Body = styled.div`
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  width: 100vw;
-
-  img {
-    margin-bottom: 0;
-  }
-`;
-
-const Content = styled.div`
-  flex: 1;
-`;
-
-const PageBase = ({ location, children }) => {
+const Layout = ({ location, children }) => {
+  const pathname = location && location.pathname ? location.pathname : "/";
+  const isHome = pathname === "/";
   return (
-    <Body>
-      <Helmet
-        title="Darren Britton"
-        meta={[
-          { name: "description", content: "portfolio" },
-          { name: "keywords", content: "darren, britton, portfolio" },
-          { name: "viewport", content: "width=device-width, initial-scale=1" },
-        ]}
-      />
-      <Content>{children}</Content>
-      {location && location.pathname != "/404" && <Footer />}
-    </Body>
+    <>
+      <a href="#main" className="skip">
+        Skip to content
+      </a>
+      <NavBar home={isHome} />
+      <main id="main" tabIndex={-1}>
+        {children}
+      </main>
+      <Footer home={isHome} />
+    </>
   );
 };
 
-export default PageBase;
+export default Layout;

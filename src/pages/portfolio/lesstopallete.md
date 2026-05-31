@@ -1,11 +1,20 @@
 ---
 title: "Less Palette"
 date: "2018-01-24"
-tags: ["react", "redux", "less", "sass", 'css']
+tags: ["React", "Open Source", "Tooling"]
+eyebrow: "Open Source · Tooling"
+crumb: "Open Source"
+lede: "An open-source React app that turns CSS, SASS and LESS files into an interactive colour palette you can read, copy and refine."
+ledeHighlight: "interactive colour palette"
 image: './images/less-palette.jpg'
+links:
+  - label: "Open the app"
+    url: "https://darrenbritton.github.io/less-to-palette/"
+    primary: true
+  - label: "GitHub"
+    url: "https://github.com/darrenbritton/less-to-palette"
 ---
 
-[Less Palette] is an open source react web app that can transform CSS, SASS, and, LESS files into an interactive colour palette by extracting their colour variables. The palette can also be sorted based on a wide variety of data points. **You can visit the site here:** [Less Palette]
+Less Palette is an open-source React web app that transforms CSS, SASS, and LESS files into an interactive colour palette. Paste or upload a stylesheet and it surfaces every colour you're using, ready to read, copy, and refine.
 
-<!-- reference links -->
-[Less Palette]: <https://darrenbritton.com/less-to-palette/?file=https://raw.githubusercontent.com/darrenbritton/less-to-palette/master/tests/files/test.less>
+A handy little utility for auditing a design system's colour usage, and a reminder that the best tools are the ones that do exactly one thing well.
