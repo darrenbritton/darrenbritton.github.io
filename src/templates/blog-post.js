@@ -1,111 +1,152 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql } from "gatsby";
-import styled from "styled-components";
-import TimeAgo from "react-timeago";
-import { Flex, Box } from "grid-styled";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import Breadcrumb from "../components/breadcrumb";
-import Bar from "../components/bar";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
 
-const Header = styled.div`
-  height: fit-contents;
-  padding: 0;
-  background: #292929;
-  position: relative;
-  overflow: hidden;
-
-  & > div {
-    padding-top: 120px;
-    margin: auto;
-    max-width: 600px;
+// Split a lede on its highlight phrase and wrap that phrase in the accent.
+const renderLede = (lede, highlight) => {
+  if (!lede) return null;
+  if (highlight && lede.includes(highlight)) {
+    const [before, after] = lede.split(highlight);
+    return (
+      <p className="lede reveal">
+        {before}
+        <span className="hl">{highlight}</span>
+        {after}
+      </p>
+    );
   }
-`;
-
-const Tags = styled.ol`
-  float: right;
-  list-style: none;
-  margin: 0;
-  & li a,
-  & li {
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    color: #222;
-  }
-  & > li + li:before {
-    padding: 0 8px;
-    font-weight: 400;
-    color: #444;
-    content: "|";
-  }
-`;
-
-const Content = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 5vh;
-  hr {
-    margin: 0 0 40px;
-  }
-`;
-
-const Title = styled.h1`
-  margin-top: 0;
-  text-transform: capitalize;
-  color: #fff;
-`;
-
-const Timestamp = styled.i`
-  float: right;
-`;
-
-const TimeToRead = styled.h5`
-  text-transform: uppercase;
-  margin-top: 0.5em;
-  display: inline-block;
-`;
+  return <p className="lede reveal">{lede}</p>;
+};
 
 const BlogPost = ({ data, location }) => {
   const post = data.markdownRemark;
-  const crumbs = [
-    { name: "home", link: "/" },
-    { name: "portfolio", link: "/#portfolio" },
-    { name: post.frontmatter.title, link: location.pathname },
-  ];
-  const tags = post.frontmatter.tags.map(function (tag) {
-    return <li key={tag}>{tag}</li>;
-  });
+  const fm = post.frontmatter;
+  const eyebrow = fm.eyebrow || "Project";
+  const crumb = fm.crumb || "Portfolio";
+  const figImage = fm.image ? getImage(fm.image) : null;
+  const links = fm.links || [];
+
+  // Next project, cycling through all posts in date order.
+  const all = data.allMarkdownRemark.edges;
+  const idx = all.findIndex((e) => e.node.fields.slug === post.fields.slug);
+  const next = idx >= 0 ? all[(idx + 1) % all.length].node : null;
+
+  useEffect(() => {
+    const reduce =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return undefined;
+    document.querySelectorAll(".reveal").forEach((el, i) => {
+      el.style.transitionDelay = `${Math.min(i * 80, 300)}ms`;
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <div>
-      <Header>
-        <Flex flexWrap="wrap">
-          <Box px={2} width={[1, 2 / 3, 1 / 3]}>
-            <Title>{post.frontmatter.title}</Title>
-          </Box>
-          <Box px={2} width={[1, 2 / 3]}>
-            <Breadcrumb crumbs={crumbs} />
-          </Box>
-          <Box px={2} width={[1]}>
-            <Bar />
-          </Box>
-        </Flex>
-      </Header>
-      <Content>
-        <TimeToRead>{post.timeToRead} min read</TimeToRead>
-        <Tags>{tags}</Tags>
-        <Bar />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Timestamp>
-          Posted: <TimeAgo date={post.frontmatter.date} />
-        </Timestamp>
-      </Content>
-    </div>
+    <Layout location={location}>
+      <article className="post">
+        <div className="wrap">
+          <nav className="crumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span className="sep" aria-hidden="true">
+              /
+            </span>
+            <a href="/#beyond">{crumb}</a>
+            <span className="sep" aria-hidden="true">
+              /
+            </span>
+            <span className="here">{fm.title}</span>
+          </nav>
+
+          <header className="post-head">
+            <span className="eyebrow reveal">{eyebrow}</span>
+            <h1 className="reveal">{fm.title}</h1>
+            {renderLede(fm.lede, fm.ledeHighlight)}
+            <div className="post-metarow reveal">
+              {(fm.tags || []).map((tag) => (
+                <span className="tag" key={tag}>
+                  {tag}
+                </span>
+              ))}
+              <span className="read">{post.timeToRead} min read</span>
+              {fm.year && <span className="read">{fm.year}</span>}
+            </div>
+          </header>
+
+          <div className="post-body">
+            <div className="post-main">
+              <div
+                className="col reveal"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+              {links.length > 0 && (
+                <div className="post-actions reveal">
+                  {links.map((link) => (
+                    <a
+                      key={link.url}
+                      className={`btn ${link.primary ? "primary" : "ghost"}`}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+            <figure className="figure reveal">
+              {figImage ? (
+                <GatsbyImage image={figImage} alt={fm.title} className="figimg" />
+              ) : (
+                <div className="ph-img">
+                  <span>Project screenshot</span>
+                </div>
+              )}
+              <figcaption>{fm.title}</figcaption>
+            </figure>
+          </div>
+
+          <div className="wrap" style={{ padding: 0 }}>
+            <div className="post-foot">
+              <a href="/#beyond">
+                <span aria-hidden="true">←</span> All projects
+              </a>
+              {next && (
+                <span className="next">
+                  Next&nbsp;&nbsp;
+                  <a href={next.fields.slug}>
+                    {next.frontmatter.title} <span aria-hidden="true">→</span>
+                  </a>
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      </article>
+    </Layout>
   );
 };
 
 export default BlogPost;
+
+export const Head = ({ data }) => (
+  <Seo title={`${data.markdownRemark.frontmatter.title} · Darren Britton`} />
+);
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -117,8 +158,34 @@ export const query = graphql`
       }
       frontmatter {
         title
-        date
+        year: date(formatString: "YYYY")
         tags
+        eyebrow
+        crumb
+        lede
+        ledeHighlight
+        links {
+          label
+          url
+          primary
+        }
+        image {
+          childImageSharp {
+            gatsbyImageData(width: 1100, placeholder: BLURRED, formats: [AUTO, WEBP])
+          }
+        }
+      }
+    }
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
       }
     }
   }
