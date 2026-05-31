@@ -5,7 +5,6 @@
   "author": "Darren Britton",
   "dependencies": {
     "gatsby": "^5.13.6",
-    "gatsby-plugin-google-analytics": "^5.13.1",
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
@@ -25,13 +24,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "yes 'yes' | gh-pages -t -b master -d public",
-    "lint": "npm run lint:es && npm run lint:style",
-    "lint:fix": "eslint --fix ./src",
-    "lint:es": "eslint --fix --ignore-path .gitignore \"**/*.{ts,tsx,js}\"",
-    "lint:style": "stylelint --fix --ignore-path .gitignore \"src/**/*.{ts,tsx,js}\"",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.js\"",
+    "lint:fix": "eslint --fix --ignore-path .gitignore \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.{js,css}\""
   },
   "devDependencies": {
     "eslint": "^8.57.0",
@@ -43,12 +38,6 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "gatsby-cli": "^5.13.3",
-    "gh-pages": "^6.1.1",
-    "greenkeeper-lockfile": "^1.15.1",
-    "prettier": "^3.3.2",
-    "stylelint": "^16.6.1",
-    "stylelint-config-idiomatic-order": "^10.0.0",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-recommended": "^14.0.1"
+    "prettier": "^3.3.2"
   }
 }
