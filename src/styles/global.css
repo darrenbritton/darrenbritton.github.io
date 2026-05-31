@@ -942,3 +942,22 @@ footer.foot a:hover { color: var(--accent); }
   padding: 13px 20px; border-radius: 2px; transition: background .2s, color .2s;
 }
 .notfound .home:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+/* =========================================================
+   BACKGROUND TEXTURE — subtle film grain
+   A fixed, full-viewport overlay above every surface (including the
+   sticky nav) so the grain reads uniformly. pointer-events:none keeps
+   it inert; at ~5% opacity the veil over text is imperceptible and the
+   AAA contrast stays effectively intact.
+   ========================================================= */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.05;
+}
+:root[data-theme="dark"] body::after { opacity: 0.085; }
