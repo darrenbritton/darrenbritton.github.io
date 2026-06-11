@@ -75,12 +75,6 @@ const Index = ({ data, location }) => {
             { y: 0, opacity: 1, duration: 0.85, stagger: 0.14 },
             0.58
           )
-          .fromTo(
-            ".hero-fig",
-            { opacity: 0 },
-            { opacity: 1, duration: 0.9 },
-            0.95
-          )
           .add(() => {
             const ul = document.querySelector(".hero h1 .ul");
             if (ul) ul.classList.add("lit");
@@ -324,9 +318,6 @@ const Index = ({ data, location }) => {
                 </div>
               </div>
             </div>
-            <p className="hero-fig" data-hero aria-hidden="true">
-              fig. 01: a system, assembling itself
-            </p>
           </div>
         </header>
 
@@ -632,7 +623,9 @@ const Index = ({ data, location }) => {
               <span className="meta">Side projects &amp; a camera</span>
             </div>
             <div className="body">
-              <div className="os" data-anim-group>
+              {/* single-block reveal: the view-all toggle adds rows after GSAP
+                  has run, so per-child animation would leave them hidden */}
+              <div className="os" data-anim>
                 <h3>Projects</h3>
                 {visibleProjects.map((node) => (
                   <a key={node.fields.slug} href={node.fields.slug}>

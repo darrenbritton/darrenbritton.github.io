@@ -1018,13 +1018,6 @@ html[data-motion="off"] .nav { transition: background .35s ease; }
   border: 1px solid var(--line);
   padding: 14px 16px;
 }
-.hero-fig {
-  display: inline-block;
-  margin: 72px 0 0; padding: 8px 12px;
-  background: var(--bg); border: 1px solid var(--line);
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--muted);
-}
 
 /* ---- focus-areas ticker ---- */
 .ticker {
@@ -1108,7 +1101,6 @@ footer.foot a { display: inline-flex; align-items: center; padding: 16px 8px; ma
 
 @media (max-width: 900px) {
   .hero { min-height: calc(100svh - 60px); padding: 72px 0 56px; }
-  .hero-fig { margin-top: 48px; }
   .ghost { font-size: clamp(110px, 30vw, 200px); right: -4vw; }
   .exp-line { left: -10px; }
 }
