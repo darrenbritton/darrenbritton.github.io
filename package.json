@@ -24,7 +24,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.js\"",
     "lint:fix": "eslint --fix --ignore-path .gitignore \"src/**/*.js\"",
