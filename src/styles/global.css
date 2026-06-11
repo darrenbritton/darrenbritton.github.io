@@ -944,6 +944,168 @@ footer.foot a:hover { color: var(--accent); }
 .notfound .home:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 
 /* =========================================================
+   EXPERIENCE LAYER — motion system, WebGL hero, choreography
+   Every animated element's CSS default is its FINAL state; the
+   pre-paint hides below apply only under html[data-motion="on"],
+   so no-JS visitors and motion-off visitors always see content.
+   ========================================================= */
+
+/* pre-hydration hides (GSAP takes over with matching from-states) */
+html[data-motion="on"] [data-anim],
+html[data-motion="on"] [data-hero],
+html[data-motion="on"] [data-anim-group] > *:not([data-noanim]) {
+  opacity: 0;
+}
+/* hero underline is drawn statically when motion is off */
+html[data-motion="off"] .hero h1 .ul .ul-line {
+  clip-path: inset(0 0 0 0);
+  transition: none;
+}
+html[data-motion="off"] { scroll-behavior: auto; }
+
+/* focus is never hidden under the sticky nav (2.4.12) */
+html { scroll-padding-top: 84px; }
+
+/* ---- quiet nav: hides scrolling down, returns scrolling up ---- */
+.nav { transition: transform .35s ease, background .35s ease; }
+.nav.nav-hidden { transform: translateY(-100%); }
+.nav:focus-within { transform: none !important; }
+html[data-motion="off"] .nav { transition: background .35s ease; }
+
+/* ---- motion toggle ---- */
+.motion-toggle {
+  appearance: none; background: none; border: 0; margin: 0; cursor: pointer;
+  position: relative; color: var(--fg);
+}
+.motion-toggle:hover { color: var(--accent); }
+.motion-toggle .slash {
+  position: absolute; width: 22px; height: 2px; background: currentColor;
+  transform: rotate(-45deg); opacity: 0;
+}
+.motion-toggle[aria-pressed="false"] .slash { opacity: 1; }
+.motion-toggle[aria-pressed="false"] .wave { opacity: .55; }
+
+/* ---- hero: full-viewport stage with the constellation behind ---- */
+.hero {
+  position: relative;
+  display: flex; align-items: center;
+  min-height: calc(100vh - 60px);
+  min-height: calc(100svh - 60px);
+  padding: 90px 0 64px;
+  overflow: hidden;
+}
+.hero .wrap { position: relative; z-index: 1; width: 100%; }
+.hero h1 { font-size: clamp(40px, 7vw, 110px); }
+.hero-sub { line-height: 1.5; }
+.hero-scene { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-scene canvas {
+  display: block; width: 100% !important; height: 100% !important;
+  opacity: 0; transition: opacity 1s ease .1s;
+}
+.hero-scene.is-ready canvas { opacity: 1; }
+/* quiet ground under the headline so type stays AAA-crisp over the canvas */
+.hero-grid { position: relative; }
+.hero-grid::before {
+  content: ""; position: absolute; inset: -14% -10%; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 72% 85% at 24% 42%, var(--bg) 30%, transparent 70%);
+}
+.hero-grid > * { position: relative; z-index: 1; }
+.hero-meta .clock { color: var(--muted); }
+/* spec-card chips: solid page ground so the 7:1 muted text never sits
+   directly on the constellation */
+.hero .hero-meta {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 14px 16px;
+}
+
+/* ---- focus-areas ticker ---- */
+.ticker {
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--panel); overflow: hidden;
+}
+.ticker-track { display: flex; width: max-content; }
+.ticker-track span {
+  display: block; white-space: nowrap; padding: 17px 0;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--muted);
+}
+html[data-motion="on"] .ticker-track { animation: ticker 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+html[data-motion="off"] .ticker-track { animation: none; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---- outlined ghost numerals (ghost-num: distinct from the .btn.ghost button variant) ---- */
+.sec-rel { overflow: hidden; }
+.sec-rel .wrap { position: relative; z-index: 1; }
+.ghost-num {
+  position: absolute; top: -12px; right: -1vw; z-index: 0;
+  pointer-events: none; user-select: none;
+  font-weight: 700; line-height: .8; letter-spacing: -.04em;
+  font-size: clamp(150px, 22vw, 320px);
+  color: transparent; -webkit-text-stroke: 1px var(--line);
+}
+
+/* ---- experience timeline line ---- */
+.exp .roles { position: relative; }
+.exp-line {
+  position: absolute; left: -20px; top: 0; bottom: 0; width: 2px;
+  background: var(--accent); opacity: .65; transform-origin: top;
+}
+
+/* ---- page progress ---- */
+.progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  pointer-events: none;
+}
+html[data-motion="off"] .progress { display: none; }
+
+/* =========================================================
+   WCAG 2.2 AAA hardening
+   44px minimum targets (2.5.5), 1.5 line spacing on text blocks
+   (1.4.8); inline links within prose keep the inline exception.
+   ========================================================= */
+.nav .links { gap: 10px; }
+.nav .links a { display: inline-flex; align-items: center; padding: 16px 9px; }
+.skip { padding: 15px 18px; }
+.nav .name { padding: 13px 8px; margin: -13px -8px; }
+.theme-toggle, .motion-toggle {
+  width: 44px; height: 44px; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.nav-right { gap: 4px; }
+footer.foot a { display: inline-flex; align-items: center; padding: 16px 8px; margin: -16px -8px; }
+.contact .links .col a { padding: 13px 0; }
+.beyond .os .more { padding: 16px 6px; }
+.flagship .desc .go {
+  border-bottom: 0; padding: 15px 0;
+  text-decoration: underline; text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px; text-underline-offset: 5px;
+}
+.crumbs a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; padding: 16px 6px; margin: -16px -6px;
+}
+.post-foot a { display: inline-flex; align-items: center; padding: 15px 4px; margin: -15px -4px; }
+.btn { padding: 15px 22px; }
+
+.about .lead p { line-height: 1.5; }
+.flagship .desc p { line-height: 1.55; }
+.post-head .lede { line-height: 1.5; }
+.post-body .col { line-height: 1.65; }
+.notfound p { line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .hero { min-height: calc(100svh - 60px); padding: 72px 0 56px; }
+  .ghost-num { font-size: clamp(110px, 30vw, 200px); right: -4vw; }
+  .exp-line { left: -10px; }
+}
+
+/* =========================================================
    BACKGROUND TEXTURE — subtle film grain
    A fixed, full-viewport overlay above every surface (including the
    sticky nav) so the grain reads uniformly. pointer-events:none keeps
