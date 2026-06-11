@@ -1,8 +1,10 @@
 import React from "react";
 
-// Set the theme before first paint: saved choice, else system preference.
-// Mirrors the inline <head> script from the design so there's no light/dark flash.
-const themeInit = `(function(){try{var s=localStorage.getItem('db-theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',s||m);}catch(e){}})();`;
+// Set theme + motion before first paint: saved choices, else system
+// preferences. Runs inline so there's no flash; when JS is unavailable the
+// data-motion attribute is never set, so nothing is ever hidden from no-JS
+// visitors (the [data-anim] hiding rule requires html[data-motion="on"]).
+const themeInit = `(function(){try{var s=localStorage.getItem('db-theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',s||m);var mo=localStorage.getItem('db-motion');var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.documentElement.setAttribute('data-motion',mo||(rm?'off':'on'));}catch(e){}})();`;
 
 export const onRenderBody = ({ setHtmlAttributes, setHeadComponents, setPreBodyComponents }) => {
   setHtmlAttributes({ lang: "en", "data-theme": "light" });
