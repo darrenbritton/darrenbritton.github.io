@@ -1038,10 +1038,10 @@ html[data-motion="off"] .ticker-track { animation: none; }
   to { transform: translateX(-50%); }
 }
 
-/* ---- outlined ghost numerals ---- */
+/* ---- outlined ghost numerals (ghost-num: distinct from the .btn.ghost button variant) ---- */
 .sec-rel { overflow: hidden; }
 .sec-rel .wrap { position: relative; z-index: 1; }
-.ghost {
+.ghost-num {
   position: absolute; top: -12px; right: -1vw; z-index: 0;
   pointer-events: none; user-select: none;
   font-weight: 700; line-height: .8; letter-spacing: -.04em;
@@ -1101,7 +1101,7 @@ footer.foot a { display: inline-flex; align-items: center; padding: 16px 8px; ma
 
 @media (max-width: 900px) {
   .hero { min-height: calc(100svh - 60px); padding: 72px 0 56px; }
-  .ghost { font-size: clamp(110px, 30vw, 200px); right: -4vw; }
+  .ghost-num { font-size: clamp(110px, 30vw, 200px); right: -4vw; }
   .exp-line { left: -10px; }
 }
 

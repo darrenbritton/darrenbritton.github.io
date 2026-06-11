@@ -115,7 +115,7 @@ const Index = ({ data, location }) => {
         });
 
         // outlined ghost numerals drift against the scroll
-        gsap.utils.toArray(".ghost").forEach((el) => {
+        gsap.utils.toArray(".ghost-num").forEach((el) => {
           gsap.fromTo(
             el,
             { yPercent: -14 },
@@ -342,7 +342,7 @@ const Index = ({ data, location }) => {
 
         {/* =================== ABOUT =================== */}
         <section id="about" className="about sec-rel">
-          <span className="ghost" aria-hidden="true">
+          <span className="ghost-num" aria-hidden="true">
             01
           </span>
           <div className="wrap">
@@ -417,7 +417,7 @@ const Index = ({ data, location }) => {
 
         {/* =================== FLAGSHIP / DEVALLY =================== */}
         <section id="devally" className="flagship sec-rel">
-          <span className="ghost" aria-hidden="true">
+          <span className="ghost-num" aria-hidden="true">
             02
           </span>
           <div className="wrap">
@@ -526,7 +526,7 @@ const Index = ({ data, location }) => {
 
         {/* =================== EXPERIENCE =================== */}
         <section id="experience" className="exp sec-rel">
-          <span className="ghost" aria-hidden="true">
+          <span className="ghost-num" aria-hidden="true">
             03
           </span>
           <div className="wrap">
@@ -664,7 +664,7 @@ const Index = ({ data, location }) => {
 
         {/* =================== CONTACT =================== */}
         <section id="contact" className="contact sec-rel">
-          <span className="ghost" aria-hidden="true">
+          <span className="ghost-num" aria-hidden="true">
             04
           </span>
           <div className="wrap">
